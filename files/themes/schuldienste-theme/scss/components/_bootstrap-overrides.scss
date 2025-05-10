@@ -1,0 +1,23 @@
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+a {
+  color: $primary;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: darken($primary, 10%);
+  }
+}
+
+.alert.alert-primary {
+  background-color: $primary;
+  color: #fff;
+  border-color: $primary;
+}

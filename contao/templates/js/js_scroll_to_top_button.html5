@@ -1,0 +1,24 @@
+<script>
+    /** Scroll to top button **/
+    document.addEventListener("DOMContentLoaded", function () {
+        const scrollButton = document.createElement("div");
+        scrollButton.className = "scroll-to-top";
+        scrollButton.innerHTML = '<a href="#"><span class="fa fa-chevron-up"></span></a>';
+        document.body.appendChild(scrollButton);
+
+        // Check if the window is scrolled down, then display the button
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > 100) {
+                scrollButton.style.display = "block";
+            } else {
+                scrollButton.style.display = "none";
+            }
+        });
+
+        // Click event to scroll to top
+        scrollButton.addEventListener("click", function (event) {
+            event.preventDefault();
+            window.scrollTo({top: 0, behavior: "smooth"});
+        });
+    });
+</script>

@@ -1,0 +1,61 @@
+// Variables
+$icon-font-name: "Font Awesome 5 Free";
+
+// Restate Bootstrap Variables
+
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #868e96 !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black: #000 !default;
+
+$blue: #007bff !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$red: #dc3545 !default;
+$orange: #BD5D38 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
+
+// Set the brand color for schuldienste.ch
+$brand-color: #F55A0E;
+$primary: $brand-color !default;
+$secondary: $gray-600 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+
+// Breakpoints
+$breakpoint-sm-up: 576px;
+$breakpoint-md-up: 768px;
+$breakpoint-lg-up: 992px;
+$breakpoint-xl-up: 1200px;
+$breakpoint-xxl-up: 1600px;
+
+// Spacing
+$spacer: 1rem;
+$spacer0: 0;
+$spacer1: $spacer * .25;
+$spacer2: $spacer * .5;
+$spacer3: $spacer;
+$spacer4: $spacer * 1.5;
+$spacer5: $spacer * 2;
+$spacer6: $spacer * 2.5;
+$spacer7: $spacer * 3;
+
+
+
+
+

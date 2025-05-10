@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="<?= $this->language ?>"<?php if ($this->isRTL): ?> dir="rtl"<?php endif; ?>>
+  <head>
+
+    <?php $this->block('head'); ?>
+      <meta charset="<?= $this->charset ?>">
+      <title><?= $this->title ?></title>
+      <base href="<?= $this->base ?>">
+
+      <?php $this->block('meta'); ?>
+        <meta name="robots" content="<?= $this->robots ?>">
+        <meta name="description" content="<?= $this->description ?>">
+        <meta name="generator" content="Contao Open Source CMS">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <?php $this->endblock(); ?>
+
+      <!-- Custom fonts for this template -->
+      <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/all.css">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+      <!-- metismenu -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css">
+
+
+    <?= $this->viewport ?>
+      <?= $this->framework ?>
+      <?= $this->stylesheets ?>
+      <?= $this->mooScripts ?>
+      <?= $this->head ?>
+    <?php $this->endblock(); ?>
+
+  </head>
+  <body id="top" class="{{ua::class}}<?php if ($this->class) echo ' ' . $this->class; ?>"<?php if ($this->onload): ?> onload="<?= $this->onload ?>"<?php endif; ?> itemscope itemtype="http://schema.org/WebPage">
+
+
+    <?php $this->block('body'); ?>
+      <?php $this->sections('top'); ?>
+
+      <!-- Here comes the bootstrap navbar -->
+      <nav class="navbar navbar-dark d-lg-none bg-primary" id="headerNav">
+        <a class="navbar-brand" href="{{env::url}}">
+          <span class="d-block d-lg-none">Schuldienste Dagmersellen</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- start mobile navigation -->
+        {{insert_module::1}}
+        <!-- end mobile navigation -->
+      </nav>
+      <!-- end navbar -->
+
+      <div id="wrapper" class="container">
+
+        <?php $this->block('header'); ?>
+          <?php if ($this->header): ?>
+            <header id="header">
+              <div class="inside">
+                <?= $this->header ?>
+              </div>
+            </header>
+          <?php endif; ?>
+        <?php $this->endblock(); ?>
+
+        <?php $this->sections('before'); ?>
+
+        <?php $this->block('container'); ?>
+          <div id="container" class="row">
+            <?php $this->block('main'); ?>
+              <main id="main" class="col-12 col-lg-8 col-xl-9 order-2">
+                <div class="inside">
+                  <?= $this->main ?>
+                </div>
+                <?php $this->sections('main'); ?>
+              </main>
+            <?php $this->endblock(); ?>
+
+            <?php $this->block('left'); ?>
+              <?php if ($this->left): ?>
+                <aside id="left" class="d-none d-lg-block col-12 col-lg-4 col-xl-3 order-1">
+                  <div class="inside">
+                    <div class="d-none d-lg-block pt-3 pb-3 pr-2 img-profile-container">
+                      <a href="{{env::url}}">
+                        <!-- Logo Schuldienste Kreis Dagmersellen -->
+                        {{image::files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg?class=img-fluid w-100 mt-0&alt=Schuldienste Kreis Dagmersellen}}
+                      </a>
+                    </div>
+                    <?= $this->left ?>
+                  </div>
+                </aside>
+              <?php endif; ?>
+            <?php $this->endblock(); ?>
+
+            <?php $this->block('right'); ?>
+              <?php if ($this->right): ?>
+                <aside id="right">
+                  <div class="inside">
+                    <?= $this->right ?>
+                  </div>
+                </aside>
+              <?php endif; ?>
+            <?php $this->endblock(); ?>
+          </div> <!-- end container -->
+        <?php $this->endblock(); ?>
+
+        <?php $this->block('footer'); ?>
+        <?php if ($this->footer): ?>
+        <footer id="footer" class="row">
+          <div class="inside col-12">
+            <?= $this->footer ?>
+          </div>
+        </footer>
+        <?php endif; ?>
+        <?php $this->endblock(); ?>
+
+        <?php $this->sections('after'); ?>
+
+      </div><!-- end wrapper -->
+
+      <?php $this->sections('bottom'); ?>
+    <?php $this->endblock(); ?>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/contao-component-popper-js/popper.min.js"></script>
+    <script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- metismenu -->
+    <!--<script src="https://cdn.jsdelivr.net/npm/metismenu"></script>-->
+
+    <!-- Plugin JavaScript -->
+    <script src="/files/themes/schuldienste-theme/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/files/themes/schuldienste-theme/js/theme-script.js"></script>
+
+    <?= $this->mootools ?>
+
+  </body>
+</html>

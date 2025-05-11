@@ -36,8 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+// Lässt die Navigation in der linken Spalte mitscrollen
 document.addEventListener("DOMContentLoaded", function () {
+
+    return; // Deaktiviert!
 
     const nav = document.querySelector("#left .inside");
     nav.style.position = "relative";

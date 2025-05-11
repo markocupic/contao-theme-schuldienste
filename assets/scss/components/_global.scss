@@ -33,6 +33,7 @@ section.mod_article.article-section {
     padding-bottom: 1rem !important;
     border-bottom: 1px solid $gray-300;
   }
+
   .w-100 {
     img {
       width: 100% !important;
@@ -40,13 +41,17 @@ section.mod_article.article-section {
       height: auto !important;
     }
   }
+
   // Some margin after each content element
+  [class*="content-"]:not([class*="content-headline"]):not([class*="content-download--inner"]):not([class*="content-downloads--inner"]):not([class*="content-hyperlink--inner"]):not([class*="content-hyperlinks--inner"]),
   [class*="ce_"]:not([class*="ce_headline"]) {
-    margin-bottom: 2rem;
+    margin-bottom: clamp-calc(1.25rem, 2rem);
   }
-  .content-hyperlink, .content_downloads li {
+
+  .content-hyperlink, .content-downloads li {
     margin-bottom: $spacer1 !important;
   }
+
   .ce_row {
     margin-bottom: 0 !important;
   }
@@ -74,9 +79,11 @@ section.mod_article.article-section:last-child {
 
 #footer {
   background-color: $gray-800;
+
   * {
     color: $gray-200;
   }
+
   a, a span {
     color: $primary;
   }
@@ -97,12 +104,14 @@ a[href*="mailto:"] {
 // Icon
 .content-downloads {
   ul {
-    padding-left: 1rem;
+    padding-left: clamp-calc(.5rem, 1.5rem);
     margin-bottom: 0;
     list-style-type: none;
-    li .content-downloads--inner{
+
+    li .content-downloads--inner {
       display: flex;
       flex-wrap: nowrap;
+
       .fa {
         margin-right: 0.5rem;
       }

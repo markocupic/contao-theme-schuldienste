@@ -27,6 +27,7 @@
         "markocupic/composer-file-copier-plugin": "^0.2"
     },
     "require-dev": {
+        "symfony/webpack-encore-bundle": "v2.2.0",
         "contao/manager-plugin": "^2.12"
     },
     "autoload": {

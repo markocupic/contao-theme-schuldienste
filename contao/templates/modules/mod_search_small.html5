@@ -4,18 +4,11 @@
 
   <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="get">
     <div class="formbody">
-
       <div class="input-group mb-3">
-        <input type="search" name="keywords"  id="ctrl_keywords_<?= $this->uniqueId ?>" class="text form-control" value="<?= $this->keyword ?>" placeholder="Suchbegriffe" aria-label="Suchbegriffe" aria-describedby="ctrl_submit_<?= $this->uniqueId ?>">
-        <div class="input-group-append">
+        <input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId ?>" class="text form-control" value="<?= $this->keyword ?>" placeholder="Suchbegriffe" aria-label="Suchbegriffe" aria-describedby="ctrl_submit_<?= $this->uniqueId ?>">
           <button class="btn btn-primary" type="submit" id="ctrl_submit_<?= $this->uniqueId ?>"><i class="fa fa-search"></i></button>
-        </div>
       </div>
-
-
     </div>
   </form>
 
 <?php $this->endblock(); ?>
-
-

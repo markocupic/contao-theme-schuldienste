@@ -4,18 +4,19 @@
 @import "components/_variables.scss";
 
 // Import bootstrap
-// files/themes/schuldienste-theme/scss/main.scss 
-@import "../../../../assets/contao-component-bootstrap/bootstrap/scss/bootstrap.scss";
+// files/themes/schuldienste-theme/scss/main.scss
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 // mixins
-@import "components/mixins.scss";
+@import "mixins/mixins.scss";
 
 //scss
 @import "components/bootstrap-overrides.scss";
 @import "components/reset.scss";
+@import "components/typography.scss";
 @import "components/global.scss";
 @import "components/scrollbar.scss";
 @import "components/scroll-to-top.scss";
 @import "components/navigation.scss";
-@import "components/typography.scss";
 @import "components/colorbox.scss";
+@import "components/alerts.scss";

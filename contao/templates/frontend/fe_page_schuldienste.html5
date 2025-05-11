@@ -18,14 +18,12 @@
       <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/all.css">
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
-      <!-- metismenu -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/metismenu/dist/metisMenu.min.css">
-
-
     <?= $this->viewport ?>
       <?= $this->framework ?>
       <?= $this->stylesheets ?>
       <?= $this->mooScripts ?>
+      <script src="{{asset::js/theme.js::markocupic_contao_schuldienste_theme}}"></script>
+      <link rel="stylesheet" href="{{asset::styles/frontend.css::markocupic_contao_schuldienste_theme}}">
       <?= $this->head ?>
     <?php $this->endblock(); ?>
 
@@ -37,16 +35,18 @@
       <?php $this->sections('top'); ?>
 
       <!-- Here comes the bootstrap navbar -->
-      <nav class="navbar navbar-dark d-lg-none bg-primary" id="headerNav">
-        <a class="navbar-brand" href="{{env::url}}">
-          <span class="d-block d-lg-none">Schuldienste Dagmersellen</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <!-- start mobile navigation -->
-        {{insert_module::1}}
-        <!-- end mobile navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark d-lg-none bg-primary" id="headerNav">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{{env::url}}">
+            <span class="d-block d-lg-none">Schuldienste Dagmersellen</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- start mobile navigation -->
+          {{insert_module::1}}
+          <!-- end mobile navigation -->
+        </div>
       </nav>
       <!-- end navbar -->
 
@@ -120,20 +120,8 @@
       <?php $this->sections('bottom'); ?>
     <?php $this->endblock(); ?>
 
-
     <!-- Bootstrap core JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-    <script src="assets/contao-component-popper-js/popper.min.js"></script>
-    <script src="assets/contao-component-bootstrap/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- metismenu -->
-    <!--<script src="https://cdn.jsdelivr.net/npm/metismenu"></script>-->
-
-    <!-- Plugin JavaScript -->
-    <script src="/files/themes/schuldienste-theme/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for this template -->
-    <script src="/files/themes/schuldienste-theme/js/theme-script.js"></script>
+    <script src="{{asset::bootstrap/dist/js/bootstrap.bundle.min.js::markocupic_contao_schuldienste_theme}}"></script>,
 
     <?= $this->mootools ?>
 

@@ -12,7 +12,7 @@ body {
 
 @media (min-width: $breakpoint-xxl-up) {
   #wrapper.container {
-    max-width: 80%;
+    max-width: 1380px;
   }
 }
 
@@ -31,7 +31,7 @@ section.article-section {
 section.mod_article.article-section {
   & > div.inner {
     padding-bottom: 1rem !important;
-    border-bottom: 1px solid $gray-200;
+    border-bottom: 1px solid $gray-300;
   }
   .w-100 {
     img {

@@ -1,0 +1,9 @@
+{
+  "entrypoints": {
+    "styles/frontend": {
+      "css": [
+        "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.88bbc2bd.css"
+      ]
+    }
+  }
+}

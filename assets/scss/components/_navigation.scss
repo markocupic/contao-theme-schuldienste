@@ -92,6 +92,10 @@
   padding-top: .75rem;
   padding-bottom: .75rem;
 
+  a.navbar-brand span {
+    font-size: clamp-calc(1rem, 1.5rem, 340px, 992px);
+  }
+
   .navbar-nav {
     margin-bottom: 1rem;
   }

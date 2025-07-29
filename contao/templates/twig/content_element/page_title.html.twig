@@ -1,0 +1,48 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+{% use "@Contao/component/_figure.html.twig" %}
+
+{% block content %}
+    <div class="grid" style="--bs-gap: 0">
+        <div class="g-col-12 g-col-lg-6 page-title--col-left">
+            <div class="p-4 page-title--col-inner">
+                {% if pageTitle|default %}
+                    <div class="page-title--title">
+                        <h1>{{ pageTitle }}</h1>
+                    </div>
+                {% endif %}
+                {% if pageTitleList|default %}
+                    <div class="page-title--list mt-4">
+                        {{ pageTitleList|raw }}
+                    </div>
+                {% endif %}
+                {% if pageTitleText|default %}
+                    <div class="page-title--text mt-4">
+                        {{ pageTitleText|raw }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="g-col-12 g-col-lg-6 page-title--col-right">
+            <div class="page-title--col-inner">
+                {# See the carousel component for more attributes https://getbootstrap.com/docs/5.3/components/carousel/ #}
+                {% set carousel_attributes = attrs()
+                    .addClass(['carousel','slide','carousel-fade'])
+                    .set('data-bs-ride','carousel')
+                    .set('data-bs-ride','carousel')
+                    .set('data-bs-touch','false') %}
+                <div{% block carousel_attributes %}{{ carousel_attributes }}{% endblock %}>
+                    <div class="carousel-inner">
+                        {% for image in pageTitleImages %}
+                            {% set carousel_item_attributes = attrs()
+                                .addClass('carousel-item')
+                                .addClass(loop.index0 == 0 ? 'active' : '') %}
+                            <div{% block carousel_item_attributes %}{{ carousel_item_attributes }}{% endblock %}>
+                                {% with {figure: image} %}{{ block('figure_component') }}{% endwith %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

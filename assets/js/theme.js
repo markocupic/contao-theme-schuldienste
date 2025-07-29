@@ -1,43 +1,7 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    // Smooth scrolling
-    var scrollTriggers = document.querySelectorAll('a.js-scroll-trigger[href*="#"]:not([href="#"])');
-
-    scrollTriggers.forEach(function (trigger) {
-        trigger.addEventListener("click", function (event) {
-            var pathname = window.location.pathname.replace(/^\//, '');
-            var hostname = window.location.hostname;
-            if (pathname === this.pathname.replace(/^\//, '') && hostname === this.hostname) {
-                var target = document.querySelector(this.hash);
-                target = target ? target : document.querySelector('[name="' + this.hash.slice(1) + '"]');
-                if (target) {
-                    event.preventDefault();
-                    window.scrollTo({
-                        top: target.offsetTop,
-                        behavior: "smooth"
-                    });
-                }
-            }
-        });
-    });
-
-    // Closes responsive menu when a scroll trigger link is clicked
-    var scrollTriggerLinks = document.querySelectorAll('.js-scroll-trigger');
-    var navbarCollapse = document.querySelector('.navbar-collapse');
-
-    scrollTriggerLinks.forEach(function (link) {
-        link.addEventListener("click", function () {
-            if (navbarCollapse) {
-                navbarCollapse.classList.remove("show");
-            }
-        });
-    });
-});
-
 // Lässt die Navigation in der linken Spalte mitscrollen
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
 
     return; // Deaktiviert!
 
@@ -70,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", () => {
         clearTimeout(timeout);
 
-        timeout = setTimeout(function () {
+        timeout = setTimeout(() => {
             setPos();
         }, delay); // Verzögerung, kann angepasst werden
     });

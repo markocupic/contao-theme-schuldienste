@@ -1,14 +1,14 @@
-<div class="{{ class }} block"{{ cssID }}>
+<div class="{{ class }} block"{{ cssID|raw }}>
     <{{ hl }}>{{ headline }}</{{ hl }}>
-    <div class="row">
+    <div class="grid">
         {% if app.request.attributes.get('_scope') == 'frontend' %}
             {% for member in members %}
-                <div class="col-6 col-md-2 col-lg-3 mb-5">
+                <div class="g-col-6 g-col-md-2 g-col-lg-3 mb-5">
                     {% if member.image|default %}
-                        {{ insert_tag('picture::'~member.image~'?size=1&class=img-fluid w-100&alt='~member.name)|raw }}
+                        {{ insert_tag('picture::'~member.image~'?size=3&class=img-fluid rounded-circle w-100&alt='~member.name)|raw }}
                     {% endif %}
                 </div>
-                <div class="col-6 col-md-4 col-lg-3 mb-5">
+                <div class="g-col-6 g-col-md-4 g-col-lg-3 mb-5">
                     {% if member.name|default %}
                         <h4 class="mt-0 text-primary">{{ member.name }}</h4>
                     {% endif %}
@@ -20,9 +20,20 @@
                     <div class="team-member-description">
                         {{ member.description|raw|nl2br }}
                     </div>
-                    <div class="team-member-email">
-                        {{ insert_tag('email_open::'~member.email)|raw }}E-Mail</a>
-                    </div>
+                    {% if member.email or member.phone %}
+                        <address>
+                            {% if member.email %}
+                                <div class="team-member-email">
+                                    {{ insert_tag('email_open::'~member.email)|raw }}E-Mail</a>
+                                </div>
+                            {% endif %}
+                            {% if member.phone %}
+                                <div class="team-member-phone">
+                                    <a href="tel:{{ member.phone }}">{{ member.phone }}</a>
+                                </div>
+                            {% endif %}
+                        </address>
+                    {% endif %}
                 </div>
             {% endfor %}
         {% endif %}

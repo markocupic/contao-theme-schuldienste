@@ -1,0 +1,33 @@
+.mod_search {
+  input[type="search"]::-webkit-clear-button {
+    display: none;
+  }
+
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  input[type="search"]::-ms-clear,
+  input[type="search"]::-webkit-search-cancel-button {
+    display: none;
+  }
+
+  input[type="search"] {
+    border: none;
+    height: 3rem;
+    width: 100%;
+    font-size: 1rem;
+    color: $gray-600;
+    padding-left: 1rem;
+  }
+
+  input[type="search"]:focus {
+    border: none;
+    outline: none;
+  }
+
+  button[type="reset"] {
+    background-color: transparent;
+    color: $gray-600;
+  }
+}

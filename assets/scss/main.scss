@@ -1,22 +1,32 @@
 // Include this file in your layout settings
 
 // Overwrite variables
-@import "components/_variables.scss";
+@import "components/_variables";
 
 // Import bootstrap
-// files/themes/schuldienste-theme/scss/main.scss
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// files/themes/schuldienste-theme/scss/main
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // mixins
-@import "mixins/mixins.scss";
+@import "mixins/mixins";
 
 //scss
-@import "components/bootstrap-overrides.scss";
-@import "components/reset.scss";
-@import "components/typography.scss";
-@import "components/global.scss";
-@import "components/scrollbar.scss";
-@import "components/scroll-to-top.scss";
-@import "components/navigation.scss";
-@import "components/colorbox.scss";
-@import "components/alerts.scss";
+@import "components/bootstrap-overrides";
+@import "components/reset";
+@import "components/layout";
+@import "components/grid";
+@import "components/typography";
+@import "components/content_downloads_and_hyperlinks";
+@import "components/content_accordion";
+@import "components/content_job_list";
+@import "components/content_anchor_links";
+@import "components/header";
+@import "components/footer";
+@import "components/sidebar";
+@import "components/breadcrumb";
+@import "components/search";
+@import "components/scroll-to-top";
+@import "components/page-title";
+@import "components/navigation";
+@import "components/colorbox";
+@import "components/alerts";

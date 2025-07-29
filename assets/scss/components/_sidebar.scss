@@ -1,0 +1,84 @@
+#sidebar {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: -400px;
+  display: none;
+  width: 100%;
+  @include media-breakpoint-up(sm) {
+    width: 400px;
+  }
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 101;
+  background-color: #ffffff;
+
+  .sidebar-inner {
+    color: #000;
+    padding: 2rem;
+
+    .logo-sidebar {
+      width: 300px;
+      height: auto;
+    }
+  }
+
+  .navigation-toggler {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    .svg-inline--fa {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+  nav {
+    margin-top: 5rem;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding-top: .75rem;
+        padding-bottom: .75rem;
+      }
+
+      li > a, li > strong.active {
+        padding-left: 0 !important;
+        font-size: 1.25rem;
+        color: #000000;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+#sidebarBackdrop {
+  position: fixed;
+  display: none;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0, .4);
+  opacity: 1;
+  z-index: 100;
+}
+
+body.sidebar-open {
+  #sidebar {
+    left: 0;
+    display: initial;
+  }
+
+  #sidebarBackdrop {
+    display: initial;
+  }
+
+  // Prevent scrolling when backdrop is active
+  overflow: hidden;
+}

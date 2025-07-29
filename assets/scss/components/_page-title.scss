@@ -1,0 +1,66 @@
+.content-page-title {
+  margin: 0 !important;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  column-gap: 0;
+
+  .page-title--col-left {
+    background-color: $primary;
+    color: #fff;
+
+    a {
+      color: #fff !important;
+      text-underline-offset: 6px;
+      text-decoration-style: dotted;
+      text-decoration-color: #ffffff;
+    }
+
+    .page-title--title {
+      font-size: clamp-calc(1.25rem, 1.75rem);
+    }
+
+    .page-title--list {
+      font-size: clamp-calc(1rem, 1.25rem);
+
+      > li {
+        font-size: clamp-calc(1rem, 1.25rem) !important;
+        @include icon-before('\f00c'); // fa-check
+        margin-bottom: .5rem;
+      }
+    }
+
+    .page-title--text {
+      font-size: clamp-calc(1rem, 1.25rem);
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  .page-title--col-right {
+    .page-title--col-inner {
+      margin: 0;
+      padding: 0;
+      background-color: transparent;
+
+      figure {
+        display: block;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        position: relative;
+
+        img {
+          width: 100% !important;
+          height: auto;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+
+

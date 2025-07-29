@@ -1,0 +1,33 @@
+#header {
+
+  #headerRow1 {
+    .container-lg {
+      background-color: #ffffff;
+    }
+
+    .logo-header {
+      width: clamp-calc(150px, 300px);
+      height: auto;
+    }
+
+    #sidebarToggleBtn {
+      font-size: 2rem;
+      background-color: transparent;
+
+      &:hover {
+        background-color: $primary;
+        color: #fff;
+      }
+    }
+  }
+}
+
+#postHeader {
+  .article-section {
+    padding: 0 !important;
+
+    .inner {
+      padding: 0 !important;
+    }
+  }
+}

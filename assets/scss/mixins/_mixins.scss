@@ -52,10 +52,14 @@
 }
 
 // Usage: @include icon-before('\f138', '#cccccc');
-@mixin icon-before($icon,$color: false) {
+@mixin icon-before($icon,$color: false, $font-style: var(--fa-font-solid)) {
   display: flex;
   flex-wrap: nowrap;
   &:before {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
     font-family: $icon-font-name !important;
     padding-right: clamp-calc(.75rem, 0.4rem);
     content: "#{$icon}";

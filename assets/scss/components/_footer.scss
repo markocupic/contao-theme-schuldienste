@@ -1,0 +1,38 @@
+#footer {
+
+  background-color: transparent;
+
+  .inside {
+    padding_left: .5rem;
+    padding_right: .5rem;
+
+    * {
+      color: #000;
+      font-size: clamp-calc(.875rem, .875rem) !important; // dynamic font-size
+    }
+
+    a, a span {
+      //color: $primary;
+    }
+
+    .mod_navigation, .mod_customnav {
+      ul {
+        padding: 0;
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    section.footer-inner {
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+    }
+  }
+
+
+}
+

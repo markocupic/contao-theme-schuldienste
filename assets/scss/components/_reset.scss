@@ -3,16 +3,3 @@
   display:none;
   visibility: hidden;
 }
-
-.content-gallery ul.row {
-  margin-right: -$spacer/4;
-  margin-left: -$spacer/4;
-  padding:0;
-  list-style-type: none;
-  li{
-    padding: $spacer/4;
-  }
-  figure{
-    margin:0;
-  }
-}

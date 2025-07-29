@@ -1,0 +1,48 @@
+.content-accordion {
+  .handorgel__content {
+    background-color: transparent;
+    border-color: var(--bs-border-color) !important;
+    margin-bottom: 0 !important;
+  }
+
+  .handorgel__header {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+
+    .handorgel__header__button {
+      display: flex;
+      align-items: center; /* Stellt sicher, dass das Icon oben bleibt */
+      gap: 10px; /* Abstand zwischen Icon und Text */
+      position: relative;
+      //@extend .h2;
+      margin: 0;
+      padding-top: clamp-calc(1rem, 1.75rem);
+      padding-bottom: clamp-calc(1rem, 1.75rem);
+      padding-left: 0;
+      line-height: 1.2 !important;
+      font-size: clamp-calc(.875rem, 1rem) !important; // dynamic font-size
+
+      &:before {
+        //content: "+";
+        flex-shrink: 0;
+        text-align: center;
+        font-size: 2rem;
+        font-family: $icon-font-name !important;
+        padding-right: .75rem;
+        content: "\2b"; // fa-plus-large
+        line-height: 1 !important;
+      }
+
+      &[aria-expanded="true"] {
+        //color: var(--bs-primary);
+
+        &:before {
+          transform: rotate(45deg);
+          // content: "\f068";
+          //content: "-"// fa-minus
+        }
+      }
+    }
+  }
+
+}

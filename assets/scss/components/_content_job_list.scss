@@ -1,0 +1,41 @@
+#main {
+  .job-list-dark {
+    > h1, > h2, > h3, h4, > h5, > h6 {
+      color: #fff;
+      margin-top: 0;
+    }
+
+    background-color: $dark;
+    padding: 1rem;
+
+    button {
+      color: $light;
+    }
+
+    .job-list--list-item {
+      .job-list--title {
+        > h1, > h2, > h3, h4, > h5, > h6 {
+          font-size: clamp-calc(.875rem, 1rem);
+          color: $light;
+          font-weight: 400;
+        }
+      }
+    }
+
+    .modal {
+      .modal-title {
+        color: $primary;
+      }
+
+      .job-list--title {
+        margin-bottom: 1rem;
+
+        > h1, > h2, > h3, h4, > h5, > h6 {
+          font-size: clamp-calc(.875rem, 1rem);
+          color: #000;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}

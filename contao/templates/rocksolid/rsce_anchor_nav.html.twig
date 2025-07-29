@@ -1,11 +1,11 @@
-<div class="d-none d-md-block {{ class }} block"{{ cssID }}>
-    <div class="">
-        <ul class="d-flex">
+<div class="d-none d-md-block content-anchor-links {{ class }} block"{{ cssID|raw }}>
+    <nav>
+        <ul class="d-flex flex-row flex-wrap">
             {% for anchor in anchorPoints %}
                 <li>
-                    <a class="js-scroll-trigger" href="{{ insert_tag('env::request') }}#{{ anchor.cssId }}">{{ anchor.title }}</a>
+                    <a class="js-anchor-link-trigger text-nowrap" title="Scrolle zu: {{ anchor.title|escape }}" href="{{ insert_tag('env::request') }}#{{ anchor.cssId }}"><i class="fa-solid fa-arrow-down me-2"></i>{{ anchor.title }}</a>
                 </li>
             {% endfor %}
         </ul>
-    </div>
+    </nav>
 </div>

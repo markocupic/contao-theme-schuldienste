@@ -12,4 +12,3 @@ services:
     Markocupic\ContaoSchuldiensteTheme\:
         resource: ../src/
         exclude: ../src/{DependencyInjection,Model,Session}
-

@@ -1,6 +1,6 @@
 body {
   @include body-font-custom;
-  color: $gray-700;
+  color: $body-color;
   font-size: 16px;
 }
 
@@ -10,29 +10,23 @@ h1, h2, h3, h4, h5, h6 {
 
 // Individuelle Anpassungen für spezifische Heading-Größen
 // Map to store heading configurations
+
 $headings-map: (
-        h1: (1.5, 2.25, 1.5, 600, $primary), // font-size min, font-size max, margin, font-weight
-        h2: (1.15, 1.35, 1.4, 600, #000000),
-        h3: (1.10, 1.3, 1.3, 600, $gray-600),
-        h4: (1.05, 1.25, 1, 600, $gray-800),
-        h5: (1.0, 1.2, 0.8, 600, $gray-800),
-        h6: (0.95, 1.15, 0.6, 600, $gray-800),
+        h1: (2, 3, 0.75, 600, #000000), // font-size min, font-size max, margin, font-weight
+        h2: (1.25, 1.75, 0.75, 600, #000000),
+        h3: (1.10, 1.3, 0.75, 400, #000000),
+        h4: (1.05, 1.25, 0.75, 600, $gray-800),
+        h5: (1.0, 1.2, 0.75, 600, $gray-800),
+        h6: (0.95, 1.15, 0.75, 600, $gray-800),
 );
 
 #main {
   // Loop through the map and apply styles
-  @each $heading, $values in $headings-map {
-    #{$heading} {
-      font-size: clamp-calc(nth($values, 1) * 1rem, nth($values, 2) * 1rem); // Fluid font size
-      font-weight: nth($values, 4);
-      margin-top: nth($values, 3) * 1.5rem;
-      margin-bottom: nth($values, 3) * 0.5rem;
-      color: nth($values, 5);
-    }
-  }
+
 
   h2:not(.subheading) {
-    @include icon-before('\f138', $primary);
+    //@include icon-before('\f138', $primary);
+    //color: $primary;
   }
 
   h2.subheading {
@@ -45,7 +39,7 @@ $headings-map: (
   }
 
   h3 {
-    @include icon-before('\f054', $gray-600);
+    //@include icon-before('\f054', $gray-600);
   }
 
   p, a, li, span, strong, label, div {
@@ -68,53 +62,35 @@ $headings-map: (
 
   .content-text {
     ul {
-      li {
-        line-height: 1.4; // optimized readability
-        //margin-top: clamp-calc(0.5rem, 1.25rem);
-        margin-bottom: clamp-calc(0.5rem, .75rem);
-      }
+      list-style: none; /* Removes default bullet */
+      padding-left: 0;
+    }
+
+    li {
+      line-height: 1.4; // optimized readability
+      //margin-top: clamp-calc(0.5rem, 1.25rem);
+      margin-bottom: clamp-calc(0.5rem, .75rem);
+      @include icon-before('\f00c', $primary);
     }
   }
 
   li.download-element {
     margin-bottom: clamp-calc(0.3rem, .5rem);
   }
-}
 
-#left {
-  // Loop through the map and apply styles
   @each $heading, $values in $headings-map {
     #{$heading} {
-      font-size: clamp-calc(nth($values, 1) * 0.8 * 1rem, nth($values, 2) * 0.8 * 1rem); // Fluid font size
+      font-size: clamp-calc(nth($values, 1) * 1rem, nth($values, 2) * 1rem); // Fluid font size
       font-weight: nth($values, 4);
-      margin-top: nth($values, 3)  * 0.875 * 1.5rem;
-      margin-bottom: nth($values, 3) *0.875 * 0.5rem;
+      margin-top: nth($values, 3) * 1.5rem;
+      margin-bottom: nth($values, 3) * 0.5rem;
       color: nth($values, 5);
     }
-  }
 
-  h2:not(.subheading) {
-    @include icon-before('\f138', $primary);
-  }
-
-  h3 {
-    @include icon-before('\f054', $gray-600);
-  }
-
-  p {
-    font-size: clamp-calc(.75rem, .875rem); // dynamic font-size
-    line-height: 1.6; // optimized readability
-    margin-top: clamp-calc(0.5rem, 1.25rem);
-    margin-bottom: clamp-calc(0.5rem, 1.25rem);
-  }
-
-  a {
-    font-size: clamp-calc(.75rem, .875rem); // dynamic font-size
-    line-height: 1.6; // optimized readability
-    text-decoration: none;
-  }
-
-  button, button > i, button > i:before {
-    color: #fff !important;
+    #{$heading} > a {
+      font-size: clamp-calc(nth($values, 1) * 1rem, nth($values, 2) * 1rem) !important; // Fluid font size
+      font-weight: nth($values, 4) !important;
+      //color: nth($values, 5);
+    }
   }
 }

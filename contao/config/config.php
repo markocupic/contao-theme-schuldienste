@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of contao-schuldienste-theme.
  *
@@ -9,3 +11,12 @@
  * please view the LICENSE file that was distributed with this source code.
  * @link https://github.com/markocupic/contao-schuldienste-theme
  */
+
+use Markocupic\ContaoSchuldiensteTheme\Model\JobModel;
+
+// Add back end modules
+$GLOBALS['BE_MOD']['content']['jobs'] = [
+    'tables' => ['tl_job']
+];
+
+$GLOBALS['TL_MODELS'][JobModel::getTable()] = JobModel::class;

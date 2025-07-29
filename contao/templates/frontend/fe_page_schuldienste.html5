@@ -15,7 +15,10 @@
       <?php $this->endblock(); ?>
 
       <!-- Custom fonts for this template -->
-      <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/all.css">
+      <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/fontawesome.min.css">
+      <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/all.min.css">
+
+      <script src="assets/contao-component-fontawesome-free/fontawesomefree/js/all.min.js"></script>
       <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
 
     <?= $this->viewport ?>
@@ -32,26 +35,14 @@
 
 
     <?php $this->block('body'); ?>
+      <?php if(!empty($this->sections['sidebar_section'])): ?>
+				<div id="sidebar">
+					<?= $this->sections['sidebar_section'] ?>
+				</div>
+				<?php endif; ?>
       <?php $this->sections('top'); ?>
 
-      <!-- Here comes the bootstrap navbar -->
-      <nav class="navbar navbar-expand-lg navbar-dark d-lg-none bg-primary" id="headerNav">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="{{env::url}}">
-            <span class="d-block d-lg-none">Schuldienste Dagmersellen</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobile" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <!-- start mobile navigation -->
-          {{insert_module::1}}
-          <!-- end mobile navigation -->
-        </div>
-      </nav>
-      <!-- end navbar -->
-
-      <div id="wrapper" class="container">
-
+      <div id="wrapper">
         <?php $this->block('header'); ?>
           <?php if ($this->header): ?>
             <header id="header">
@@ -62,51 +53,35 @@
           <?php endif; ?>
         <?php $this->endblock(); ?>
 
+        <?php if(!empty($this->sections['post_header'])): ?>
+            <div id="postHeader">
+              <div class="container-lg p-0">
+                <?= $this->sections['post_header'] ?>
+              </div>
+            </div>
+        <?php endif; ?>
+
         <?php $this->sections('before'); ?>
 
         <?php $this->block('container'); ?>
-          <div id="container" class="row">
-            <?php $this->block('main'); ?>
-              <main id="main" class="col-12 col-lg-8 col-xl-9 order-2">
-                <div class="inside">
-                  <?= $this->main ?>
-                </div>
-                <?php $this->sections('main'); ?>
-              </main>
-            <?php $this->endblock(); ?>
-
-            <?php $this->block('left'); ?>
-              <?php if ($this->left): ?>
-                <aside id="left" class="d-none d-lg-block col-12 col-lg-4 col-xl-3 order-1">
-                  <div class="inside">
-                    <div class="d-none d-lg-block pt-3 pb-3 pr-2 img-profile-container">
-                      <a href="{{env::url}}">
-                        <!-- Logo Schuldienste Kreis Dagmersellen -->
-                        {{image::files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg?class=img-fluid w-100 mt-0&alt=Schuldienste Kreis Dagmersellen}}
-                      </a>
-                    </div>
-                    <?= $this->left ?>
-                  </div>
-                </aside>
-              <?php endif; ?>
-            <?php $this->endblock(); ?>
-
-            <?php $this->block('right'); ?>
-              <?php if ($this->right): ?>
-                <aside id="right">
-                  <div class="inside">
-                    <?= $this->right ?>
-                  </div>
-                </aside>
-              <?php endif; ?>
-            <?php $this->endblock(); ?>
+          <div id="container" class="d-flex flex-column">
+            <div class="container-inner">
+              <?php $this->block('main'); ?>
+	              <main id="main">
+	                <div class="inside">
+	                  <?= $this->main ?>
+	                </div>
+	                <?php $this->sections('main'); ?>
+	              </main>
+	            <?php $this->endblock(); ?>
+            </div> <!-- end container inner -->
           </div> <!-- end container -->
         <?php $this->endblock(); ?>
 
         <?php $this->block('footer'); ?>
         <?php if ($this->footer): ?>
-        <footer id="footer" class="row">
-          <div class="inside col-12">
+        <footer id="footer" class="container-lg d-flex flex-column">
+          <div class="inside">
             <?= $this->footer ?>
           </div>
         </footer>
@@ -124,6 +99,6 @@
     <script src="{{asset::bootstrap/dist/js/bootstrap.bundle.min.js::markocupic_contao_schuldienste_theme}}"></script>,
 
     <?= $this->mootools ?>
-
+    <?= $this->jsonLdScripts ?>
   </body>
 </html>

@@ -68,6 +68,14 @@ return array(
                     'inputType' => 'textarea',
                     'eval' => array('rte'=>'tinyMCE', 'tl_class' => 'clr'),
                 ),
+                'phone' => array(
+                    'label' => array(
+                        'de' => array('Telefonnummer', 'Direkte Telefonnummer des Mitarbeiters'),
+                        'en' => array('Phone', 'Direct phone number of employee'),
+                    ),
+                    'inputType' => 'text',
+                    'eval' => array('rgxp' => 'phone', 'tl_class' => 'w50'),
+                ),
                 'email' => array(
                     'label' => array(
                         'de' => array('E-Mail', 'E-Mail-Addresse des Mitarbeiters'),

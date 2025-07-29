@@ -3,7 +3,10 @@ $icon-font-name: "Font Awesome 7 Free";
 $body-color: #000000;
 $white: #ffffff;
 $brand-color: #f65a0f;
+// Enable CSS Grid
 $enable-cssgrid: true;
+// Disable Grid Classes (flexbox)
+$enable-grid-classes: false;
 
 $theme-colors: (
         "light": #ededed,

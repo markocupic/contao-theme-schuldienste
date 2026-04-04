@@ -1,0 +1,32 @@
+.content-downloads, .content-download, .content-hyperlinks, .content-hyperlink, .content-job-list {
+  ul {
+    margin: 0;
+    list-style-type: none;
+    padding-left: 0 !important
+  }
+
+  .content-hyperlink--inner {
+    padding: 0 !important;
+  }
+}
+
+.content-downloads, .content-download {
+  margin: 0 !important;
+
+  li {
+    margin-bottom: .75rem !important;
+    margin-top: .75rem !important;
+
+  }
+
+  .icon-box-link-element--icon {
+    display: none;
+  }
+}
+
+section.article-section.mod_article .content-hyperlink {
+  margin-bottom: .75rem !important;
+  margin-top: .75rem !important;
+
+}
+

@@ -1,42 +1,53 @@
-<div class="{{ class }} block"{{ cssID }}>
+<div class="{{ class }} block mb-0 pb-0"{{ cssID }}>
     <{{ hl }}>{{ headline }}</{{ hl }}>
-    <div class="row">
-        {% if app.request.attributes.get('_scope') == 'frontend' %}
-            {% for member in members %}
-                <div class="col-6 col-md-2 col-lg-3 mb-5">
-                    {% if member.image|default %}
-                        {{ insert_tag('picture::'~member.image~'?size=1&class=img-fluid w-100&alt='~member.name)|raw }}
-                    {% endif %}
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 mb-5">
-                    {% if member.name|default %}
-                        <h4 class="mt-0 text-primary">{{ member.name }}</h4>
-                    {% endif %}
-                    {% if member.function|default %}
-                        <div class="team-member-function">
-                            <strong>{{ member.function }}</strong>
+<div class="row mt-5">
+    {% if app.request.attributes.get('_scope') == 'frontend' %}
+        {% for member in members %}
+            <div class="col-12 col-sm-6">
+                <div class="team-member-card d-flex">
+                    <div class="col_1">
+                        {% if member.image|default %}
+                            {{ insert_tag('picture::'~member.image~'?size=3&class=img-fluid rounded-circle w-100&alt='~member.name)|raw }}
+                        {% endif %}
+                    </div>
+                    <div class="col_2">
+                        {% if member.name|default %}
+                            <h6 class="mt-0 text-primary">{{ member.name }}</h6>
+                        {% endif %}
+                        {% if member.function|default %}
+                            <div class="team-member-function small mb-2">
+                                <strong>{{ member.function }}</strong>
+                            </div>
+                        {% endif %}
+                        <div class="team-member-description small mb-2">
+                            {{ member.description|raw|nl2br }}
                         </div>
-                    {% endif %}
-                    <div class="team-member-description">
-                        {{ member.description|raw|nl2br }}
-                    </div>
-                    <div class="team-member-email">
-                        {{ insert_tag('email_open::'~member.email)|raw }}E-Mail</a>
+                        <div class="team-member-phone small mb-2">
+                            <address>
+                                <a href="tel:{{ member.phone|replace({' ':''}) }}">{{ member.phone }}</a>
+                            </address>
+                        </div>
+                        <div class="team-member-email small mb-2">
+                            <address>
+                                {{ insert_tag('email_open::'~member.email)|raw }}E-Mail</a>
+                            </address>
+                        </div>
                     </div>
                 </div>
-            {% endfor %}
-        {% endif %}
-        {% if app.request.attributes.get('_scope') == 'backend' %}
-            {% for member in members %}
-                {% if member.name|default %}
-                    <h4 class="mt-0 text-primary">{{ member.name }}</h4>
-                {% endif %}
-                {% if member.image|default %}
-                    <div style="margin-bottom: 15px;">
-                        {{ insert_tag("image::" ~ member.image ~ "?width=100&height=100&method=crop")|raw }}
-                    </div>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
-    </div><!-- end row -->
+            </div>
+        {% endfor %}
+    {% endif %}
+    {% if app.request.attributes.get('_scope') == 'backend' %}
+        {% for member in members %}
+            {% if member.name|default %}
+                <h4 class="mt-0 text-primary">{{ member.name }}</h4>
+            {% endif %}
+            {% if member.image|default %}
+                <div style="margin-bottom: 15px;">
+                    {{ insert_tag("image::" ~ member.image ~ "?width=100&height=100&method=crop")|raw }}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</div><!-- end row -->
 </div>

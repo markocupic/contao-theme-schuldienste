@@ -12,7 +12,7 @@
 
 {% block list_item %}
     <div class="content-downloads--inner">
-        <i class="fa fa-file-download"></i>
+        {# <i class="fa fa-file-download"></i> #}
         {% with {download: item} %}{{ block('download_component') }}{% endwith %}
     </div>
 {% endblock %}

@@ -7,7 +7,7 @@
         {% block text_link %}
             {{- text_before -}}
             <div class="content-hyperlink--inner">
-                <i class="fa fa-link"></i>
+                {# <i class="fa fa-link"></i> #}
                 <a{{ attrs(link_attributes|default) }}>{{ link_text|insert_tag }}</a>
             </div>
             {{- text_after -}}

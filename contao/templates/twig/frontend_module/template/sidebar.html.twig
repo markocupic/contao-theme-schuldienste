@@ -1,0 +1,35 @@
+<div id="sidebar" class="collapsed">
+    <div class="sidebar-inner">
+        <div class="d-none sidebar-logo-box">
+            <a href="{{ insert_tag('env::url') }}">
+                <img src="files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg" class="logo-sidebar" alt="Logo Schuldienste Dagmersellen">
+            </a>
+        </div>
+        <div class="sidebar-navigation-box">
+            {{ insert_tag('insert_module::7')|raw }}
+        </div>
+
+        <div class="sidebar-search-box d-block d-lg-none ">
+            {{ insert_tag('insert_module::18')|raw }}
+        </div>
+    </div>
+</div>
+<div id="sidebarBackdrop">{# No content #}</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const body = document.getElementsByTagName('body')[0];
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebarBackdrop');
+        const toggleBtn = document.getElementById('sidebarToggleBtn');
+
+        toggleBtn.addEventListener('click', (event) => {
+            //event.stopPropagation(); // Prevent the click from bubbling to document
+            //body.classList.toggle('sidebar-open');
+        });
+
+        // Close sidebar when user clicks outside
+        backdrop.addEventListener('click', (event) => {
+            //body.classList.remove('sidebar-open');
+        });
+    });
+</script>

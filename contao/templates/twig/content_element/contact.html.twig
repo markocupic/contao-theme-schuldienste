@@ -1,0 +1,36 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <address class="bg-light border border-1 p-3">
+        {% if company %}
+            <div class="contact__company">
+                <h4 class="mt-0">{{ company }}</h4>
+            </div>
+        {% endif %}
+        {% if street %}
+            <div class="contact__street">
+                {{ street }}
+            </div>
+        {% endif %}
+        {% if postal or city %}
+            <div class="contact__postalAndCity">
+                {% if postal %}{{ postal }} {% endif %}{% if city %}{{ city }}{% endif %}
+            </div>
+        {% endif %}
+        {% if phone and phoneInt %}
+            <div class="contact__phone">
+                <a href="tel:{{ phoneInt }}">{{ phone }}</a>
+            </div>
+        {% endif %}
+        {% if email %}
+            <div class="contact__email">
+                {{ insert_tag('email_open::'~email)|raw }}{{ insert_tag('email::'~email)|raw }}</a>
+            </div>
+        {% endif %}
+        {% if pageLink %}
+            <div class="contact__pageLink mt-3">
+                <a href="{{ insert_tag('link_url::'~pageLink) }}" class="btn btn-sm btn-primary text-white">Mehr &xrarr;</a>
+            </div>
+        {% endif %}
+    </address>
+{% endblock %}

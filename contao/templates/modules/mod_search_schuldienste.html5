@@ -1,0 +1,68 @@
+<?php $this->extend('block_unsearchable'); ?>
+
+<?php $this->block('content'); ?>
+  <?php $this->uniqueId = uniqid(); ?>
+  <form<?php if ($this->action): ?> action="<?= $this->action ?>"<?php endif; ?> method="get">
+    <div class="formbody">
+      <div class="border border-1 rounded rounded-5 d-flex flex-row flex-nowrap align-items-center justify-content-between gab-3 overflow-hidden">
+        <div class="widget widget-text ms-1 flex-grow-1 position-relative">
+          <label for="ctrl_keywords_<?= $this->uniqueId ?>" class="d-none"><?= $this->keywordLabel ?></label>
+          <input type="search" name="keywords" id="ctrl_keywords_<?= $this->uniqueId ?>" class="text" value="<?= $this->keyword ?>" spellcheck="false" placeholder="Suche">
+        </div>
+        <div class="d-flex flex-row flex-nowrap gap-2">
+          <div class="widget widget-submit">
+            <button type="reset" id="ctrl_reset_<?= $this->uniqueId ?>" title="Suche zurücksetzen" class="border border-0" style="display:none"><i class="fa-solid fa-xmark fa-xl"></i></button>
+          </div>
+          <div class="widget widget-submit me-4">
+            <button type="submit" id="ctrl_submit_<?= $this->uniqueId ?>" class="submit bg-white border border-0"><i class="fa-solid fa-search fa-xl"></i></button>
+          </div>
+        </div>
+      </div>
+      <?php if ($this->advanced): ?>
+        <div class="widget widget-radio">
+          <fieldset class="radio_container">
+            <legend class="invisible"><?= $this->optionsLabel ?></legend>
+            <span><input type="radio" name="query_type" id="matchAll_<?= $this->uniqueId ?>" class="radio" value="and"<?php if ('and' == $this->queryType): ?> checked<?php endif; ?>> <label for="matchAll_<?= $this->uniqueId ?>"><?= $this->matchAll ?></label></span>
+            <span><input type="radio" name="query_type" id="matchAny_<?= $this->uniqueId ?>" class="radio" value="or"<?php if ('or' == $this->queryType): ?> checked<?php endif; ?>> <label for="matchAny_<?= $this->uniqueId ?>"><?= $this->matchAny ?></label></span>
+          </fieldset>
+        </div>
+      <?php endif; ?>
+    </div>
+  </form>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const textInput = document.getElementById('ctrl_keywords_<?= $this->uniqueId ?>');
+      const resetBtn = document.getElementById('ctrl_reset_<?= $this->uniqueId ?>');
+
+      resetBtn.style.display = 'none';
+
+      if (textInput.value.trim().length > 0){
+        resetBtn.style.display = 'flex';
+      }
+
+      textInput.addEventListener('input', () => {
+        if (textInput.value.trim().length > 0) {
+          resetBtn.style.display = 'flex';
+        } else {
+          resetBtn.style.display = 'none';
+        }
+      });
+
+      // Optional: Reset functionality
+      resetBtn.addEventListener('click', () => {
+        resetBtn.style.display = 'none';
+        textInput.setAttribute('value', '');
+        textInput.value = '';
+      });
+    });
+  </script>
+  <?php if ($this->header): ?>
+    <p class="header"><?= $this->header ?></p>
+    <?php if ($this->keywordHint): ?>
+      <p class="info"><?= $this->keywordHint ?></p>
+    <?php endif; ?>
+  <?php endif; ?>
+
+  <?= $this->results.$this->pagination ?>
+
+<?php $this->endblock(); ?>

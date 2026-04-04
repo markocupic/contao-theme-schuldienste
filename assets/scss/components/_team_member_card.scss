@@ -1,0 +1,29 @@
+#main .team-member-card {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  .col_1 {
+    width: 100px !important;
+    position: relative;
+    padding:0;
+    flex: 0 0 100px;
+
+    img{
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+    }
+  }
+
+  .col_2 {
+    flex: 1;
+    .small {
+      p, * {
+        font-size: .875rem !important;
+        margin: 0;
+        line-height: 1.5;
+      }
+    }
+  }
+}

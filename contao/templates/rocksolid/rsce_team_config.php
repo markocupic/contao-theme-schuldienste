@@ -4,11 +4,11 @@ return array(
     'label' => array(
         'de' => array(
             'Mitarbeiter',
-            'Eine Liste von Personen mit Foto, Name, E-Mail und Social-Media-Links',
+            'Eine Liste von Personen mit Foto, Name, Telefonnummer, E-Mail-Adresse und Social-Media-Links',
         ),
         'en' => array(
             'Staff',
-            'A list of employees with picture, name email and social media links',
+            'A list of employees with picture, name, phone number, email and social media links',
         ),
     ),
     'types' => array('content'),
@@ -67,6 +67,14 @@ return array(
                     ),
                     'inputType' => 'textarea',
                     'eval' => array('rte'=>'tinyMCE', 'tl_class' => 'clr'),
+                ),
+                'phone' => array(
+                    'label' => array(
+                        'de' => array('Telefon', 'Telefonummer des Mitarbeiters'),
+                        'en' => array('Phone', 'Phone number of employee'),
+                    ),
+                    'inputType' => 'text',
+                    'eval' => array('rgxp' => 'phone', 'tl_class' => 'w50'),
                 ),
                 'email' => array(
                     'label' => array(

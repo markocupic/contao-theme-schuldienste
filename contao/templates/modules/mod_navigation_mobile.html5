@@ -1,6 +1,6 @@
 
 <!-- indexer::stop -->
-<nav class="collapse navbar-collapse" id="navbarMobile">
+<nav>
 
   <?php if ($this->headline): ?>
     <<?= $this->hl ?>><?= $this->headline ?></<?= $this->hl ?>>

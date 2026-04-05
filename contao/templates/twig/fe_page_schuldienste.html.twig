@@ -64,7 +64,7 @@
         {{ contao_sections('before') }}
 
         {% block container %}
-            <div id="container" class="row gx-5">
+            <div id="container" class="row gx-0">
 
                 {% block main %}
                     <main id="main" class="col-12 col-lg-9 order-2">
@@ -79,7 +79,7 @@
                     {% if left %}
                         <aside id="left" class="d-none d-lg-block col-12 col-lg-3 order-1">
                             <div class="inside sticky-lg-top">
-                                <div class="d-none d-lg-block pt-3 pb-3 pr-2 img-profile-container">
+                                <div class="d-none d-lg-block mb-3 img-profile-container">
                                     <a href="{{ insert_tag('env::url') }}">
                                         <!-- Logo Schuldienste Kreis Dagmersellen -->
                                         {{ insert_tag('image::files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg?class=img-fluid w-100 mt-0&alt=Schuldienste Kreis Dagmersellen')|raw }}

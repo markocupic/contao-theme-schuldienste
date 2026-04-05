@@ -73,25 +73,6 @@
   }
 }
 
-// anchor navigation
-.ce_rsce_anchor_nav {
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  li {
-    padding: 0.5rem;
-
-    a {
-      font-size: 1rem;
-    }
-  }
-
-  margin-bottom: 0 !important;
-  border-bottom: 1px solid $gray-200;
-}
-
 #headerNav.navbar {
   padding-top: .75rem;
   padding-bottom: .75rem;

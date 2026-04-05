@@ -1,6 +1,7 @@
 
 #wrapper {
   background-color: #fff;
+  padding:0;
 }
 
 @media (min-width: $breakpoint-xxl-up) {
@@ -10,15 +11,8 @@
 }
 
 #left > .inside, #footer .footer-inner, #main > .inside {
-  margin: 0.5rem;
-}
-
-@media (min-width: 576px) and (max-width: 996px) {
-
-  #main > .inside {
-    padding: 1rem;
-  }
-}
+  padding: clamp-calc(1rem,1.5rem);
+ }
 
 section.article-section {
   padding-left: 0;

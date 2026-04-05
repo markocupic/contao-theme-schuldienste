@@ -1,15 +1,10 @@
 #headerMobile.header-mobile {
   .header-mobile--inner {
     color: var(--bs-body-color);
-
-    padding: 1rem;
-
-    @media (min-width: 576px) and (max-width: 996px) {
-      padding: 2rem;
-    }
+    padding: clamp-calc(1rem, 1.5rem);
 
     .logo-header-mobile {
-      width: clamp-calc(150px,450px);
+      width: clamp-calc(150px, 450px);
       height: auto;
     }
   }
@@ -18,22 +13,41 @@
 body {
   #mobileNavigation.mobile-navigation {
     position: fixed;
-    left: -8000px;
     top: 0;
-    width: 0;
+    left: 0;
+    width: 100vw; /* volle Breite */
+    height: 100vh; /* volle Höhe */
+    transform: translateX(-100%); /* initial versteckt */
+    transition: transform 0.3s ease;
+    opacity: 1;
+    z-index: 2000;
+    color:#000;
+    background: #ffffff;
+    margin:0;
+    overflow: hidden;
+    padding: clamp-calc(1rem, 1.5rem);
+
+    .logo-header-mobile {
+      width: clamp-calc(150px, 450px);
+      height: auto;
+      margin-bottom: clamp-calc(3rem, 6rem);
+    }
 
     button.mobile-navigation-toggler {
       position: absolute;
-      top: clamp-calc(1rem,3rem);
-      right: clamp-calc(1rem,3rem);
+      top: clamp-calc(1rem, 3rem);
+      right: clamp-calc(1rem, 3rem);
     }
 
     nav {
       ul {
+        display:flex;
+        flex-direction: column;
+        gap: clamp-calc(.25rem, 1rem);
+
         li {
-          padding: .75rem .5rem;
+          padding: .75rem clamp-calc(1rem, 2rem);
           border-left: 5px solid #dcdcdc;
-          margin-bottom: clamp-calc(.25rem,1rem);
 
           &.active {
             border-left: 5px solid var(--bs-primary);
@@ -42,12 +56,11 @@ body {
           > strong, > a {
             padding-top: 0;
             padding-bottom: 0;
-            font-size: clamp(1rem, 0.155rem + 3.378vi, 2.25rem);
+            font-size: clamp-calc(1.25rem, 2.875rem);
             font-weight: bold;
             color: #000;
             line-height: 1.25;
           }
-
         }
       }
     }
@@ -68,25 +81,9 @@ button.mobile-navigation-toggler {
 }
 
 body.mobile-navigation-active {
-  overflow: hidden;
 
   #mobileNavigation.mobile-navigation {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #fff;
-    opacity: 1;
-    color: #000;
-    padding: clamp-calc(1rem,3rem);
-    z-index: 2000;
-
-    .logo-header-mobile {
-      width: clamp-calc(150px,450px);
-      height: auto;
-      margin-bottom: clamp-calc(3rem,6rem);
-    }
+    transform: translateX(0);
   }
 
   button.mobile-navigation-toggler .nav-open {

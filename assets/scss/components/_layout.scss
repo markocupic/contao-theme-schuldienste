@@ -1,7 +1,7 @@
 
 #wrapper {
   background-color: #fff;
-  padding:0;
+  padding: 0;
 }
 
 @media (min-width: $breakpoint-xxl-up) {
@@ -11,8 +11,8 @@
 }
 
 #left > .inside, #footer .footer-inner, #main > .inside {
-  padding: clamp-calc(1rem,1.5rem);
- }
+  padding: clamp-calc(1rem, 1.5rem);
+}
 
 section.article-section {
   padding-left: 0;
@@ -50,15 +50,8 @@ section.mod_article.article-section:last-child {
   }
 }
 
-#left #desktopNavigation {
-  margin-top: 2rem;
-}
 
-#left .mod_search.block, #left .mod_login.login {
-  padding-top: 3rem;
+#left .mod_search.block {
+  margin-top: 4rem;
   margin-bottom: 3rem;
-}
-
-#left .mod_login.login {
-  border-top: 1px solid $gray-200;
 }

@@ -1,0 +1,47 @@
+/* Contao 5 pagination */
+/**
+nav[data-pagination] {
+  ol {
+    @extend .pagination;
+
+    li {
+      @extend .page-item;
+
+      a {
+        @extend .page-link;
+      }
+
+      margin-right: 2px;
+    }
+  }
+}
+*/
+#main nav[role="navigation"].pagination {
+  display: block;
+
+  ul, ol {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 1px;
+    gap: 1rem;
+    row-gap: 0.5rem;
+
+    li {
+      > a, > strong {
+        line-height: 1;
+      }
+    }
+
+    li:not(.next):not(.previous) {
+      border-radius: .675rem !important;
+      padding: 3px 10px;
+      background-color: var(--bs-primary);
+
+      a, strong {
+        color: #fff;
+      }
+    }
+  }
+}

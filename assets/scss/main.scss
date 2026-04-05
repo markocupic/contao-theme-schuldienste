@@ -10,7 +10,8 @@
 // mixins
 @import "mixins/mixins.scss";
 
-@import "root.scss"; // overrides bootstrap root vars
+@import "root.scss";
+// overrides bootstrap root vars
 
 //scss
 @import "components/bootstrap-overrides.scss";
@@ -25,5 +26,6 @@
 @import "components/_header_and_navigation_mobile.scss";
 @import "components/navigation.scss";
 @import "components/team_member_card.scss";
+@import "components/pagination.scss";
 @import "components/scrollbar.scss";
 @import "components/scroll-to-top.scss";

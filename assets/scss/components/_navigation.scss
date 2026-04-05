@@ -1,6 +1,7 @@
 #desktopNavigation {
   background-color: #ffffff;
   border-radius: 0.175rem;
+  margin-top: 4rem;
 
   ul.level_1 {
     padding: 0;
@@ -14,6 +15,11 @@
       border-left: 5px solid #dcdcdc;
       margin-bottom: 4px;
     }
+
+    > li:hover {
+      background: var(--bs-body-bg);
+    }
+
     > li.active {
       border-left: 5px solid $brand-color;
     }
@@ -26,7 +32,7 @@
       font-weight: 600;
       text-transform: none !important;
       color: #000 !important;
-      font-size: clamp-calc(1rem,1.125rem) !important;
+      font-size: clamp-calc(1rem, 1.125rem) !important;
       line-height: 1.5 !important;
     }
 
@@ -73,70 +79,5 @@
   }
 }
 
-#headerNav.navbar {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
-
-  a.navbar-brand span {
-    font-size: clamp-calc(1rem, 1.5rem, 340px, 992px);
-  }
-
-  .navbar-nav {
-    margin-bottom: 1rem;
-  }
-
-  .nav-item * {
-    color: $gray-100 !important;
-  }
-
-  .nav-item .active {
-    color: #000 !important;
-  }
-
-  .nav-item *:hover {
-    color: darken($gray-100, 20%) !important;
-  }
-
-  .nav-item .active:hover {
-    color: #000 !important;
-  }
-
-  .level_1 * {
-    font-size: 1rem;
-  }
-
-  .level_2 * {
-    font-size: .875rem;
-  }
-
-  .level_3 * {
-    font-size: .75rem;
-  }
-
-  .level_1 {
-    padding-left: .875rem;
-
-    > li {
-      padding: .5rem 0;
-    }
-  }
-
-  .level_2 {
-    padding-left: .875rem;
-
-    > li {
-      padding: .3rem 0;
-    }
-  }
-
-  .level_3 {
-    padding-left: .875rem;
-
-    > li {
-      padding: .2rem 0;
-    }
-  }
-
-}
 
 

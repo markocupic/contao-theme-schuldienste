@@ -1,4 +1,3 @@
-
 #wrapper {
   background-color: var(--bs-tertiary-bg);
   padding: 0;
@@ -14,14 +13,56 @@
   padding: clamp-calc(1rem, 1.5rem);
 }
 
-.mod_article {
+#main .mod_article {
   padding-left: 0;
   padding-right: 0;
   overflow-x: hidden;
 
-  & > div.inner {
-    padding-bottom: 1rem !important;
+  // Set a default margin after each content element
+  // Set a default margin after each content element
+  // Set a default margin after each content element
+  [class*="content-"]:not([class*="content-headline"]):not([class*="--inner"]):not([class*="content-hyperlink"]):not([class*="content-download"]),
+  [class*="ce_"]:not([class*="ce_row"]):not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]) {
+    margin-bottom: clamp-calc(2.5rem, 3.75rem);
   }
+
+  // Override default margin-top with tl_content.marginTop
+  [class*="content-"].mt-none, [class*="ce_"].mt-none {
+    margin-bottom: 0;
+  }
+
+  [class*="content-"].mt-small, [class*="ce_"].mt-small {
+    margin-bottom: clamp-calc(1.5rem, 2.25rem);
+  }
+
+  [class*="content-"].mt-medium, [class*="ce_"].mt-medium {
+    margin-bottom: clamp-calc(2.5rem, 3.75rem);
+  }
+
+  [class*="content-"].mt-large, [class*="ce_"].mt-large {
+    margin-bottom: clamp-calc(3.5rem, 5.35rem);
+  }
+
+  // Override default margin-bottom with tl_content.marginBottom
+  [class*="content-"].mb-none, [class*="ce_"].mb-none {
+    margin-bottom: 0;
+  }
+
+  [class*="content-"].mb-small, [class*="ce_"].mb-small {
+    margin-bottom: clamp-calc(1.5rem, 2.25rem);
+  }
+
+  [class*="content-"].mb-medium, [class*="ce_"].mb-medium {
+    margin-bottom: clamp-calc(2.5rem, 3.75rem);
+  }
+
+  [class*="content-"].mb-large, [class*="ce_"].mb-large {
+    margin-bottom: clamp-calc(3.5rem, 5.35rem);
+  }
+
+  // End content element margins
+  // End content element margins
+  // End content element margins
 
   .w-100 {
     img {
@@ -29,22 +70,6 @@
       max-width: 100% !important;
       height: auto !important;
     }
-  }
-
-  // Some margin after each content element
-  [class*="content-"]:not([class*="content-headline"]):not([class*="content-download--inner"]):not([class*="content-downloads--inner"]):not([class*="content-hyperlink"]):not([class*="content-hyperlink--inner"]):not([class*="content-hyperlinks--inner"]),
-  [class*="ce_"]:not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]):not([class*="ce_headline"]) {
-    margin-bottom: clamp(2.5rem, 2.143rem + 1.429vi, 3.75rem);
-  }
-
-  .ce_row {
-    margin-bottom: 0 !important;
-  }
-}
-
-.mod_article:last-child {
-  & > div.inner {
-    border-bottom: 0;
   }
 }
 

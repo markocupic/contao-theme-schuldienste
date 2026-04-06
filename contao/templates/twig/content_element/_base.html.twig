@@ -1,0 +1,5 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{# Attach the margin classes to the class attribute of the content element #}
+{% set attributes = attributes|default(attrs())
+    .addClass([data.marginTop|default(''),data.marginBottom|default('')]) %}

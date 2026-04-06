@@ -1,5 +1,6 @@
 #main {
   div.alert {
+    background: var(--bs-body-bg);
     margin-top: clamp-calc(1.5rem, 2.5rem);
     margin-bottom: clamp-calc(1.5rem, 2.5rem);
 

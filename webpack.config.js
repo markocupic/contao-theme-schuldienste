@@ -12,10 +12,7 @@ Encore
         to: 'bootstrap/dist/js/[path][name].[ext]',
         pattern: /(bootstrap\.bundle\.min\.js)$/,
     })
-    .copyFiles({
-        from: './assets/img',
-        to: 'img/[path][name].[ext]'
-    })
+  
     .copyFiles({
         from: './assets/js',
         to: 'js/[path][name].[hash:8].[ext]'

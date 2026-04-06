@@ -43,14 +43,6 @@
   outline-offset: -2px;
 }
 
-@mixin body-font-custom {
-  font-family: 'Google Sans', 'Helvetica', 'Open Sans', 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-@mixin heading-font-custom {
-  font-family: 'Open Sans', 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
 // Usage: @include icon-before('\f138', '#cccccc');
 @mixin icon-before($icon,$color: false) {
   display: flex;

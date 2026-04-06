@@ -14,13 +14,11 @@
   padding: clamp-calc(1rem, 1.5rem);
 }
 
-section.article-section {
+.mod_article {
   padding-left: 0;
   padding-right: 0;
   overflow-x: hidden;
-}
 
-section.mod_article.article-section {
   & > div.inner {
     padding-bottom: 1rem !important;
   }
@@ -44,7 +42,7 @@ section.mod_article.article-section {
   }
 }
 
-section.mod_article.article-section:last-child {
+.mod_article:last-child {
   & > div.inner {
     border-bottom: 0;
   }

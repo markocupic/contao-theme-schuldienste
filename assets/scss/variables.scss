@@ -1,10 +1,18 @@
 // Variables
 $icon-font-name: "Font Awesome 5 Free";
 
+$brand-color: #fc6b23;
+
 // Restate Bootstrap Variables
-$body-bg: #f8f8f8 !default;
+$body-bg: #ececec !default;
+$body-bg-dark: #323232 !default;
 $body-color: #333333 !default;
+$body-color-dark: #f4f4f4 !default;
 $body-tertiary-bg: #fff !default;
+$body-tertiary-bg-dark: #121212 !default;
+
+$link-color: darken($brand-color, 13%) !default; // Minimal contrast ration of 1:4.1
+$link-color-dark: $brand-color !default; // Minimal contrast ration of 1:4.1
 
 $white: #fff !default;
 $gray-100: #f8f9fa !default;
@@ -30,7 +38,6 @@ $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
 
 // Set the brand color for schuldienste.ch
-$brand-color: #fc6b23;
 $primary: $brand-color !default;
 $secondary: $gray-600 !default;
 $success: $green !default;

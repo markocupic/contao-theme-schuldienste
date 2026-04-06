@@ -27,11 +27,15 @@
     <a class="" href="{{ insert_tag('env::url') }}">
         <div class="mobile-navigation--logo-box">
             <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
-                <img src="files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg" class="logo-header-mobile" alt="Logo Schuldienste Dagmersellen">
+                {# Logo Schuldienste Kreis Dagmersellen #}
+                {{ include('@MarkocupicContaoSchuldiensteTheme/brand_logo.html.twig') }}
             </a>
         </div>
     </a>
     {{ insert_tag('insert_module::1')|raw }}
+    <div class="mt-5">
+        {% include('@MarkocupicContaoSchuldiensteTheme/theme_toggle.html.twig') %}
+    </div>
 </div>
 
 {% add to body %}

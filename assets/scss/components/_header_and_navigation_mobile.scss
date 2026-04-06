@@ -9,7 +9,7 @@
       height: auto;
     }
 
-    button.mobile-navigation-toggler{
+    button.mobile-navigation-toggler {
       color: var(--bs-body-color);
       background: transparent;
     }
@@ -58,6 +58,11 @@ body {
         li {
           padding: .75rem clamp-calc(1rem, 2rem);
           border-left: 5px solid #dcdcdc;
+          background: var(--bs-menu-bg);
+
+          &:hover {
+            background: var(--bs-menu-bg-hover);
+          }
 
           &.active {
             border-left: 5px solid var(--bs-primary);
@@ -76,7 +81,7 @@ body {
             padding-bottom: 0;
             font-size: clamp-calc(1.25rem, 2.875rem);
             font-weight: bold;
-            color: #000;
+            color: var(--bs-menu-color);
             line-height: 1.25;
           }
         }

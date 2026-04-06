@@ -1,4 +1,4 @@
-<div class="{{ class }} block mb-0 pb-0"{{ cssID }}>
+<div class="{{ class }} block mb-0 pb-0"{{ cssID|raw }}>
     <{{ hl }}>{{ headline }}</{{ hl }}>
 <div class="row mt-5">
     {% if app.request.attributes.get('_scope') == 'frontend' %}

@@ -12,3 +12,11 @@
     }
   }
 }
+
+html[data-bs-theme="dark"] {
+  #main {
+    div.alert {
+      background-color: var(--bs-body-bg);
+    }
+  }
+}

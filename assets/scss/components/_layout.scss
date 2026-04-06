@@ -28,36 +28,36 @@
 
   // Override default margin-top with tl_content.marginTop
   [class*="content-"].mt-none, [class*="ce_"].mt-none {
-    margin-bottom: 0;
+    margin-top: 0 !important;
   }
 
   [class*="content-"].mt-small, [class*="ce_"].mt-small {
-    margin-bottom: clamp-calc(1.5rem, 2.25rem);
+    margin-top: clamp-calc(1.5rem, 2.25rem) !important;
   }
 
   [class*="content-"].mt-medium, [class*="ce_"].mt-medium {
-    margin-bottom: clamp-calc(2.5rem, 3.75rem);
+    margin-top: clamp-calc(2.5rem, 3.75rem) !important;
   }
 
   [class*="content-"].mt-large, [class*="ce_"].mt-large {
-    margin-bottom: clamp-calc(3.5rem, 5.35rem);
+    margin-top: clamp-calc(3.5rem, 5.35rem) !important;
   }
 
   // Override default margin-bottom with tl_content.marginBottom
   [class*="content-"].mb-none, [class*="ce_"].mb-none {
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 
   [class*="content-"].mb-small, [class*="ce_"].mb-small {
-    margin-bottom: clamp-calc(1.5rem, 2.25rem);
+    margin-bottom: clamp-calc(1.5rem, 2.25rem) !important;
   }
 
   [class*="content-"].mb-medium, [class*="ce_"].mb-medium {
-    margin-bottom: clamp-calc(2.5rem, 3.75rem);
+    margin-bottom: clamp-calc(2.5rem, 3.75rem) !important;
   }
 
   [class*="content-"].mb-large, [class*="ce_"].mb-large {
-    margin-bottom: clamp-calc(3.5rem, 5.35rem);
+    margin-bottom: clamp-calc(3.5rem, 5.35rem) !important;
   }
 
   // End content element margins

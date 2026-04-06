@@ -1,14 +1,13 @@
-<nav class="header-mobile bg-white d-lg-none" id="headerMobile">
+<nav class="header-mobile d-lg-none" id="headerMobile">
     <div class="header-mobile--inner d-block">
         <div class="d-flex justify-content-between">
             <div>
-                <a class="" href="{{ insert_tag('env::url') }}">
-                    <div class="header-logo-box">
-                        <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
-                            <img src="files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg" class="logo-header-mobile" alt="Logo Schuldienste Dagmersellen">
-                        </a>
-                    </div>
-                </a>
+                <div class="header-mobile--logo-box">
+                    <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
+                        {# Logo Schuldienste Kreis Dagmersellen #}
+                        {{ include('@MarkocupicContaoSchuldiensteTheme/brand_logo.html.twig') }}
+                    </a>
+                </div>
             </div>
             <div>
                 <button class="mobile-navigation-toggler" type="button" aria-controls="navbarMobile" aria-expanded="false" aria-label="Toggle mobile navigation">
@@ -26,7 +25,7 @@
         <i class="fa-2x fa-solid fa-xmark nav-close"></i>
     </button>
     <a class="" href="{{ insert_tag('env::url') }}">
-        <div class="header-logo-box">
+        <div class="mobile-navigation--logo-box">
             <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
                 <img src="files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg" class="logo-header-mobile" alt="Logo Schuldienste Dagmersellen">
             </a>

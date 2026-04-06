@@ -1,11 +1,17 @@
 #headerMobile.header-mobile {
   .header-mobile--inner {
     color: var(--bs-body-color);
+    background: var(--bs-tertiary-bg);
     padding: clamp-calc(1rem, 1.5rem);
 
-    .logo-header-mobile {
+    .header-mobile--logo-box img {
       width: clamp-calc(150px, 450px);
       height: auto;
+    }
+
+    button.mobile-navigation-toggler{
+      color: var(--bs-body-color);
+      background: transparent;
     }
   }
 }
@@ -22,18 +28,20 @@ body {
     opacity: 1;
     z-index: 2000;
     color: #000;
-    background: #ffffff;
+    background: var(--bs-tertiary-bg);
     margin: 0;
     overflow: hidden;
     padding: clamp-calc(1rem, 1.5rem);
 
-    .logo-header-mobile {
+    .mobile-navigation--logo-box img {
       width: clamp-calc(150px, 450px);
       height: auto;
       margin-bottom: clamp-calc(3rem, 6rem);
     }
 
     button.mobile-navigation-toggler {
+      color: var(--bs-body-color);
+      background: transparent !important;
       position: absolute;
       top: clamp-calc(1rem, 3rem);
       right: clamp-calc(1rem, 3rem);

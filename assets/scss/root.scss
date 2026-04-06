@@ -1,4 +1,20 @@
-:root {
-  --bs-body-bg: #f8f8f8;
+:root[data-bs-theme="light"] {
   --bs-body-color: #333;
+  --bs-tertiary-bg: #ffffff;
+  --bs-heading-color-h1: #000000;
+  --bs-heading-color: $gray-800;
+  --bs-menu-bg: #ffffff;
+  --bs-menu-color: #000000;
+  --bs-alert-bg: var(--bs-alert-bg);
+}
+
+:root[data-bs-theme="dark"] {
+  --bs-body-bg: #333;
+  --bs-tertiary-bg: #434343;
+  --bs-body-color: #fafafa;
+  --bs-heading-color-h1: #f8f9fa;
+  --bs-heading-color: #f8f9fa;
+  --bs-menu-bg: var(--bs-body-bg);
+  --bs-menu-color: #f8f9fa;
+  --bs-alert-bg: var(--bs-body-bg);
 }

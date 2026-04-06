@@ -1,19 +1,6 @@
-<div id="headerRow1" class="overflow-hidden">
-    <div class="container-lg d-flex flex-column">
-        <div class="inner d-flex flex-row flex-nowrap justify-content-between align-items-center gap-3 mx-2 my-4">
-            <div class="header-logo-box">
-                <a href="{{ insert_tag('env::url') }}">
-                    <img src="files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg" class="logo-header" alt="Logo Schuldienste Dagmersellen">
-                </a>
-            </div>
-            <div class="header-search flex-grow-1 d-none d-lg-block">
-                {{ insert_tag('insert_module::18')|raw }}
-            </div>
-            <div class="header-nav-toggler">
-                <button id="sidebarToggleBtn" class="navigation-toggler btn btn-light d-flex flex-row flex-nowrap align-items-center border border-0 rounded rounded-5">
-                    <i class="fa-solid fa-bars"></i><span class="ms-2 d-none d-sm-block">MEN&Uuml;</span>
-                </button>
-            </div>
-        </div>
-    </div>
+<div class="header--row-1">
+    {% include('@MarkocupicContaoSchuldiensteTheme/theme_toggle.html.twig') %}
+</div>
+<div class="header--row-2">
+    {{ include('@MarkocupicContaoSchuldiensteTheme/header_mobile.html.twig')|raw }}
 </div>

@@ -1,15 +1,13 @@
 {%- set rootAttributes = attrs()
     .set('lang', language)
     .set('dir', 'rtl', isRTL)
-    .mergeWith(rootAttributes|default)
--%}
+    .mergeWith(rootAttributes|default) -%}
 
 {%- set bodyAttributes = attrs()
     .set('id', 'top')
     .addClass(class)
     .setIfExists('onload', onload)
-    .mergeWith(bodyAttributes|default)
--%}
+    .mergeWith(bodyAttributes|default) -%}
 <!DOCTYPE html>
 <html{{ rootAttributes }}>
 <head>
@@ -48,9 +46,7 @@
 {% block body %}
     {{ contao_sections('top') }}
 
-    {{ include('@MarkocupicContaoSchuldiensteTheme/header_mobile.html.twig')|raw }}
     <div id="wrapper" class="container-xl">
-
         {% block header %}
             {% if header %}
                 <header id="header">
@@ -81,8 +77,8 @@
                             <div class="inside sticky-lg-top">
                                 <div class="d-none d-lg-block mb-3 img-profile-container">
                                     <a href="{{ insert_tag('env::url') }}">
-                                        <!-- Logo Schuldienste Kreis Dagmersellen -->
-                                        {{ insert_tag('image::files/themes/schuldienste-theme/img/logos/logo_spd_text_2025.svg?class=img-fluid w-100 mt-0&alt=Schuldienste Kreis Dagmersellen')|raw }}
+                                        {# Logo Schuldienste Kreis Dagmersellen #}
+                                        {{ include('@MarkocupicContaoSchuldiensteTheme/brand_logo.html.twig') }}
                                     </a>
                                 </div>
                                 {{ left|raw }}

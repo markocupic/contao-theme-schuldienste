@@ -1,0 +1,34 @@
+tl_content:
+    # Legends
+    anchorLink_legend: Sprungmarke (Anchor Link)
+    # Fields
+    marginTop:
+        - Aussenabstand oben (margin-top)
+        - Fügen Sie einen Aussenabstand oberhalb des Inhaltselementes ein.
+    marginBottom:
+        - Aussenabstand unten (margin-bottom)
+        - Fügen Sie einen Aussenabstand unterhalb des Inhaltselementes ein.
+    anchorLink:
+        - Sprungmarke (Sprunkmarkentext)
+        - Erstelle eine Sprungmarke für dieses Element. Schreibe den Link-Text in dieses Feld.
+    anchorLinkContext:
+        - Such-Kontext
+        - Layout Element (CSS ID) in dem nach Sprungmarken gesucht werden soll.
+    # References
+    mt-none:
+        - Kein Abstand
+    mt-small:
+        - Kleiner Abstand
+    mt-medium:
+        - Mittlerer Abstand (Standard)
+    mt-large:
+        - Grosser Abstand
+    mb-none:
+        - Kein Abstand
+    mb-small:
+        - Kleiner Abstand
+    mb-medium:
+        - Mittlerer Abstand (Standard)
+    mb-large:
+        - Grosser Abstand
+

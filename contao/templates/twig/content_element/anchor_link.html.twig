@@ -1,0 +1,36 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    {% set rand_id = '' %}{% for i in 1..8 %}{% set rand_id = rand_id ~ random('abcdefghijklmnopqrstuvwxyz') %}{% endfor %}
+    <div class="anchor-links d-md-block block" id="{{ rand_id }}">
+        <ul></ul>
+    </div>
+    <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+        document.addEventListener('DOMContentLoaded', function () {
+            const anchorLinkContext = '{{ anchor_link_context }}';
+            const request = '{{ insert_tag('env::request') }}';
+
+            if (!anchorLinkContext) {
+                return;
+            }
+
+            const targets = document.querySelectorAll('[data-anchorlink]');
+            const element = document.getElementById('{{ rand_id }}');
+            const list = document.querySelector('#{{ rand_id }} ul');
+
+            for (const target of targets) {
+                console.log('aaa');
+                const id = target.getAttribute('data-anchorlink');
+
+                if (!id || id === '') {
+                    continue;
+                }
+
+                element.classList.remove('d-none');
+
+                const listEl = `<li><a class="js-scroll-trigger" href="${request}#${id}">#${id}</a></li>`;
+                list.insertAdjacentHTML('beforeend', listEl);
+            }
+        });
+    </script>
+{% endblock %}

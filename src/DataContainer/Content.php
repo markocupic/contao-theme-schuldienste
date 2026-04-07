@@ -20,23 +20,14 @@ use Contao\DataContainer;
 
 readonly class Content
 {
-    #[AsCallback(table: 'tl_content', target: 'config.onload', priority: -100)]
-    public function addMarginFieldsToPalettes(DataContainer $dc)
+    #[AsCallback(table: 'tl_content', target: 'config.onpalette', priority: -100)]
+    public function extendPaletteListener(string $palette, DataContainer $dc): string
     {
-        $palettes = $GLOBALS['TL_DCA']['tl_content']['palettes'];
+        return PaletteManipulator::create()
+            ->addLegend('anchorLink_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)
+            ->addField(['anchorLink'], 'anchorLink_legend', PaletteManipulator::POSITION_PREPEND)
+            ->addField(['marginTop', 'marginBottom'], 'expert_legend', PaletteManipulator::POSITION_PREPEND)
+            ->applyToString($palette);
 
-        foreach ($palettes as $key => $value) {
-            if ($key === '__selector__' || $key === 'default') {
-                continue;
-            }
-
-            if (!str_contains($value, '{expert_legend')) {
-                continue;
-            }
-
-            PaletteManipulator::create()
-                ->addField(['marginTop', 'marginBottom'], 'expert_legend', PaletteManipulator::POSITION_PREPEND)
-                ->applyToPalette($key, 'tl_content');
-        }
     }
 }

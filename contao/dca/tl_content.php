@@ -12,6 +12,11 @@ declare(strict_types=1);
  * @link https://github.com/markocupic/contao-schuldienste-theme
  */
 
+use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\AnchorLinkController;
+
+// Content elements
+$GLOBALS['TL_DCA']['tl_content']['palettes'][AnchorLinkController::TYPE] = '{type_legend},type,headline;{config_legend},anchorLinkContext';
+
 $GLOBALS['TL_DCA']['tl_content']['fields']['marginTop'] = [
     'exclude'   => true,
     'inputType' => 'select',
@@ -28,4 +33,20 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marginBottom'] = [
     'options'   => ['mb-none', 'mb-small', 'mb-medium', 'mb-large'],
     'eval'      => ['multiple' => false, 'includeBlankOption' => true, 'tl_class' => 'w25'],
     'sql'       => ['type' => 'string', 'length' => 32, 'default' => ''],
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['anchorLink'] = [
+    'filter'    => true,
+    'exclude'   => true,
+    'inputType' => 'text',
+    'eval'      => ['rgxp' => 'extnd', 'tl_class' => 'w25'],
+    'sql'       => ['type' => 'string', 'length' => 32, 'default' => ''],
+];
+
+$GLOBALS['TL_DCA']['tl_content']['fields']['anchorLinkContext'] = [
+    'exclude'   => true,
+    'inputType' => 'select',
+    'options'   => ['#left', '#main', '#right'],
+    'eval'      => ['multiple' => false, 'tl_class' => 'w25'],
+    'sql'       => ['type' => 'string', 'length' => 32, 'default' => '#main'],
 ];

@@ -2,4 +2,10 @@
 
 {# Attach the margin classes to the class attribute of the content element #}
 {% set attributes = attributes|default(attrs())
-    .addClass([data.marginTop|default(''),data.marginBottom|default('')]) %}
+    .addClass([data.marginTop|default(''), data.marginBottom|default('')]) %}
+
+{% if data.anchorLink|default('') != '' %}
+    {% set attributes = attributes
+        .set('data-anchorlink', data.anchorLink)
+        .set('id', data.anchorLink) %}
+{% endif %}

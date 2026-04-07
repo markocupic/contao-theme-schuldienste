@@ -21,7 +21,7 @@
   // Set a default margin after each content element
   // Set a default margin after each content element
   // Set a default margin after each content element
-  [class*="content-"]:not([class*="content-headline"]):not([class*="--inner"]):not([class*="content-hyperlink"]):not([class*="content-download"]),
+  [class*="content-"]:not(.content-headline):not([class*="--inner"]):not(.content-hyperlink):not(.content-download),
   [class*="ce_"]:not([class*="ce_row"]):not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]) {
     margin-bottom: clamp-calc(2.5rem, 3.75rem);
   }
@@ -59,6 +59,11 @@
   [class*="content-"].mb-large, [class*="ce_"].mb-large {
     margin-bottom: clamp-calc(3.5rem, 5.35rem) !important;
   }
+
+  .content-text > .rte:first-child p {
+    margin-top: 0; // No margin top for the first paragraph in the RTE
+  }
+
 
   // End content element margins
   // End content element margins

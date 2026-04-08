@@ -4,8 +4,8 @@
     "keywords": [
         "contao",
         "bundle",
-        "tag 3",
-        "tag 4"
+        "theme",
+        "schuldienste.ch"
     ],
     "type": "contao-bundle",
     "license": "GPL-3.0-or-later",

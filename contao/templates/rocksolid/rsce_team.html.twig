@@ -1,12 +1,6 @@
-{% set attributes = attributes|default(attrs())
-    .addClass(class)
-    .addClass('block')
-    .setIfExists('id', cssID[0] ?? null)
-    .setIfExists('data-anchorlink', data.anchorLink|default)
-    .setIfExists('id', data.anchorLink|default)
-%}
-<div{{ attributes }}>
-    <{{ hl }}>{{ headline }}</{{ hl }}>
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
     <div class="row g-3">
         {% if app.request.attributes.get('_scope') == 'frontend' %}
             {% for member in members %}
@@ -59,4 +53,4 @@
             {% endfor %}
         {% endif %}
     </div><!-- end row -->
-</div>
+{% endblock %}

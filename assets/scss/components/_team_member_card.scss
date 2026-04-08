@@ -1,4 +1,4 @@
-#main .team-member-card {
+#main .content-rsce-team .team-member-card {
   .team-member-card--inner{
     display: flex;
     gap: 1rem;
@@ -35,7 +35,7 @@
 }
 
 html[data-bs-theme="dark"] {
-  #main .team-member-card {
+  #main .content-rsce-team .team-member-card {
     .team-member-card--inner {
       padding: .75rem;
       background-color: var(--bs-body-bg);

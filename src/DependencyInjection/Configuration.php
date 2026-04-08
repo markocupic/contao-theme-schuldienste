@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of contao-schuldienste-theme.
+ * This file is part of Contao Schuldienste Theme.
  *
  * (c) Marko Cupic <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later

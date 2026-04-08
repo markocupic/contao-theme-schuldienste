@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of contao-schuldienste-theme.
+ * This file is part of Contao Schuldienste Theme.
  *
  * (c) Marko Cupic <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
@@ -23,10 +23,9 @@ use Symfony\Component\HttpKernel\KernelEvents;
 class AssetSubscriber implements EventSubscriberInterface
 {
     public function __construct(
-        private readonly Packages     $packages,
+        private readonly Packages $packages,
         private readonly ScopeMatcher $scopeMatcher,
-    )
-    {
+    ) {
     }
 
     public static function getSubscribedEvents()
@@ -50,11 +49,11 @@ class AssetSubscriber implements EventSubscriberInterface
 ';
 
             // Add theme assets
-            $GLOBALS['TL_HEAD'][] = '<script src="' . $this->packages->getUrl('js/theme.js', 'markocupic_contao_schuldienste_theme') . '"></script>';
-            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="' . $this->packages->getUrl('styles/frontend.css', 'markocupic_contao_schuldienste_theme') . '">';
+            $GLOBALS['TL_HEAD'][] = '<script src="'.$this->packages->getUrl('js/theme.js', 'markocupic_contao_schuldienste_theme').'"></script>';
+            $GLOBALS['TL_HEAD'][] = '<link rel="stylesheet" href="'.$this->packages->getUrl('styles/frontend.css', 'markocupic_contao_schuldienste_theme').'">';
 
             // Add Bootstrap JS
-            $GLOBALS['TL_BODY'][] = '<script src="' . $this->packages->getUrl('bootstrap/dist/js/bootstrap.bundle.min.js', 'markocupic_contao_schuldienste_theme') . '"></script>';
+            $GLOBALS['TL_BODY'][] = '<script src="'.$this->packages->getUrl('bootstrap/dist/js/bootstrap.bundle.min.js', 'markocupic_contao_schuldienste_theme').'"></script>';
         }
     }
 }

@@ -1,0 +1,119 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <div class="gallery row g-1">
+        {% for pic in pics %}
+            <div data-index="{{ loop.index0 }}" class="col-6 col-md-4 col-lg-3">
+                {{ insert_tag('picture::'~pic~'?size=4')|raw }}
+            </div>
+        {% endfor %}
+    </div>
+    <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+        (function () {
+            const gallery = document.querySelector('.gallery');
+            if (!gallery) return;
+
+            const DURATION = 600; // ms für die Animation
+            let animating = false;
+
+            function getItems() {
+                return Array.from(gallery.children);
+            }
+
+            function swapRandom() {
+                if (animating) return;
+
+                const items = getItems();
+                if (items.length < 2) return;
+
+                let a = Math.floor(Math.random() * items.length);
+                let b;
+                do {
+                    b = Math.floor(Math.random() * items.length);
+                } while (b === a);
+
+                const itemA = items[a];
+                const itemB = items[b];
+
+                // FIRST: Positionen vor dem Tausch merken
+                const rectA = itemA.getBoundingClientRect();
+                const rectB = itemB.getBoundingClientRect();
+
+                // DOM-Tausch
+                const placeholder = document.createComment('');
+                itemA.replaceWith(placeholder);
+                itemB.replaceWith(itemA);
+                placeholder.replaceWith(itemB);
+
+                // LAST → INVERT: Differenz berechnen und als Transform setzen
+                const deltaA = {
+                    x: rectA.left - itemA.getBoundingClientRect().left,
+                    y: rectA.top - itemA.getBoundingClientRect().top,
+                };
+                const deltaB = {
+                    x: rectB.left - itemB.getBoundingClientRect().left,
+                    y: rectB.top - itemB.getBoundingClientRect().top,
+                };
+
+                itemA.style.transition = 'none';
+                itemB.style.transition = 'none';
+                itemA.style.transform = `translate(${deltaA.x}px, ${deltaA.y}px)`;
+                itemB.style.transform = `translate(${deltaB.x}px, ${deltaB.y}px)`;
+
+                // PLAY: zurück auf 0 animieren
+                animating = true;
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        itemA.style.transition = `transform ${DURATION}ms ease-in-out`;
+                        itemB.style.transition = `transform ${DURATION}ms ease-in-out`;
+                        itemA.style.transform = '';
+                        itemB.style.transform = '';
+
+                        setTimeout(() => {
+                            itemA.style.transition = '';
+                            itemB.style.transition = '';
+                            animating = false;
+                        }, DURATION);
+                    });
+                });
+            }
+
+            const images = Array.from(gallery.querySelectorAll('img'));
+
+            if (images.length === 0) {
+                setInterval(swapRandom, 2000);
+                return;
+            }
+
+            let loaded = 0;
+
+            function onLoad() {
+                loaded++;
+                if (loaded >= images.length) {
+                    setInterval(swapRandom, 2000);
+                }
+            }
+
+            images.forEach(img => {
+                if (img.complete) {
+                    onLoad();
+                } else {
+                    img.addEventListener('load', onLoad, {once: true});
+                    img.addEventListener('error', onLoad, {once: true});
+                }
+            });
+        }());
+    </script>
+    <style>
+        .content-random-gallery {
+            display: block;
+        }
+
+        .content-random-gallery .gallery img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 0.25rem;
+        }
+    </style>
+{% endblock %}

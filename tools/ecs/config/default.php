@@ -4,22 +4,21 @@ declare(strict_types=1);
 
 use Contao\EasyCodingStandard\Set\SetList;
 use PhpCsFixer\Fixer\Comment\HeaderCommentFixer;
-use PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer;
-use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return ECSConfig::configure()
-    ->withSets([SetList::CONTAO])
+    ->withSets([
+        SetList::CONTAO,
+        \Markocupic\EasyCodingStandard\Set\SetList::MARKOCUPIC,
+    ])
     ->withPaths([
         __DIR__ . '/../../src',
     ])
     ->withSkip([
-        MethodChainingIndentationFixer::class => [
+        \Contao\EasyCodingStandard\Fixer\CommentLengthFixer::class          => ['*.php'],
+        \PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer::class  => [
             '*/DependencyInjection/Configuration.php',
-        ],
-        UnusedVariableSniff::class => [
-            //'core-bundle/tests/Session/Attribute/ArrayAttributeBagTest.php',
         ],
     ])
     ->withRootFiles()

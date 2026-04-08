@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of contao-schuldienste-theme.
+ * This file is part of Contao Schuldienste Theme.
  *
  * (c) Marko Cupic <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
@@ -21,9 +21,6 @@ use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 class MarkocupicContaoSchuldiensteThemeExtension extends Extension
 {
-    /**
-     * {@inheritdoc}
-     */
     public function getAlias(): string
     {
         return Configuration::ROOT_KEY;
@@ -40,7 +37,7 @@ class MarkocupicContaoSchuldiensteThemeExtension extends Extension
 
         $loader = new YamlFileLoader(
             $container,
-            new FileLocator(__DIR__.'/../../config')
+            new FileLocator(__DIR__.'/../../config'),
         );
 
         $loader->load('parameters.yaml');

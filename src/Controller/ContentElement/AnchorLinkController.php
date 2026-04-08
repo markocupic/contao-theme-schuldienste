@@ -29,6 +29,7 @@ class AnchorLinkController extends AbstractContentElementController
     protected function getResponse(FragmentTemplate $template, ContentModel $model, Request $request): Response
     {
         $template->set('anchor_link_context', $model->anchorLinkContext);
+
         return $template->getResponse();
     }
 }

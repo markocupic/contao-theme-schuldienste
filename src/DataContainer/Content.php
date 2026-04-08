@@ -27,7 +27,7 @@ readonly class Content
             ->addLegend('anchorLink_legend', 'expert_legend', PaletteManipulator::POSITION_BEFORE)
             ->addField(['anchorLink'], 'anchorLink_legend', PaletteManipulator::POSITION_PREPEND)
             ->addField(['marginTop', 'marginBottom'], 'expert_legend', PaletteManipulator::POSITION_PREPEND)
-            ->applyToString($palette);
-
+            ->applyToString($palette)
+        ;
     }
 }

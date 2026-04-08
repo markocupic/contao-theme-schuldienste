@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of contao-schuldienste-theme.
+ * This file is part of Contao Schuldienste Theme.
  *
  * (c) Marko Cupic <m.cupic@gmx.ch>
  * @license GPL-3.0-or-later
@@ -30,9 +30,6 @@ class MarkocupicContaoSchuldiensteTheme extends Bundle
         return new MarkocupicContaoSchuldiensteThemeExtension();
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function build(ContainerBuilder $container): void
     {
         parent::build($container);

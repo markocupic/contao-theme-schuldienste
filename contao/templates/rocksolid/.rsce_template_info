@@ -1,0 +1,2 @@
+Rocksolid Custome Element Templates must be copied to the templates folder in the Contao Root.
+This will be done automatically in the next composer update od composer install (Filecopier Plugin).

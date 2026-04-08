@@ -6,4 +6,4 @@ cd..
 cd..
 cd..
 cd..
-php -d memory_limit=-1 vendor/bin/phpstan analyse vendor/markocupic/contao-schuldienste-theme/src --level 1
+php -d memory_limit=-1 vendor/bin/phpstan analyse vendor/markocupic/sac-event-tool-bundle/src vendor/markocupic/sac-event-tool-bundle/tests

@@ -1,135 +1,90 @@
 <?php
 
-return array(
-    'label' => array(
-        'de' => array(
+return [
+    'label'           => [
+        'de' => [
             'Mitarbeiter',
             'Eine Liste von Personen mit Foto, Name, Telefonnummer, E-Mail-Adresse und Social-Media-Links',
-        ),
-        'en' => array(
+        ],
+        'en' => [
             'Staff',
             'A list of employees with picture, name, phone number, email and social media links',
-        ),
-    ),
-    'types' => array('content'),
+        ],
+    ],
+    'types'           => ['content'],
     'contentCategory' => 'texts',
-    'standardFields' => array('headline', 'cssID'),
-    'fields' => array(
-        'members' => array(
-            'label' => array(
-                'de' => array(
+    'standardFields'  => ['headline', 'cssID'],
+    'fields'          => [
+        'members' => [
+            'label'        => [
+                'de' => [
                     'Personen',
                     'Fügen Sie eine beliebige Anzahl an Mitarbeitern ein.',
-                ),
-                'en' => array(
+                ],
+                'en' => [
                     'Members',
                     'Add any number of employees.',
-                ),
-            ),
-            'elementLabel' => array(
+                ],
+            ],
+            'elementLabel' => [
                 'de' => 'Mitarbeiter %s',
                 'en' => 'Employee %s',
-            ),
-            'inputType' => 'list',
-            'fields' => array(
-                'image' => array(
-                    'label' => array(
-                        'de' => array('Profilbild', ''),
-                        'en' => array('Profile picture', ''),
-                    ),
+            ],
+            'inputType'    => 'list',
+            'fields'       => [
+                'image'       => [
+                    'label'     => [
+                        'de' => ['Profilbild', ''],
+                        'en' => ['Profile picture', ''],
+                    ],
                     'inputType' => 'fileTree',
-                    'eval' => array(
-                        'fieldType' => 'radio',
-                        'filesOnly' => true,
+                    'eval'      => [
+                        'fieldType'  => 'radio',
+                        'filesOnly'  => true,
                         'extensions' => 'jpg,jpeg,png,gif,svg',
-                    ),
-                ),
-                'name' => array(
-                    'label' => array(
-                        'de' => array('Name', 'Vor- und Nachname des Mitarbeiters'),
-                        'en' => array('Name', 'First and last name of employee'),
-                    ),
+                    ],
+                ],
+                'name'        => [
+                    'label'     => [
+                        'de' => ['Name', 'Vor- und Nachname des Mitarbeiters'],
+                        'en' => ['Name', 'First and last name of employee'],
+                    ],
                     'inputType' => 'text',
-                    'eval' => array('tl_class' => 'w50'),
-                ),
-                'function' => array(
-                    'label' => array(
-                        'de' => array('Funktion', 'Geben Sie die Funktion des Mitarbeiters an.'),
-                        'en' => array('Function', 'Add the function of employee.'),
-                    ),
+                    'eval'      => ['tl_class' => 'w50'],
+                ],
+                'function'    => [
+                    'label'     => [
+                        'de' => ['Funktion', 'Geben Sie die Funktion des Mitarbeiters an.'],
+                        'en' => ['Function', 'Add the function of employee.'],
+                    ],
                     'inputType' => 'text',
-                    'eval' => array('tl_class' => 'w50'),
-                ),
-                'description' => array(
-                    'label' => array(
-                        'de' => array('Weitere Angaben', 'Geben Sie weitere Angaben an.'),
-                        'en' => array('Further information', 'Please add some further informations.'),
-                    ),
+                    'eval'      => ['tl_class' => 'w50'],
+                ],
+                'description' => [
+                    'label'     => [
+                        'de' => ['Weitere Angaben', 'Geben Sie weitere Angaben an.'],
+                        'en' => ['Further information', 'Please add some further informations.'],
+                    ],
                     'inputType' => 'textarea',
-                    'eval' => array('rte'=>'tinyMCE', 'tl_class' => 'clr'),
-                ),
-                'phone' => array(
-                    'label' => array(
-                        'de' => array('Telefon', 'Telefonummer des Mitarbeiters'),
-                        'en' => array('Phone', 'Phone number of employee'),
-                    ),
+                    'eval'      => ['rte' => 'tinyMCE', 'tl_class' => 'clr'],
+                ],
+                'phone'       => [
+                    'label'     => [
+                        'de' => ['Telefon', 'Telefonummer des Mitarbeiters'],
+                        'en' => ['Phone', 'Phone number of employee'],
+                    ],
                     'inputType' => 'text',
-                    'eval' => array('rgxp' => 'phone', 'tl_class' => 'w50'),
-                ),
-                'email' => array(
-                    'label' => array(
-                        'de' => array('E-Mail', 'E-Mail-Addresse des Mitarbeiters'),
-                        'en' => array('Email', 'Email address of employee'),
-                    ),
+                    'eval'      => ['rgxp' => 'phone', 'tl_class' => 'w50'],
+                ],
+                'email'       => [
+                    'label'     => [
+                        'de' => ['E-Mail', 'E-Mail-Addresse des Mitarbeiters'],
+                        'en' => ['Email', 'Email address of employee'],
+                    ],
                     'inputType' => 'text',
-                    'eval' => array('rgxp' => 'email', 'tl_class' => 'w50'),
-                ),
-                /**
-                'socials' => array(
-                    'label' => array(
-                        'de' => array(
-                            'Social-Media-Profile',
-                            'Fügen Sie eine beliebige Anzahl an Social-Media-Profilen ein.',
-                        ),
-                        'en' => array(
-                            'Social media profiles',
-                            'Add any number of social media profiles.',
-                        ),
-                    ),
-                    'elementLabel' => array(
-                        'de' => '%s. Social-Media-Profil',
-                        'en' => '%s. social media profile',
-                    ),
-                    'inputType' => 'list',
-                    'fields' => array(
-                        'platform' => array(
-                            'label' => array(
-                                'de' => array('Social-Media-Plattform', ''),
-                                'en' => array('Social media platform', ''),
-                            ),
-                            'inputType' => 'select',
-                            'options' => array(
-                                'facebook' => 'Facebook',
-                                'twitter' => 'Twitter',
-                                'gplus' => 'Google+',
-                                'xing' => 'Xing',
-                                'pinterest' => 'Pinterest',
-                                'linkedin' => 'LinkedIn',
-                            ),
-                            'eval' => array('tl_class' => 'w50'),
-                        ),
-                        'url' => array(
-                            'label' => array(
-                                'de' => array('Link', 'URL zur Profilseite auf der Social-Media-Plattform'),
-                                'en' => array('Link', 'URL of the social media profile'),
-                            ),
-                            'inputType' => 'text',
-                            'eval' => array('tl_class' => 'w50'),
-                        ),
-                    ),
-                ),
-                 **/
-            ),
-        ),
-    ),
-);
+                    'eval'      => ['rgxp' => 'email', 'tl_class' => 'w50'],
+                ],
+            ],
+        ],
+    ],
+];

@@ -1,34 +1,33 @@
 <?php
 
-return array(
-    'label'           => array(
-        'de' => array(
+return [
+    'label'           => [
+        'de' => [
             'Überschrift mit Subheadline',
             'Erstellen Sie eine Überschrift mit Subheadline.',
-        ),
-        'en' => array(
+        ],
+        'en' => [
             'Headline & Subheadline',
             'Create a headline with subheadline.',
-        ),
-    ),
-    'types'           => array('content'),
+        ],
+    ],
+    'types'           => ['content'],
     'contentCategory' => 'texts',
-    'standardFields'  => array('headline', 'cssID'),
-    'fields'          => array(
-        'subheadline' => array(
-            'label'     => array(
-                'de' => array(
+    'standardFields'  => ['headline', 'cssID'],
+    'fields'          => [
+        'subheadline' => [
+            'label'     => [
+                'de' => [
                     'Subheadline',
                     'Fügen Sie eine Subheadline ein.',
-                ),
-                'en' => array(
+                ],
+                'en' => [
                     'Subheadline',
                     'Add a subheadline.',
-                ),
-            ),
-            'eval'      => array(),
+                ],
+            ],
+            'eval'      => [],
             'inputType' => 'textarea',
-        ),
-    ),
-
-);
+        ],
+    ],
+];

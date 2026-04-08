@@ -1,4 +1,6 @@
-<div class="{{ class }} block"{{ cssID }}>
-    <{{ hl }} class="mt-0 mt-md-4">{{ headline }}</{{ hl }}>
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    {{ parent() }}
     <h2 class="subheading">{{ subheadline|nl2br }}</h2>
-</div>
+{% endblock %}

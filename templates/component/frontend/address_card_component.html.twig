@@ -1,0 +1,24 @@
+{% block address_card_component %}
+    <div class="card">
+        <div class="card-body">
+            <address class="mb-3">
+                {% if name|default %}
+                    <div class="card-title mb-3">{% if href|default %}<a href="{{ url }}">{% endif %}<strong>{{ name }}</strong>{% if href|default %}</a>{% endif %}</div>
+                {% endif %}
+                {% if function|default %}
+                    <div class="text-muted mb-2 text-body-secondary">{{ function }}</div>
+                {% endif %}
+                {% if street|default %}
+                    <div>{{ street }}</div>
+                {% endif %}
+                <div>{{ postal|default }} {{ city|default }}</div>
+                {% if phone|default %}
+                    <div><a class="card-link" href="tel:{{ phone|replace([' ', '']) }}">{{ phone }}</a></div>
+                {% endif %}
+                {% if email|default %}
+                    <div>{{ insert_tag('email::'~email)|raw }}</div>
+                {% endif %}
+            </address>
+        </div>
+    </div>
+{% endblock %}

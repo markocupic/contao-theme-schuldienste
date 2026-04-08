@@ -1,0 +1,19 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <div class="d-block">
+        {% block google_maps %}
+            {% set iframe_attributes = attrs()
+                .setIfExists('title',keys.title|default)
+                .set('width',keys.width|default('100%'))
+                .set('height',keys.height|default('300'))
+                .set('frameborder',keys.frameborder|default('0'))
+                .set('scrolling',keys.scrolling|default('no'))
+                .set('marginheight',keys.marginheight|default('0'))
+                .set('marginwidth',keys.marginwidth|default('0'))
+                .set('src',keys.src|default(''))
+                .mergeWith(iframe_attributes|default) %}
+            <iframe{% block iframe_attributes %}{{ iframe_attributes }}{% endblock %}></iframe>
+        {% endblock %}
+    </div>
+{% endblock %}

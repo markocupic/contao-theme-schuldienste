@@ -23,9 +23,10 @@
     },
     "require": {
         "php": "^8.3",
-        "contao/core-bundle": "^5.3",
+        "contao/core-bundle": "^5.7",
         "markocupic/composer-file-copier-plugin": "^0.2",
-        "markocupic/contao-component-fontawesome-free": "7.0.0"
+        "markocupic/contao-component-fontawesome-free": "7.0.0",
+        "inspiredminds/contao-glightbox": "^1.0"
     },
     "require-dev": {
         "symfony/webpack-encore-bundle": "v2.2.0",

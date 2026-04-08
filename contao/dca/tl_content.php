@@ -17,6 +17,7 @@ use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\AnchorLinkContr
 // Content elements
 $GLOBALS['TL_DCA']['tl_content']['palettes'][AnchorLinkController::TYPE] = '{type_legend},type,headline;{config_legend},anchorLinkContext';
 
+// This field is injected into every content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['marginTop'] = [
     'exclude'   => true,
     'inputType' => 'select',
@@ -26,6 +27,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marginTop'] = [
     'sql'       => ['type' => 'string', 'length' => 32, 'default' => ''],
 ];
 
+// This field is injected into every content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['marginBottom'] = [
     'exclude'   => true,
     'inputType' => 'select',
@@ -35,6 +37,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['marginBottom'] = [
     'sql'       => ['type' => 'string', 'length' => 32, 'default' => ''],
 ];
 
+// This field belongs to the anchor_link content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['anchorLink'] = [
     'filter'    => true,
     'exclude'   => true,
@@ -43,6 +46,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['anchorLink'] = [
     'sql'       => ['type' => 'string', 'length' => 32, 'default' => ''],
 ];
 
+// This field belongs to the anchor_link content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['anchorLinkContext'] = [
     'exclude'   => true,
     'inputType' => 'select',

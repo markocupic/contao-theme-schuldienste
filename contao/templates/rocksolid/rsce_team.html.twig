@@ -14,7 +14,9 @@
                             </div>
                             <div class="col_2">
                                 {% if member.name|default %}
-                                    <h6 class="mt-0 text-primary">{{ member.name }}</h6>
+                                    <div class="team-member-name">
+                                        <h6 class="mt-0 text-primary">{{ member.name }}</h6>
+                                    </div>
                                 {% endif %}
                                 {% if member.function|default %}
                                     <div class="team-member-function small mb-2">

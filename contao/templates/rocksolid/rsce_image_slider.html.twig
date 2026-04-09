@@ -1,13 +1,13 @@
 {% extends "@Contao/content_element/_base.html.twig" %}
 
 {% block content %}
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-touch="false">
         <div class="carousel-inner">
             {% for image in images %}
                 {% if image.singleSRC|default %}
                     {% if app.request.attributes.get('_scope') == 'frontend' %}
                         <div class="carousel-item{% if loop.index0 == 0 %} active{% endif %}" data-bs-interval="5000">
-                            {{ insert_tag('picture::'~image.singleSRC~'?size=2&class=img-fluid w-100')|raw }}
+                            {{ insert_tag('picture::'~image.singleSRC~'?size=2&class=d-block img-fluid w-100')|raw }}
                         </div>
                     {% else %}
                         <div class="block mb-2">

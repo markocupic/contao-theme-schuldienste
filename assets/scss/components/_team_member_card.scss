@@ -1,5 +1,5 @@
-#main .content-rsce-team .team-member-card {
-  .team-member-card--inner{
+.layout-main .content-rsce-team .team-member-card {
+  .team-member-card--inner {
     display: flex;
     gap: 1rem;
     background: var(--bs-body-bg);
@@ -7,10 +7,12 @@
     border-radius: var(--bs-border-radius);
 
     .col_1 {
-      width: 100px !important;
       position: relative;
       padding: 0;
-      flex: 0 0 100px;
+      flex: 0 0 60px;
+      @media (min-width: $breakpoint-lg-up) {
+        flex: 0 0 100px;
+      }
 
       img {
         width: 100%;
@@ -22,8 +24,16 @@
     .col_2 {
       flex: 1;
 
+      > div * {
+        overflow-wrap: anywhere;
+      }
+
+      address {
+        margin: 0;
+      }
+
       .small {
-        p, * {
+        p, a, strong {
           font-size: .875rem !important;
           margin: 0;
           line-height: 1.5;
@@ -35,7 +45,7 @@
 }
 
 html[data-bs-theme="dark"] {
-  #main .content-rsce-team .team-member-card {
+  .layout-main .content-rsce-team .team-member-card {
     .team-member-card--inner {
       padding: .75rem;
       background-color: var(--bs-body-bg);

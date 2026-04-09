@@ -46,7 +46,7 @@
 {% block body %}
     {{ contao_sections('top') }}
 
-    <div id="wrapper" class="container-xl">
+    <div id="wrapper" class="layout-wrapper container-xl">
         {% block header %}
             {% if header %}
                 <header id="header">
@@ -60,10 +60,10 @@
         {{ contao_sections('before') }}
 
         {% block container %}
-            <div id="container" class="row gx-0">
+            <div id="container" class="layout-container row gx-0">
 
                 {% block main %}
-                    <main id="main" class="col-12 col-lg-9 order-2">
+                    <main id="main" class="layout-main col-12 col-lg-9 order-2">
                         <div class="inside">
                             {{ main|raw }}
                         </div>
@@ -73,7 +73,7 @@
 
                 {% block left %}
                     {% if left %}
-                        <aside id="left" class="d-none d-lg-block col-12 col-lg-3 order-1">
+                        <aside id="left" class="layout-left d-none d-lg-block col-12 col-lg-3 order-1">
                             <div class="inside sticky-lg-top">
                                 <div class="d-none d-lg-block mb-3 img-profile-container">
                                     <a href="{{ insert_tag('env::url') }}">
@@ -89,7 +89,7 @@
 
                 {% block right %}
                     {% if right %}
-                        <aside id="right">
+                        <aside id="right" class="layout-right">
                             <div class="inside">
                                 {{ right|raw }}
                             </div>
@@ -102,7 +102,7 @@
 
         {% block footer %}
             {% if footer %}
-                <footer id="footer">
+                <footer id="footer" class="layout-footer">
                     <div class="inside">
                         {{ footer|raw }}
                     </div>

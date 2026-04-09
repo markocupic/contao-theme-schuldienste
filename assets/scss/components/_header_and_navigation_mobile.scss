@@ -2,7 +2,8 @@
   .header-mobile--inner {
     color: var(--bs-body-color);
     background: var(--bs-tertiary-bg);
-    padding: clamp-calc(1rem, 1.5rem);
+    padding: clamp-calc(1.5rem, 1.5rem);
+    padding-bottom: 0;
 
     .header-mobile--logo-box img {
       width: clamp-calc(150px, 450px);
@@ -21,9 +22,9 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* volle Breite */
-    height: 100vh; /* volle Höhe */
-    transform: translateX(-100%); /* initial versteckt */
+    width: 100vw; /* full width */
+    height: 100vh; /* full height */
+    transform: translateX(-100%); /* initially hidden */
     transition: transform 0.3s ease;
     opacity: 1;
     z-index: 2000;
@@ -31,7 +32,7 @@ body {
     background: var(--bs-tertiary-bg);
     margin: 0;
     overflow: hidden;
-    padding: clamp-calc(1rem, 1.5rem);
+    padding: clamp-calc(1.5rem, 1.5rem);
 
     .mobile-navigation--logo-box img {
       width: clamp-calc(150px, 450px);
@@ -43,8 +44,8 @@ body {
       color: var(--bs-body-color);
       background: transparent !important;
       position: absolute;
-      top: clamp-calc(1rem, 3rem);
-      right: clamp-calc(1rem, 3rem);
+      top: clamp-calc(1.5rem, 3rem);
+      right: clamp-calc(1.5rem, 3rem);
     }
 
     nav {

@@ -1,22 +1,37 @@
-// anchor navigation
-.content-anchor-link {
-  ul {
-    list-style-type: none !important;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 1.25rem;
-    row-gap: 1rem;
+#anchorLinks.content-anchor-link {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+
+  @media (min-width: $breakpoint-sm-up) {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 1rem;
   }
 
-  li {
-    a {
-      font-size: 1rem;
+  ul {
+    display: flex;
+    gap: 1rem 1.25rem;
+    padding-left: 0;
+    padding-bottom: 4px;
+    list-style: none !important;
+    overflow-x: auto;
+    scrollbar-width: 1px; // Versteckt die Standard-Bar in Firefox
+
+    &::-webkit-scrollbar {
+      height: 1px; // Exakte Höhe für Chrome/Safari
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--bs-primary);
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    li a {
+      white-space: nowrap;
     }
   }
-
-  margin-bottom: 0 !important;
-  border-bottom: 1px solid $gray-200;
 }

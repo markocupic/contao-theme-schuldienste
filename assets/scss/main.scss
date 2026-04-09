@@ -1,14 +1,15 @@
 // Include this file in your layout settings
 
+// import mixins & functions first!
+@import "functions/functions.scss";
+@import "mixins/mixins.scss";
+
 // Overwrite variables
 @import "variables.scss";
 
 // Import bootstrap
 // files/themes/schuldienste-theme/scss/main.scss
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
-// mixins
-@import "mixins/mixins.scss";
 
 @import "root.scss";
 // overrides bootstrap root vars

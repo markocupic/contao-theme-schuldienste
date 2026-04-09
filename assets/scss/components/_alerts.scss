@@ -1,4 +1,4 @@
-#main {
+.layout-main {
   div.alert {
     background: var(--bs-body-bg);
     margin-top: clamp-calc(1.5rem, 2.5rem);
@@ -15,7 +15,7 @@
 }
 
 html[data-bs-theme="dark"] {
-  #main {
+  .layout-main {
     div.alert {
       background-color: var(--bs-body-bg);
     }

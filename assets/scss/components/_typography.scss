@@ -23,7 +23,7 @@ a {
   }
 }
 
-#main {
+.layout-main {
 
   *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     &:not(.small):not(.smaller) {
@@ -36,7 +36,6 @@ a {
     #{$heading} {
       font-size: clamp-calc(nth($values, 1) * 1rem, nth($values, 2) * 1rem); // Fluid font size
       font-weight: nth($values, 4);
-      //margin-top: nth($values, 3) * 1.5rem;
       margin-bottom: clamp-calc(nth($values, 3) * .75rem, nth($values, 3) * 1.25rem);
       color: nth($values, 5);
     }
@@ -64,7 +63,7 @@ a {
 
   p {
     line-height: 1.6; // optimized readability
-    margin-top: clamp-calc(0.5rem, 1.25rem);
+    margin-top: 0;
     margin-bottom: clamp-calc(0.5rem, 1.25rem);
   }
 
@@ -90,7 +89,7 @@ a {
   }
 }
 
-#left {
+.layout-left {
   *:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
     &:not(.small):not(.smaller) {
       font-size: clamp-calc(.75rem, .875rem); // dynamic font-size

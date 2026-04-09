@@ -1,73 +1,25 @@
-#wrapper {
+.layout-wrapper {
   background-color: var(--bs-tertiary-bg);
   padding: 0;
 }
 
 @media (min-width: $breakpoint-xxl-up) {
-  #wrapper {
+  .layout-wrapper {
     max-width: 1380px;
   }
 }
 
-#left > .inside, #footer .footer-inner, #main > .inside {
-  padding: clamp-calc(1rem, 1.5rem);
+// Some padding for each layout section
+.layout-header, .layout-left, .layout-main, .layout-footer {
+  .inside {
+    padding: clamp-calc(1.5rem, 1.5rem);
+  }
 }
 
-#main .mod_article {
+.mod_article {
   padding-left: 0;
   padding-right: 0;
   overflow-x: hidden;
-
-  // Set a default margin after each content element
-  // Set a default margin after each content element
-  // Set a default margin after each content element
-  [class*="content-"]:not(.content-headline):not([class*="--inner"]):not(.content-hyperlink):not(.content-download),
-  [class*="ce_"]:not([class*="ce_row"]):not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]) {
-    margin-bottom: clamp-calc(2.5rem, 3.75rem);
-  }
-
-  // Override default margin-top with tl_content.marginTop
-  [class*="content-"].mt-none, [class*="ce_"].mt-none {
-    margin-top: 0 !important;
-  }
-
-  [class*="content-"].mt-small, [class*="ce_"].mt-small {
-    margin-top: clamp-calc(1.5rem, 2.25rem) !important;
-  }
-
-  [class*="content-"].mt-medium, [class*="ce_"].mt-medium {
-    margin-top: clamp-calc(2.5rem, 3.75rem) !important;
-  }
-
-  [class*="content-"].mt-large, [class*="ce_"].mt-large {
-    margin-top: clamp-calc(3.5rem, 5.35rem) !important;
-  }
-
-  // Override default margin-bottom with tl_content.marginBottom
-  [class*="content-"].mb-none, [class*="ce_"].mb-none {
-    margin-bottom: 0 !important;
-  }
-
-  [class*="content-"].mb-small, [class*="ce_"].mb-small {
-    margin-bottom: clamp-calc(1.5rem, 2.25rem) !important;
-  }
-
-  [class*="content-"].mb-medium, [class*="ce_"].mb-medium {
-    margin-bottom: clamp-calc(2.5rem, 3.75rem) !important;
-  }
-
-  [class*="content-"].mb-large, [class*="ce_"].mb-large {
-    margin-bottom: clamp-calc(3.5rem, 5.35rem) !important;
-  }
-
-  .content-text > .rte:first-child p {
-    margin-top: 0; // No margin top for the first paragraph in the RTE
-  }
-
-
-  // End content element margins
-  // End content element margins
-  // End content element margins
 
   .w-100 {
     img {
@@ -78,8 +30,56 @@
   }
 }
 
+// Set a default margin after each content element
+// Set a default margin after each content element
+// Set a default margin after each content element
+[class*="content-"]:not(.content-headline):not([class*="justify-content-"]):not([class*="--inner"]):not(.content-hyperlink):not(.content-download),
+[class*="ce_"]:not([class*="ce_row"]):not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]) {
+  margin-bottom: var(--bs-spacing-md);
+}
 
-#left .mod_search.block {
-  margin-top: 4rem;
-  margin-bottom: 3rem;
+// Override default margin-top with tl_content.marginTop
+[class*="content-"].mt-none, [class*="ce_"].mt-none {
+  margin-top: var(--bs-spacing-none) !important;
+}
+
+[class*="content-"].mt-small, [class*="ce_"].mt-small {
+  margin-top: var(--bs-spacing-sm) !important;
+}
+
+[class*="content-"].mt-medium, [class*="ce_"].mt-medium {
+  margin-top: var(--bs-spacing-md) !important;
+}
+
+[class*="content-"].mt-large, [class*="ce_"].mt-large {
+  margin-top: var(--bs-spacing-lg) !important;
+}
+
+// Override default margin-bottom with tl_content.marginBottom
+[class*="content-"].mb-none, [class*="ce_"].mb-none {
+  margin-bottom: var(--bs-spacing-none) !important;
+}
+
+[class*="content-"].mb-small, [class*="ce_"].mb-small {
+  margin-bottom: var(--bs-spacing-sm) !important;
+}
+
+[class*="content-"].mb-medium, [class*="ce_"].mb-medium {
+  margin-bottom: var(--bs-spacing-md) !important;
+}
+
+[class*="content-"].mb-large, [class*="ce_"].mb-large {
+  margin-bottom: var(--bs-spacing-lg) !important;
+}
+
+// End content element margins
+// End content element margins
+// End content element margins
+
+
+.layout-left {
+  .mod_search.block {
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
 }

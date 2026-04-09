@@ -12,7 +12,7 @@ $primary: $brand-color;
 // Restate Bootstrap Variables
 $body-bg: #f7f7f7;
 $body-bg-dark: #222222;
-$body-color: #333333;
+$body-color: #111111;
 $body-color-dark: #f4f4f4;
 $body-tertiary-bg: #fff;
 $body-tertiary-bg-dark: #121212;
@@ -27,3 +27,8 @@ $breakpoint-md-up: 768px;
 $breakpoint-lg-up: 992px;
 $breakpoint-xl-up: 1200px;
 $breakpoint-xxl-up: 1600px;
+
+// Spacings for content elements
+$spacing-sm: clamp-calc(1.5rem, 2rem);
+$spacing-md: clamp-calc(3rem, 4rem);
+$spacing-lg: clamp-calc(4.5rem, 6rem);

@@ -1,5 +1,9 @@
 {% extends "@Contao/content_element/_base.html.twig" %}
 
+{% set attributes = attributes|default(attrs())
+    .set('id', 'anchorLinks')
+%}
+
 {% block content %}
     {% set rand_id = '' %}{% for i in 1..8 %}{% set rand_id = rand_id ~ random('abcdefghijklmnopqrstuvwxyz') %}{% endfor %}
     <div class="anchor-links d-md-block block" id="{{ rand_id }}">

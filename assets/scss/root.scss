@@ -1,27 +1,31 @@
 :root, :root[data-bs-theme="light"] {
+  --accent-color: var(--bs-primary);
+  --spacing-none: 0;
+  --spacing-sm: #{$spacing-sm};
+  --spacing-md: #{$spacing-md};
+  --spacing-lg: #{$spacing-lg};
+  --box-bg-light: var(--bs-light);
+  --menu-bg: #ffffff;
+  --menu-bg-active: var(--bs-primary-bg-subtle);
+  --menu-bg-hover: var(--bs-body-bg);
+  --menu-color: #000000;
   --bs-heading-color-h1: #000000;
-  --bs-heading-color: $gray-800;
-  --bs-menu-bg: #ffffff;
-  --bs-menu-bg-active: var(--bs-primary-bg-subtle);
-  --bs-menu-bg-hover: var(--bs-body-bg);
-  --bs-menu-color: #000000;
+  --bs-heading-color: var(--bs-gray-800);
   --bs-alert-bg: var(--bs-alert-bg);
-  --bs-spacing-none: 0;
-  --bs-spacing-sm: #{$spacing-sm};
-  --bs-spacing-md: #{$spacing-md};
-  --bs-spacing-lg: #{$spacing-lg};
 }
 
 :root[data-bs-theme="dark"] {
+  --accent-color: var(--bs-primary);
+  //--spacing-none: 0;
+  //--spacing-sm: #{$spacing-sm};
+  //--spacing-md: #{$spacing-md};
+  //--spacing-lg: #{$spacing-lg};
+  --box-bg-light: var(--bs-body-bg);
+  --menu-bg: var(--bs-body-bg);
+  --menu-bg-active: var(--bs-body-bg);
+  --menu-bg-hover: var(--bs-tertiary-bg);
+  --menu-color: #f8f9fa;
   --bs-heading-color-h1: var(--bs-body-color);
-  --bs-heading-color: var(--bs-body-color);
-  --bs-menu-bg: var(--bs-body-bg);
-  --bs-menu-bg-active: var(--bs-body-bg);
-  --bs-menu-bg-hover: var(--bs-tertiary-bg);
-  --bs-menu-color: #f8f9fa;
+  --bs-heading-color: #ededed;
   --bs-alert-bg: var(--bs-body-bg);
-  //--bs-spacing-none: 0;
-  //--bs-spacing-sm: #{$spacing-sm};
-  //--bs-spacing-md: #{$spacing-md};
-  //--bs-spacing-lg: #{$spacing-lg};
 }

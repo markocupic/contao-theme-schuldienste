@@ -15,7 +15,6 @@
 // overrides bootstrap root vars
 
 //scss
-@import "components/bootstrap-overrides.scss";
 @import "components/reset.scss";
 @import "components/layout.scss";
 @import "components/header.scss";
@@ -24,6 +23,7 @@
 
 @import "components/logo.scss";
 @import "components/content_anchor_links.scss";
+@import "components/card.scss";
 @import "components/alerts.scss";
 @import "components/content_downloads_and_hyperlinks.scss";
 @import "components/_header_and_navigation_mobile.scss";

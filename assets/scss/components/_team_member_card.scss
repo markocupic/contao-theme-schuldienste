@@ -1,9 +1,31 @@
+@keyframes pulse-opacity {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.9; /* wie stark soll der Puls sein? */
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 .layout-main .content-rsce-team .team-member-card {
+  overflow: hidden;
+
   .team-member-card__inner {
+    transition: transform 0.2s ease;
+    transform: scale(1);
+
+    &:hover {
+      transform: scale(1.03);
+    }
+
     display: flex;
     gap: 1rem;
-    background: var(--bs-body-bg);
-    padding: .75rem;
+    background: var(--box-bg-light);
+    padding: 1.25rem;
     border-radius: var(--bs-border-radius);
 
     .team-member-card__col-1 {
@@ -14,11 +36,40 @@
         flex: 0 0 100px;
       }
 
-      img {
-        width: 100%;
-        max-width: 100%;
-        min-width: 100%;
+      .team-member-card__avatar {
+        position: relative;
+        border-radius: 50%;
+        //border: 4px solid var(--accent-color);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 0%);
+
+        img {
+          border-radius: 50px;
+          border: 4px solid transparent;
+          width: 100%;
+          max-width: 100%;
+          min-width: 100%;
+        }
+
+        .team-member-card__status-indicator {
+          position: absolute;
+          bottom: 4px;
+          right: 1px;
+          width: 12px;
+          height: 12px;
+          @media (min-width: $breakpoint-lg-up) {
+            bottom: 4px;
+            right: 5px;
+            width: 18px;
+            height: 18px;
+          }
+          //background: #10b981;
+          background: var(--bs-teal);
+
+          border-radius: 50%;
+          animation: pulse-opacity 4s ease-in-out infinite;
+        }
       }
+
     }
 
     .team-member-card__col-2 {

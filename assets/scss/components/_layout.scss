@@ -34,7 +34,7 @@
 // Set a default margin after each content element
 // Set a default margin after each content element
 [class*="content-"] {
-  margin-bottom: var(--bs-spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 // But no margin-bottom for these elements:
@@ -45,36 +45,36 @@
 
 // Override default margin-top with tl_content.marginTop
 [class*="content-"].mt-none, [class*="ce_"].mt-none {
-  margin-top: var(--bs-spacing-none) !important;
+  margin-top: var(--spacing-none) !important;
 }
 
 [class*="content-"].mt-small, [class*="ce_"].mt-small {
-  margin-top: var(--bs-spacing-sm) !important;
+  margin-top: var(--spacing-sm) !important;
 }
 
 [class*="content-"].mt-medium, [class*="ce_"].mt-medium {
-  margin-top: var(--bs-spacing-md) !important;
+  margin-top: var(--spacing-md) !important;
 }
 
 [class*="content-"].mt-large, [class*="ce_"].mt-large {
-  margin-top: var(--bs-spacing-lg) !important;
+  margin-top: var(--spacing-lg) !important;
 }
 
 // Override default margin-bottom with tl_content.marginBottom
 [class*="content-"].mb-none, [class*="ce_"].mb-none {
-  margin-bottom: var(--bs-spacing-none) !important;
+  margin-bottom: var(--spacing-none) !important;
 }
 
 [class*="content-"].mb-small, [class*="ce_"].mb-small {
-  margin-bottom: var(--bs-spacing-sm) !important;
+  margin-bottom: var(--spacing-sm) !important;
 }
 
 [class*="content-"].mb-medium, [class*="ce_"].mb-medium {
-  margin-bottom: var(--bs-spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
 }
 
 [class*="content-"].mb-large, [class*="ce_"].mb-large {
-  margin-bottom: var(--bs-spacing-lg) !important;
+  margin-bottom: var(--spacing-lg) !important;
 }
 
 // End content element margins

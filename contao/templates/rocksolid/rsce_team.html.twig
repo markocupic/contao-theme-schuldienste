@@ -8,9 +8,12 @@
                     <div class="team-member-card">
                         <div class="team-member-card__inner">
                             <div class="team-member-card__col-1">
-                                {% if member.image|default %}
-                                    {{ insert_tag('picture::'~member.image~'?size=3&class=img-fluid rounded-circle w-100&alt='~member.name)|raw }}
-                                {% endif %}
+                                <div class="team-member-card__avatar">
+                                    {% if member.image|default %}
+                                        {{ insert_tag('picture::'~member.image~'?size=3&class=img-fluid rounded-circle w-100&alt='~member.name)|raw }}
+                                        <div class="team-member-card__status-indicator"></div>
+                                    {% endif %}
+                                </div>
                             </div>
                             <div class="team-member-card__col-2">
                                 {% if member.name|default %}

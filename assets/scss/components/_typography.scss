@@ -3,7 +3,7 @@
 /** All sections **/
 
 $headings-map: (
-        h1: (1.8, 2.6, 1.3, 900, var(--bs-primary)), // font-size min, font-size max, margin, font-weight
+        h1: (1.8, 2.8, 1.3, 300, var(--accent-color)), // font-size min, font-size max, margin, font-weight
         h2: (1.25, 1.875, 1.3, 600, var(--bs-heading-color)),
         h3: (1.2, 1.8, 1.2, 600, var(--bs-heading-color)),
         h4: (1.15, 1.725, 1, 600, var(--bs-heading-color)),
@@ -63,7 +63,7 @@ p {
 
   @include media-breakpoint-up(lg) {
     h2 {
-      @include icon-before('\f138', $primary);
+      @include icon-before('\f138', var(--accent-color));
     }
   }
 
@@ -76,7 +76,8 @@ p {
     color: var(--bs-body-color);
     // Revert the icon before settings
     display: block;
-    &:before{
+
+    &:before {
       display: none;
     }
   }

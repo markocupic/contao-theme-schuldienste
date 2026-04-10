@@ -4,21 +4,21 @@ $font-family-sans-serif: 'Google Sans', system-ui, -apple-system, "Segoe UI", Ro
 
 $icon-font-name: "Font Awesome 7 Free";
 
-$brand-color: #fc6b23;
+$accent-color: #fc6b23;
 
 // Set the brand color for schuldienste.ch
-$primary: $brand-color;
+$primary: $accent-color;
 
 // Restate Bootstrap Variables
 $body-bg: #f7f7f7;
-$body-bg-dark: #222222;
+$body-bg-dark: #1c1c1c;
 $body-color: #111111;
 $body-color-dark: #f4f4f4;
 $body-tertiary-bg: #fff;
-$body-tertiary-bg-dark: #121212;
+$body-tertiary-bg-dark: #141414;
 
-$link-color: darken($brand-color, 13%); // Minimal contrast ration of 1:4.1
-$link-color-dark: $brand-color; // Minimal contrast ration of 1:4.1
+$link-color: darken($accent-color, 13%); // Minimal contrast ration of 1:4.1
+$link-color-dark: $accent-color; // Minimal contrast ration of 1:4.1
 
 
 // Breakpoints

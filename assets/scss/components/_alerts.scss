@@ -1,24 +1,19 @@
 .layout-main {
   div.alert {
     @extend .border-0;
-    background: var(--bs-body-bg);
     margin-top: clamp-calc(1.5rem, 2.5rem);
     margin-bottom: clamp-calc(1.5rem, 2.5rem);
 
-    div.rte > p:first-child, *:first-child {
+    &.alert-light {
+      background: var(--box-bg-light);
+    }
+
+    *:first-child {
       margin-top: 0 !important;
     }
 
     *:last-child {
       margin-bottom: 0 !important;
-    }
-  }
-}
-
-html[data-bs-theme="dark"] {
-  .layout-main {
-    div.alert {
-      background-color: var(--bs-body-bg);
     }
   }
 }

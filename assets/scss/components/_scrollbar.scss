@@ -3,20 +3,20 @@
   display: none;
   height: 13px;
   border-radius: 0px;
-  background-color: #AAA;
+  background-color: #aaaaaa;
 }
 
 ::-webkit-scrollbar-button:hover {
-  background-color: #AAA;
+  background-color: #aaaaaa;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $primary;
+  background-color: var(--accent-color);
   border-radius: 8px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: $primary;
+  background-color: var(--accent-color);
 }
 
 ::-webkit-scrollbar-track {
@@ -24,7 +24,7 @@
 }
 
 ::-webkit-scrollbar-track:hover {
-  background-color: #CCC;
+  background-color: #cccccc;
 }
 
 ::-webkit-scrollbar {

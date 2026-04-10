@@ -33,9 +33,14 @@
 // Set a default margin after each content element
 // Set a default margin after each content element
 // Set a default margin after each content element
-[class*="content-"]:not(.content-headline):not([class*="justify-content-"]):not([class*="--inner"]):not(.content-hyperlink):not(.content-download),
-[class*="ce_"]:not([class*="ce_row"]):not([class*="ce_dma_simplegrid_row_start"]):not([class*="ce_dma_simplegrid_column_start"]) {
+[class*="content-"] {
   margin-bottom: var(--bs-spacing-md);
+}
+
+// But no margin-bottom for these elements:
+[class*="ce_"], .ce_row, .ce_dma_simplegrid_row_start, .ce_dma_simplegrid_column_start,
+.content-headline, [class*="justify-content-"], .content-hyperlink, .content-download {
+  margin-bottom: 0;
 }
 
 // Override default margin-top with tl_content.marginTop
@@ -78,7 +83,7 @@
 
 
 .layout-left {
-  .mod_search.block {
+  .mod_search {
     margin-top: 4rem;
     margin-bottom: 3rem;
   }

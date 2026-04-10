@@ -5,7 +5,7 @@
     <form{% if action|default %} action="{{ action }}"{% endif %} method="get">
         <div class="formbody">
             <div class="widget widget-text form-floating mb-3">
-                <input type="search" name="keywords" class="form-control" id="ctrl_keywords_{{ uniqueId }}" placeholder="Suche" value="{{ keyword }}" spellcheck="false" aria-label="Suche" aria-describedby="ctrl_submit_{{ uniqueId }}">
+                <input type="search" name="keywords" class="form-control border-0" id="ctrl_keywords_{{ uniqueId }}" placeholder="Suche" value="{{ keyword }}" spellcheck="false" aria-label="Suche" aria-describedby="ctrl_submit_{{ uniqueId }}">
                 {# <button class="btn btn-primary" type="submit" id="ctrl_submit_{{ uniqueId }}"><i class="fa fa-search"></i></button> #}
                 <label for="ctrl_keywords_{{ uniqueId }}">{{ keywordLabel }}</label>
             </div>

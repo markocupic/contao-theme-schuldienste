@@ -1,11 +1,11 @@
 #headerMobile.header-mobile {
-  .header-mobile--inner {
+  .header-mobile__inner {
     color: var(--bs-body-color);
     background: var(--bs-tertiary-bg);
     padding: clamp-calc(1.5rem, 1.5rem);
     padding-bottom: 0;
 
-    .header-mobile--logo-box img {
+    .header-mobile__logo-box img {
       width: clamp-calc(150px, 450px);
       height: auto;
     }
@@ -34,7 +34,7 @@ body {
     overflow: hidden;
     padding: clamp-calc(1.5rem, 1.5rem);
 
-    .mobile-navigation--logo-box img {
+    .mobile-navigation__logo-box img {
       width: clamp-calc(150px, 450px);
       height: auto;
       margin-bottom: clamp-calc(3rem, 6rem);

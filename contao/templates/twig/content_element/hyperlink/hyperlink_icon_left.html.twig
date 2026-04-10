@@ -6,7 +6,7 @@
         {# Link wrapping text #}
         {% block text_link %}
             {{- text_before -}}
-            <div class="content-hyperlink--inner">
+            <div class="content-hyperlink__inner">
                 {# <i class="fa fa-link"></i> #}
                 <a{{ attrs(link_attributes|default) }}>{{ link_text|insert_tag }}</a>
             </div>

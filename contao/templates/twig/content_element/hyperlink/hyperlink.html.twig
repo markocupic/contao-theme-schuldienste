@@ -7,10 +7,10 @@
         {% block text_link %}
             {{- text_before -}}
             <div class="icon-box-link-element">
-                <div class="icon-box-link-element--icon">
+                <div class="icon-box-link-element__icon">
                     <a{{ attrs(link_attributes|default) }}><i class="fa-solid fa-link"></i></a>
                 </div>
-                <div class="icon-box-link-element--link">
+                <div class="icon-box-link-element__link">
                     <a{{ attrs(link_attributes|default) }}>{{ link_text }}</a>
                 </div>
             </div>

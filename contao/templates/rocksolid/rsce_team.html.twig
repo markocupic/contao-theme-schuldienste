@@ -6,32 +6,32 @@
             {% for member in members %}
                 <div class="col-12 col-sm-6">
                     <div class="team-member-card">
-                        <div class="team-member-card--inner">
-                            <div class="col_1">
+                        <div class="team-member-card__inner">
+                            <div class="team-member-card__col-1">
                                 {% if member.image|default %}
                                     {{ insert_tag('picture::'~member.image~'?size=3&class=img-fluid rounded-circle w-100&alt='~member.name)|raw }}
                                 {% endif %}
                             </div>
-                            <div class="col_2">
+                            <div class="team-member-card__col-2">
                                 {% if member.name|default %}
-                                    <div class="team-member-name">
+                                    <div class="team-member-card__name">
                                         <h6 class="mt-0 text-primary">{{ member.name }}</h6>
                                     </div>
                                 {% endif %}
                                 {% if member.function|default %}
-                                    <div class="team-member-function small mb-2">
+                                    <div class="team-member-card__function small mb-2">
                                         <strong>{{ member.function }}</strong>
                                     </div>
                                 {% endif %}
-                                <div class="team-member-description small mb-2">
+                                <div class="team-member-card__description small text-muted mb-2">
                                     {{ member.description|raw|nl2br }}
                                 </div>
-                                <div class="team-member-phone small mb-2">
+                                <div class="team-member-card__phone small mb-2">
                                     <address>
                                         <a href="tel:{{ member.phone|replace({' ':''}) }}">{{ member.phone }}</a>
                                     </address>
                                 </div>
-                                <div class="team-member-email small mb-2">
+                                <div class="team-member-card__email small mb-2">
                                     <address>
                                         {{ insert_tag('email_open::'~member.email)|raw }}E-Mail</a>
                                     </address>

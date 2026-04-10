@@ -1,11 +1,15 @@
-.content-downloads, .content-download, .content-hyperlinks, .content-hyperlink, .content-job-list {
+.content-downloads, .content-download, .content-hyperlinks, .content-hyperlink {
+  .content-downloads__inner, .content-download__inner, .content-hyperlinks__inner, .content-hyperlink__inner {
+    margin-bottom: 0;
+  }
+
   ul {
     margin: 0;
     list-style-type: none;
     padding-left: 0 !important
   }
 
-  .content-hyperlink--inner {
+  .content-hyperlink__inner {
     padding: 0 !important;
   }
 }
@@ -17,12 +21,11 @@
 
   }
 
-  .icon-box-link-element--icon {
+  .icon-box-link-element__icon {
     display: none;
   }
 }
 
-.mod_article .content-hyperlink {
+.content-hyperlink {
   margin-top: .75rem !important;
 }
-

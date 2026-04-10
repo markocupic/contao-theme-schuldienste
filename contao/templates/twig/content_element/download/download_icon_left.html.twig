@@ -9,7 +9,7 @@
 
 {% block content %}
     {% if downloads %}
-        <div class="content-download--inner">
+        <div class="content-download__inner">
             {# <i class="fa fa-file-download"></i> #}
             {% with {download: downloads|first} %}{{ block('download_component') }}{% endwith %}
         </div>

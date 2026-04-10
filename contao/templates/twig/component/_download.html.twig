@@ -63,13 +63,13 @@ Note:
 
         <div class="icon-box-link-element">
 
-            <div class="icon-box-link-element--icon d-none">
+            <div class="icon-box-link-element__icon d-none">
                 <a{% block download_link_attributes %}{{ download_link_attributes }}{% endblock %}>
                     <i data-ext="{{ ext }}" class="fa-solid {{ icon }}"></i>
                 </a>
             </div>
 
-            <div class="icon-box-link-element--link ">
+            <div class="icon-box-link-element__link">
                 <a{{ block('download_link_attributes') }}>
                     {%- block download_link_inner %}{{ text }}{% endblock -%}
                 </a>

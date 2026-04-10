@@ -1,22 +1,22 @@
 {% block address_card_component %}
-    <div class="card">
-        <div class="card-body">
+    <div class="address-card card border-0">
+        <div class="address-card__body card-body">
             <address class="mb-3">
                 {% if name|default %}
-                    <div class="card-title mb-3">{% if href|default %}<a href="{{ url }}">{% endif %}<strong>{{ name }}</strong>{% if href|default %}</a>{% endif %}</div>
+                    <div class="address-card__title card-title mb-3">{% if href|default %}<a href="{{ url }}">{% endif %}<strong>{{ name }}</strong>{% if href|default %}</a>{% endif %}</div>
                 {% endif %}
                 {% if function|default %}
-                    <div class="text-muted mb-2 text-body-secondary">{{ function }}</div>
+                    <div class="address-card__postalandcity"><span class="text-muted mb-2 text-body-secondary">{{ function }}</span></div>
                 {% endif %}
                 {% if street|default %}
-                    <div>{{ street }}</div>
+                    <div class="address-card__street"><span>{{ street }}</span></div>
                 {% endif %}
-                <div>{{ postal|default }} {{ city|default }}</div>
+                <div class="address-card__postalandcity"><span>{{ postal|default }}</span> <span>{{ city|default }}</span></div>
                 {% if phone|default %}
-                    <div><a class="card-link" href="tel:{{ phone|replace([' ', '']) }}">{{ phone }}</a></div>
+                    <div class="address-card__phone"><a class="card-link" href="tel:{{ phone|replace([' ', '']) }}">{{ phone }}</a></div>
                 {% endif %}
                 {% if email|default %}
-                    <div>{{ insert_tag('email::'~email)|raw }}</div>
+                    <div class="address-card__email">{{ insert_tag('email::'~email)|raw }}</div>
                 {% endif %}
             </address>
         </div>

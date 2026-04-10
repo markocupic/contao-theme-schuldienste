@@ -13,9 +13,18 @@ declare(strict_types=1);
  */
 
 use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\AnchorLinkController;
+use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\TextGalleryController;
 
 // Content elements
+$GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addTextGallery';
+
 $GLOBALS['TL_DCA']['tl_content']['palettes'][AnchorLinkController::TYPE] = '{type_legend},type,headline;{config_legend},anchorLinkContext';
+$GLOBALS['TL_DCA']['tl_content']['palettes'][TextGalleryController::TYPE] = '{type_legend},type,headline,title;{text_legend},text;{source_legend},addTextGallery;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
+
+
+// Sub-palettes
+$GLOBALS['TL_DCA']['tl_content']['subpalettes']['addTextGallery'] = 'multiSRC,useHomeDir,sortBy,metaIgnore,size,fullsize';
+
 
 // This field is injected into every content element
 $GLOBALS['TL_DCA']['tl_content']['fields']['marginTop'] = [
@@ -54,3 +63,11 @@ $GLOBALS['TL_DCA']['tl_content']['fields']['anchorLinkContext'] = [
     'eval'      => ['multiple' => false, 'tl_class' => 'w25'],
     'sql'       => ['type' => 'string', 'length' => 32, 'default' => '#main'],
 ];
+
+// This field belongs to the text_gallery content element
+$GLOBALS['TL_DCA']['tl_content']['fields']['addTextGallery'] = [
+    'inputType' => 'checkbox',
+    'eval'      => ['submitOnChange' => true],
+    'sql'       => ['type' => 'boolean', 'default' => false]
+];
+

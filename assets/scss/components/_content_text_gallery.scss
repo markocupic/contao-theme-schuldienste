@@ -1,0 +1,11 @@
+[data-bs-theme="dark"] {
+  .content-text-gallery {
+    background-color: var(--box-bg-light);
+    border-radius: var(--bs-border-radius);
+    overflow: hidden;
+
+    .content-text-gallery__col-text {
+      padding: 1rem;
+    }
+  }
+}

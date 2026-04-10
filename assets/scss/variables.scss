@@ -20,7 +20,6 @@ $body-tertiary-bg-dark: #141414;
 $link-color: darken($accent-color, 13%); // Minimal contrast ration of 1:4.1
 $link-color-dark: $accent-color; // Minimal contrast ration of 1:4.1
 
-
 // Breakpoints
 $breakpoint-sm-up: 576px;
 $breakpoint-md-up: 768px;
@@ -29,6 +28,7 @@ $breakpoint-xl-up: 1200px;
 $breakpoint-xxl-up: 1600px;
 
 // Spacings for content elements
+$spacing-xs: clamp-calc(.75rem, 1rem);
 $spacing-sm: clamp-calc(1.5rem, 2rem);
 $spacing-md: clamp-calc(3rem, 4rem);
 $spacing-lg: clamp-calc(4.5rem, 6rem);

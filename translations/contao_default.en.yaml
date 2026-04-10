@@ -1,4 +1,7 @@
 CTE:
     anchor_link:
-        - Anchor-Link-Container
-        - Fügen Sie dem Artikel einen Anchor-Link-Container hinzu.
+        - Anchor link container
+        - Add an anchor link container to the article.
+    text_gallery:
+        - Text with image gallery
+        - Add a text element with an adjacent image gallery to the article.

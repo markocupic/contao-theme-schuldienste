@@ -1,6 +1,7 @@
 :root, :root[data-bs-theme="light"] {
   --accent-color: var(--bs-primary);
   --spacing-none: 0;
+  --spacing-xs: #{$spacing-xs};
   --spacing-sm: #{$spacing-sm};
   --spacing-md: #{$spacing-md};
   --spacing-lg: #{$spacing-lg};
@@ -16,6 +17,7 @@
 
 :root[data-bs-theme="dark"] {
   --accent-color: var(--bs-primary);
+  //--spacing-xs: #{$spacing-xs};
   //--spacing-none: 0;
   //--spacing-sm: #{$spacing-sm};
   //--spacing-md: #{$spacing-md};

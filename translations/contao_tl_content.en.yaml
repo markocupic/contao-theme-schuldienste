@@ -14,6 +14,10 @@ tl_content:
     anchorLinkContext:
         - Such-Kontext
         - Layout Element (CSS ID) in dem nach Sprungmarken gesucht werden soll.
+    addTextGallery:
+        - Add image gallery
+         Add an image gallery to the element.
+
     # References
     mt-none:
         - Kein Abstand

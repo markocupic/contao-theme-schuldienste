@@ -1,10 +1,12 @@
 // Variables
 
-$font-family-sans-serif: 'Google Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
-
 $icon-font-name: "Font Awesome 7 Free";
 
-$accent-color: #fc6b23;
+$font-family-sans-serif: 'Montserrat', 'Google Sans', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$line-height-base: 1.8;
+$font-weight-base: 400;
+
+$accent-color: #fd6b22;
 
 // Set the brand color for schuldienste.ch
 $primary: $accent-color;

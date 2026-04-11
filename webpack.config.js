@@ -12,10 +12,15 @@ Encore
         to: 'bootstrap/dist/js/[path][name].[ext]',
         pattern: /(bootstrap\.bundle\.min\.js)$/,
     })
-  
+
     .copyFiles({
         from: './assets/js',
         to: 'js/[path][name].[hash:8].[ext]'
+    })
+
+    .copyFiles({
+        from: './assets/images',
+        to: 'images/[path][name].[ext]'
     })
 
     .disableSingleRuntimeChunk()

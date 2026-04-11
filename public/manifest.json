@@ -1,8 +1,20 @@
 {
-  "styles/frontend.css": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.287ab43a.css",
+  "styles/frontend.css": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.191c8da5.css",
   "bootstrap/dist/js/bootstrap.bundle.min.js": "/bundles/markocupiccontaoschuldienstetheme/bootstrap/dist/js/bootstrap.bundle.min.js",
+  "glidejs/dist/glide.modular.esm.js": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/glide.modular.esm.6870025a.js",
+  "glidejs/dist/glide.esm.js": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/glide.esm.9d9ef058.js",
+  "glidejs/dist/glide.js": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/glide.482ab02f.js",
+  "glidejs/dist/glide.min.js": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/glide.min.a8fdef3c.js",
+  "glidejs/dist/css/glide.theme.css": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.theme.fc4bc211.css",
+  "glidejs/dist/css/glide.theme.min.css": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.theme.min.1bdb6361.css",
+  "glidejs/dist/css/glide.core.css": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.core.b635f1af.css",
+  "glidejs/dist/css/glide.core.min.css": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.core.min.589bf02f.css",
+  "glidejs/dist/css/glide.theme.min.css.map": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.theme.min.css.132efe0b.map",
   "js/theme.js": "/bundles/markocupiccontaoschuldienstetheme/js/theme.7961aef7.js",
+  "glidejs/dist/css/glide.theme.css.map": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.theme.css.235a4431.map",
+  "glidejs/dist/css/glide.core.min.css.map": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.core.min.css.fcef73ad.map",
+  "glidejs/dist/css/glide.core.css.map": "/bundles/markocupiccontaoschuldienstetheme/glidejs/dist/css/glide.core.css.c999e718.map",
   "images/bi-check2--accent.svg": "/bundles/markocupiccontaoschuldienstetheme/images/bi-check2--accent.29bde043.svg",
   "images/icons/bootstrap/bi-check2--accent.svg": "/bundles/markocupiccontaoschuldienstetheme/images/icons/bootstrap/bi-check2--accent.svg",
-  "frontend.287ab43a.css.map": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.287ab43a.css.map"
+  "frontend.191c8da5.css.map": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.191c8da5.css.map"
 }

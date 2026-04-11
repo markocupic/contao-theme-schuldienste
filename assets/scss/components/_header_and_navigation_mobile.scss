@@ -2,8 +2,6 @@
   .header-mobile__inner {
     color: var(--bs-body-color);
     background: var(--bs-tertiary-bg);
-    padding: clamp-calc(1.5rem, 1.5rem);
-    padding-bottom: 0;
 
     .header-mobile__logo-box img {
       width: clamp-calc(150px, 450px);

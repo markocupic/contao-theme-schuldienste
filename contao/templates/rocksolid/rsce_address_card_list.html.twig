@@ -2,11 +2,51 @@
 {% use "@MarkocupicContaoSchuldiensteTheme/component/frontend/address_card_component.html.twig" %}
 
 {% block content %}
-    <ul class="list-unstyled row g-3">
-        {% for card in cards %}
-            <li class="col-12 col-sm-6 col-md-4">
-                {% with card %}{{ block('address_card_component') }}{% endwith %}
-            </li>
-        {% endfor %}
-    </ul>
+    {% if slide %}
+        {% add to head %}
+            <link rel="stylesheet" href="{{ asset('glidejs/dist/css/glide.core.min.css','markocupic_contao_schuldienste_theme') }}">
+        {% endadd %}
+        {% add to body %}
+            <script src="{{ asset('glidejs/dist/glide.min.js','markocupic_contao_schuldienste_theme') }}"></script>
+            <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+                new Glide('.glide', {
+                    type: 'slider',
+                    bound: true,     // verhindert, dass Glide über das letzte Slide hinaus scrollt
+                    perView: 2,
+                    peek: {before: 0, after: 20},
+                }).mount();
+            </script>
+        {% endadd %}
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides list-unstyled">
+                    {% for card in cards %}
+                        <li class="glide__slide">{% with card %}{{ block('address_card_component') }}{% endwith %}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <div class="glide__arrows" data-glide-el="controls">
+                    <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+                        <svg class="glide__arrow-icon--left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+                            <path fill="currentColor" d="M164.7 331.3C158.5 325.1 158.5 314.9 164.7 308.7L372.7 100.7C378.9 94.5 389.1 94.5 395.3 100.7C401.5 106.9 401.5 117.1 395.3 123.3L198.6 320L395.3 516.7C401.5 522.9 401.5 533.1 395.3 539.3C389.1 545.5 378.9 545.5 372.7 539.3L164.7 331.3z"/>
+                        </svg>
+                    </button>
+                    <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+                        <svg class="glide__arrow-icon--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+                            <path fill="currentColor" d="M475.3 308.7C481.5 314.9 481.5 325.1 475.3 331.3L267.3 539.3C261.1 545.5 250.9 545.5 244.7 539.3C238.5 533.1 238.5 522.9 244.7 516.7L441.4 320L244.7 123.3C238.5 117.1 238.5 106.9 244.7 100.7C250.9 94.5 261.1 94.5 267.3 100.7L475.3 308.7z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <ul class="list-unstyled row g-3">
+            {% for card in cards %}
+                <li class="col-12 col-sm-6 col-md-4">
+                    {% with card %}{{ block('address_card_component') }}{% endwith %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 {% endblock %}

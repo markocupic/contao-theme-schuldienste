@@ -15,6 +15,14 @@ return [
     'contentCategory' => 'texts',
     'standardFields'  => ['headline', 'cssID'],
     'fields'          => [
+        'slide' => [
+            'label'     => [
+                'de' => ['Slider aktivieren', 'Die Liste wird als slide dargestellt.'],
+                'en' => ['Enable slider', 'The list will be presented as a slide.'],
+            ],
+            'inputType' => 'checkbox',
+            'eval'      => ['tl_class' => 'clr'],
+        ],
         'cards' => [
             'label'        => [
                 'de' => [

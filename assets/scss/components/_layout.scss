@@ -16,6 +16,16 @@
   }
 }
 
+// More padding for tablet devices
+@include media-breakpoint-between(md, lg) {
+  .layout-header, .layout-left, .layout-main, .layout-footer {
+    .inside {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
+  }
+}
+
 .mod_article {
   padding-left: 0;
   padding-right: 0;
@@ -80,11 +90,3 @@
 // End content element margins
 // End content element margins
 // End content element margins
-
-
-.layout-left {
-  .mod_search {
-    margin-top: 4rem;
-    margin-bottom: 3rem;
-  }
-}

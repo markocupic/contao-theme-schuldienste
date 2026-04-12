@@ -1,0 +1,70 @@
+// Slider
+.mcglide {
+  position: relative;
+  overflow: hidden;
+}
+
+.mcglide__track {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.mcglide[data-mcglide-hidescrollbar="true"] .mcglide__track {
+  overflow-x: auto;
+  scrollbar-width: none; /* Hide the scrollbar: Firefox */
+}
+
+.mcglide[data-mcglide-hidescrollbar="true"] .mcglide__track::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar: Chrome, Safari */
+}
+
+.mcglide__slides {
+  display: flex;
+  gap: 20px; /* optional */
+  padding: 0;
+  margin: 0;
+}
+
+.mcglide__slides::after {
+  content: "";
+  flex: 0 0 50px; /* 50px extra Breite */
+}
+
+.mcglide__slide {
+  flex: 0 0 auto;
+  width: 290px; /* oder was du brauchst */
+}
+
+/* Buttons */
+.mcglide__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fc6b23;
+  color: white;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.mcglide__arrow--left {
+  left: 1rem;
+}
+
+.mcglide__arrow--right {
+  right: 1rem;
+}
+
+.mcglide__arrow:disabled {
+  opacity: 0;
+  cursor: default;
+}
+
+.mcglide:hover .mcglide__arrow:disabled {
+  opacity: .1;
+}

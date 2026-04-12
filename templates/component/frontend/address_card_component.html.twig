@@ -1,3 +1,5 @@
+{% set ctx = _context.card is defined ? _context.card : _context %}
+
 {% block address_card_component %}
     <div class="address-card card border-0">
         <div class="address-card__body card-body">
@@ -9,22 +11,38 @@
                     </svg>
                 </div>
             </div>
+
             <address class="mb-3">
-                {% if name|default %}
-                    <div class="address-card__title card-title mb-3">{% if href|default %}<a href="{{ url }}">{% endif %}<strong>{{ name }}</strong>{% if href|default %}</a>{% endif %}</div>
+                {% if ctx.name|default %}
+                    <div class="address-card__title card-title mb-3">
+                        {% if ctx.href|default %}<a href="{{ ctx.url }}">{% endif %}
+                            <strong>{{ ctx.name }}</strong>
+                            {% if ctx.href|default %}</a>{% endif %}
+                    </div>
                 {% endif %}
-                {% if function|default %}
-                    <div class="address-card__postalandcity"><span class="text-muted mb-2 text-body-secondary">{{ function }}</span></div>
+
+                {% if ctx.function|default %}
+                    <div class="address-card__postalandcity">
+                        <span class="text-muted mb-2 text-body-secondary">{{ ctx.function }}</span>
+                    </div>
                 {% endif %}
-                {% if street|default %}
-                    <div class="address-card__street"><span>{{ street }}</span></div>
+
+                {% if ctx.street|default %}
+                    <div class="address-card__street"><span>{{ ctx.street }}</span></div>
                 {% endif %}
-                <div class="address-card__postalandcity"><span>{{ postal|default }}</span> <span>{{ city|default }}</span></div>
-                {% if phone|default %}
-                    <div class="address-card__phone"><a class="card-link" href="tel:{{ phone|replace([' ', '']) }}">{{ phone }}</a></div>
+
+                <div class="address-card__postalandcity">
+                    <span>{{ ctx.postal|default }}</span> <span>{{ ctx.city|default }}</span>
+                </div>
+
+                {% if ctx.phone|default %}
+                    <div class="address-card__phone">
+                        <a class="card-link" href="tel:{{ ctx.phone|replace([' ', '']) }}">{{ ctx.phone }}</a>
+                    </div>
                 {% endif %}
-                {% if email|default %}
-                    <div class="address-card__email">{{ insert_tag('email::'~email)|raw }}</div>
+
+                {% if ctx.email|default %}
+                    <div class="address-card__email">{{ insert_tag('email::'~ctx.email)|raw }}</div>
                 {% endif %}
             </address>
         </div>

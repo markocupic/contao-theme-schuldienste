@@ -22,11 +22,6 @@ Encore
         from: './assets/images',
         to: 'images/[path][name].[ext]'
     })
-    // Glide.js slider
-    .copyFiles({
-        from: './node_modules/@glidejs/glide/dist',
-        to: 'glidejs/dist/[path][name].[hash:8].[ext]',
-    })
 
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()

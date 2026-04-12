@@ -1,6 +1,5 @@
 {% extends "@Contao/content_element/_base.html.twig" %}
-{% use "@MarkocupicContaoSchuldiensteTheme/component/frontend/address_card_component.html.twig" %}
 
 {% block content %}
-    {{ block('address_card_component') }}
+    {% include "@MarkocupicContaoSchuldiensteTheme/component/frontend/address_card_component.html.twig" with _context %}
 {% endblock %}

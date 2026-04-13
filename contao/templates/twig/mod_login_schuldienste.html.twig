@@ -1,0 +1,74 @@
+{% trans_default_domain 'contao_default' %}
+{% extends '@Contao/block_unsearchable.html.twig' %}
+
+{% set wrapperAttributes = attrs()
+    .addClass(logout|default ? 'logout' : 'login')
+    .mergeWith(wrapperAttributes|default) %}
+
+{% block content %}
+
+    <form{% if action|default %} action="{{ action }}"{% endif %} id="{{ formId }}" method="post">
+        <div class="formbody">
+            {% if message|default %}
+                <p class="error text-danger">{{ message }}</p>
+            {% endif %}
+            <input type="hidden" name="FORM_SUBMIT" value="{{ formId }}">
+            <input type="hidden" name="REQUEST_TOKEN" value="{{ contao.request_token }}">
+            <input type="hidden" name="_target_path" value="{{ targetPath }}">
+            <input type="hidden" name="_always_use_target_path" value="{{ forceTargetPath|default }}">
+            {% if remembered|default %}
+                <input type="hidden" name="username" class="form-control" value="{{ value }}">
+                <input type="hidden" name="autologin" class="form-control" value="{{ autologin|default ? '1' : '' }}">
+            {% endif %}
+            {% if logout|default %}
+                <p class="login_info">{{ loggedInAs }}<br>{{ lastLogin|default }}</p>
+            {% elseif twoFactorEnabled|default %}
+                <h3>{{ twoFactorAuthentication }}</h3>
+                <div class="widget widget-text">
+                    <label for="verify">{{ authCode }}</label>
+                    <input type="text" name="verify" id="verify" class="text" value="" autocapitalize="off" autocomplete="one-time-code" required>
+                </div>
+                <div class="widget widget-checkbox">
+                    <fieldset class="checkbox_container">
+                        <span><input type="checkbox" name="trusted" id="trusted" value="1" class="tl_checkbox"> <label for="trusted">{{ 'MSC.twoFactorTrustDevice'|trans }}</label></span>
+                    </fieldset>
+                </div>
+            {% else %}
+                {% if remembered|default %}
+                    <p class="login_info">{{ loggedInAs }}<br>{{ reauthenticate }}</p>
+                {% else %}
+                    <div class="form-floating mb-5 widget widget-text">
+                        <input type="text" name="username" id="username" class="form-control text" value="{{ value }}" autocapitalize="off" autocomplete="username" required>
+                        <label for="username">{{ username }}</label>
+                    </div>
+                {% endif %}
+                <div class="form-floating mb-5 widget widget-password">
+                    <input type="password" name="password" id="password" class="form-control text password" value="" autocomplete="current-password" required>
+                    <label for="password">{{ password }}</label>
+                </div>
+                {% if autologin and not remembered|default %}
+                    <div class="widget widget-checkbox mb-5">
+                        <fieldset class="checkbox_container">
+                            <div class="form-check">
+                                <input type="checkbox" name="autologin" id="autologin" value="1" class="form-check-input checkbox">
+                                <label class="form-check-label" for="autologin">{{ autoLabel }}</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                {% endif %}
+            {% endif %}
+            <div class="widget widget-submit mb-3">
+                <button type="submit" class="btn btn-danger submit">{{ slabel }}</button>
+                {% if twoFactorEnabled|default %}
+                    <a href="{{ path('contao_frontend_logout') }}">{{ cancel }} ›</a>
+                {% endif %}
+            </div>
+            {% if pwResetUrl|default %}
+                <div class="password-reset">
+                    <a href="{{ pwResetUrl }}">{{ 'MSC.lostPassword'|trans }}</a>
+                </div>
+            {% endif %}
+        </div>
+    </form>
+
+{% endblock %}

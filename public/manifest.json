@@ -1,8 +1,8 @@
 {
-  "styles/frontend.css": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.5bcbfab6.css",
+  "styles/frontend.css": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.9d4fbc16.css",
+  "images/loginform/background.jpg": "/bundles/markocupiccontaoschuldienstetheme/images/loginform/background.jpg",
   "bootstrap/dist/js/bootstrap.bundle.min.js": "/bundles/markocupiccontaoschuldienstetheme/bootstrap/dist/js/bootstrap.bundle.min.js",
   "js/theme.js": "/bundles/markocupiccontaoschuldienstetheme/js/theme.7961aef7.js",
   "images/bi-check2--accent.svg": "/bundles/markocupiccontaoschuldienstetheme/images/bi-check2--accent.29bde043.svg",
-  "images/icons/bootstrap/bi-check2--accent.svg": "/bundles/markocupiccontaoschuldienstetheme/images/icons/bootstrap/bi-check2--accent.svg",
-  "frontend.5bcbfab6.css.map": "/bundles/markocupiccontaoschuldienstetheme/styles/frontend.5bcbfab6.css.map"
+  "images/icons/bootstrap/bi-check2--accent.svg": "/bundles/markocupiccontaoschuldienstetheme/images/icons/bootstrap/bi-check2--accent.svg"
 }

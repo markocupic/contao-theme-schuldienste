@@ -1,0 +1,20 @@
+<a class="" href="{{ insert_tag('env::url') }}">
+    <div class="layout-left__logo-box">
+        <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
+            {# Logo Schuldienste Kreis Dagmersellen #}
+            {{ include('@MarkocupicContaoSchuldiensteTheme/component/frontend/brand_logo.html.twig') }}
+        </a>
+    </div>
+</a>
+
+<button class="layout-left__navigation-toggle navigation-toggle" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fa-solid fa-bars nav-open"></i>
+    <i class="fa-solid fa-xmark nav-close"></i>
+</button>
+
+<div class="navigation">
+    {{ insert_tag('insert_module::1')|raw }}
+    <div class="mt-5">
+        {% include('@MarkocupicContaoSchuldiensteTheme/component/frontend/theme_toggle.html.twig') %}
+    </div>
+</div>

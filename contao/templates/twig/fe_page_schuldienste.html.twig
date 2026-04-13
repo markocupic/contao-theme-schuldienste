@@ -17,20 +17,20 @@
         <title>{{ title }}</title>
         <base href="{{ base }}">
 
-        {% block meta %}
-            <meta name="robots" content="{{ robots }}">
-            <meta name="description" content="{{ description|u.truncate(320, '…') }}">
-            <meta name="generator" content="Contao Open Source CMS">
-            {% for metaTag in metaTags|default %}
-                <meta{{ metaTag }}>
-            {% endfor %}
-            {% for linkTag in linkTags|default %}
-                <meta{{ linkTag }}>
-            {% endfor %}
-        {% endblock %}
+    {% block meta %}
+    <meta name="robots" content="{{ robots }}">
+    <meta name="description" content="{{ description|u.truncate(320, '…') }}">
+    <meta name="generator" content="Contao Open Source CMS">
+        {% for metaTag in metaTags|default %}
+    <meta{{ metaTag }}>
+        {% endfor %}
+        {% for linkTag in linkTags|default %}
+    <meta{{ linkTag }}>
+        {% endfor %}
+    {% endblock %}
 
         {% if canonical|default %}
-            <link rel="canonical" href="{{ canonical }}">
+    <link rel="canonical" href="{{ canonical }}">
         {% endif %}
 
         {# --- Add favicons --- #}
@@ -59,22 +59,21 @@
 
     <div id="wrapper" class="layout-wrapper container-xl">
         {% block header %}
-            {% if header %}
-                <header id="header" class="layout-header">
-                    <div class="inside">
-                        {{ header|raw }}
-                    </div>
-                </header>
-            {% endif %}
+            <header id="header" class="layout-header">
+                <div class="inside">
+                    {{ include('@MarkocupicContaoSchuldiensteTheme/layout_header.html.twig')|raw }}
+                    {{ header|raw }}
+                </div>
+            </header>
         {% endblock %}
 
         {{ contao_sections('before') }}
 
         {% block container %}
-            <div id="container" class="layout-container row gx-0">
+            <div id="container" class="layout-container">
 
                 {% block main %}
-                    <main id="main" class="layout-main col-12 col-lg-9 order-2">
+                    <main id="main" class="layout-main">
                         <div class="inside">
                             {{ main|raw }}
                         </div>
@@ -83,19 +82,12 @@
                 {% endblock %}
 
                 {% block left %}
-                    {% if left %}
-                        <aside id="left" class="layout-left d-none d-lg-block col-12 col-lg-3 order-1">
-                            <div class="inside sticky-lg-top">
-                                <div class="d-none d-lg-block mb-3 img-profile-container">
-                                    <a href="{{ insert_tag('env::url') }}">
-                                        {# Logo Schuldienste Kreis Dagmersellen #}
-                                        {{ include('@MarkocupicContaoSchuldiensteTheme/component/frontend/brand_logo.html.twig') }}
-                                    </a>
-                                </div>
-                                {{ left|raw }}
-                            </div>
-                        </aside>
-                    {% endif %}
+                    <aside id="left" class="layout-left fixed-top">
+                        <div class="inside ">
+                            {{ include('@MarkocupicContaoSchuldiensteTheme/layout_left.html.twig')|raw }}
+                            {{ left|raw }}
+                        </div>
+                    </aside>
                 {% endblock %}
 
                 {% block right %}

@@ -1,0 +1,54 @@
+<div class="d-flex justify-content-between">
+    <div>
+        <div class="layout-header__logo-box">
+            <a href="{{ insert_tag('env::url') }}" title="Schuldienste Dagmersellen">
+                {# Logo Schuldienste Kreis Dagmersellen #}
+                {{ include('@MarkocupicContaoSchuldiensteTheme/component/frontend/brand_logo.html.twig') }}
+            </a>
+        </div>
+    </div>
+    <div>
+        <ul class="layout-header__icon-links d-flex list-unstyled g-2">
+            <li>{{ include('@MarkocupicContaoSchuldiensteTheme/login_form.html.twig') }}</li>
+            <li>
+                <button class="layout-header__navigation-toggle navigation-toggle p-0 d-flex" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa-solid fa-bars nav-open"></i>
+                    <i class="fa-solid fa-xmark nav-close"></i>
+                    <span class="navigation-toggle__label d-none d-sm-block ms-2 lh-1">MENÜ</span>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+{% add to body %}
+    <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+        const body = document.querySelector('body');
+        const buttons = document.querySelectorAll('.navigation-toggle');
+
+        // Always set the aria-expanded attribute to the current state of the body
+        const observer = new MutationObserver(() => {
+            const expanded = body.classList.contains('navigation-active');
+            buttons.forEach(btn => btn.setAttribute('aria-expanded', expanded));
+        });
+
+        observer.observe(body, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+
+        for (const button of buttons) {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                button.disabled = true;
+                setTimeout(() => {
+                    button.disabled = false;
+                }, 1000);
+
+                body.classList.toggle('navigation-active');
+
+            });
+        }
+    </script>
+{% endadd %}

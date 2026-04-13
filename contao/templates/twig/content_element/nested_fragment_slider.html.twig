@@ -1,0 +1,113 @@
+{# templates/content_element/example.html.twig #}
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <div class="mcglide" data-mcglide-hidescrollbar="true">
+        <div class="mcglide__track">
+            {% block mcslider_slides %}
+                <ul class="mcglide__slides list-unstyled">
+                    {% for fragment in nested_fragments %}
+                    <li class="mcglide__slide">{{ content_element(fragment) }}</li>
+                    {% endfor %}
+                </ul>
+            {% endblock %}
+        </div>
+        <div class="mcglide__arrows">
+            <button class="mcglide__arrow mcglide__arrow--left">
+                <svg class="mcglide__arrow-icon--left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+                    <path fill="currentColor" d="M164.7 331.3C158.5 325.1 158.5 314.9 164.7 308.7L372.7 100.7C378.9 94.5 389.1 94.5 395.3 100.7C401.5 106.9 401.5 117.1 395.3 123.3L198.6 320L395.3 516.7C401.5 522.9 401.5 533.1 395.3 539.3C389.1 545.5 378.9 545.5 372.7 539.3L164.7 331.3z"/>
+                </svg>
+            </button>
+            <button class="mcglide__arrow mcglide__arrow--right">
+                <svg class="mcglide__arrow-icon--right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+                    <path fill="currentColor" d="M475.3 308.7C481.5 314.9 481.5 325.1 475.3 331.3L267.3 539.3C261.1 545.5 250.9 545.5 244.7 539.3C238.5 533.1 238.5 522.9 244.7 516.7L441.4 320L244.7 123.3C238.5 117.1 238.5 106.9 244.7 100.7C250.9 94.5 261.1 94.5 267.3 100.7L475.3 308.7z"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+    {% add to body %}
+        <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+            document.addEventListener("DOMContentLoaded", () => {
+                const sliders = document.querySelectorAll(".mcglide");
+
+                for (const root of sliders) {
+                    const track = root.querySelector(".mcglide__track");
+                    const btnLeft = root.querySelector(".mcglide__arrow--left");
+                    const btnRight = root.querySelector(".mcglide__arrow--right");
+
+                    const viewportWidth = () => root.clientWidth;
+
+                    function updateButtons() {
+                        btnLeft.disabled = track.scrollLeft <= 0;
+                        btnRight.disabled =
+                            track.scrollLeft + track.clientWidth >= track.scrollWidth - 1;
+                    }
+
+                    btnRight.addEventListener("click", () => {
+                        track.scrollBy({left: viewportWidth(), behavior: "smooth"});
+                        setTimeout(updateButtons, 350);
+                    });
+
+                    btnLeft.addEventListener("click", () => {
+                        track.scrollBy({left: -viewportWidth(), behavior: "smooth"});
+                        setTimeout(updateButtons, 350);
+                    });
+
+                    updateButtons();
+
+                    // --- Update buttons and scroll to 0 on window resize ---
+                    let resizeTimeout;
+                    window.addEventListener("resize", () => {
+                        clearTimeout(resizeTimeout);
+                        resizeTimeout = setTimeout(() => {
+                            track.scrollLeft = 0;
+                            updateButtons();
+                        }, 200);
+                    });
+
+                    // --- Swipe / Drag on the track ---
+                    let isDown = false;
+                    let startX;
+                    let scrollLeft;
+
+                    const startDrag = (pageX) => {
+                        isDown = true;
+                        startX = pageX - track.getBoundingClientRect().left;
+                        scrollLeft = track.scrollLeft;
+                    };
+
+                    const moveDrag = (pageX) => {
+                        if (!isDown) return;
+                        const x = pageX - track.getBoundingClientRect().left;
+                        const walk = (x - startX) * 1.2;
+                        track.scrollLeft = scrollLeft - walk;
+                    };
+
+                    const endDrag = () => {
+                        isDown = false;
+                        updateButtons();
+                    };
+
+                    // --- Mouse ---
+                    track.addEventListener("mousedown", (e) => {
+                        e.preventDefault();
+                        startDrag(e.pageX);
+                    });
+                    window.addEventListener("mousemove", (e) => moveDrag(e.pageX));
+                    window.addEventListener("mouseup", endDrag);
+
+                    // --- Touch ---
+                    track.addEventListener("touchstart", (e) => {
+                        startDrag(e.touches[0].pageX);
+                    }, {passive: true});
+
+                    track.addEventListener("touchmove", (e) => {
+                        moveDrag(e.touches[0].pageX);
+                    }, {passive: false});
+
+                    track.addEventListener("touchend", endDrag);
+                }
+            });
+        </script>
+    {% endadd %}
+{% endblock %}

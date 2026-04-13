@@ -1,7 +1,12 @@
 CTE:
+    schuldienste: Inhaltselemente Schuldienste
+
     anchor_link:
         - Anchor-Link-Container
         - Fügen Sie dem Artikel einen Anchor-Link-Container hinzu.
     text_gallery:
         - Text mit Bildergalerie
         - Fügen Sie dem Artikel ein Textelement mit nebenstehender Bildergalerie hinzu.
+    nested_fragment_slider:
+        - Slider Wrapper Element (Nested Fragements)
+        - Fügen Sie dem Artikel ein Slider Wrapper Element (Nested Fragments) hinzu.

@@ -14,13 +14,14 @@ declare(strict_types=1);
 
 use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\AnchorLinkController;
 use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\TextGalleryController;
+use Markocupic\ContaoSchuldiensteTheme\Controller\ContentElement\NestedFragmentSliderController;
 
 // Content elements
 $GLOBALS['TL_DCA']['tl_content']['palettes']['__selector__'][] = 'addTextGallery';
 
 $GLOBALS['TL_DCA']['tl_content']['palettes'][AnchorLinkController::TYPE] = '{type_legend},type,headline;{config_legend},anchorLinkContext';
 $GLOBALS['TL_DCA']['tl_content']['palettes'][TextGalleryController::TYPE] = '{type_legend},type,headline,title;{text_legend},text;{source_legend},addTextGallery;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},cssID;{invisible_legend:hide},invisible,start,stop';
-
+$GLOBALS['TL_DCA']['tl_content']['palettes'][NestedFragmentSliderController::TYPE] = 'name,type,headline;{template_legend},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop';
 
 // Sub-palettes
 $GLOBALS['TL_DCA']['tl_content']['subpalettes']['addTextGallery'] = 'multiSRC,useHomeDir,sortBy,metaIgnore,size,fullsize';

@@ -1,0 +1,37 @@
+{% extends "@Contao/content_element/_base.html.twig" %}
+
+{% block content %}
+    <div class="card" style="width: 16rem;">
+        <div class="overflow-hidden">
+            <div class="ratio ratio-1x1">
+                <div style="transform: translateY(0px)">
+                    {% block google_maps %}
+                        {% set iframe_attributes = attrs()
+                            .setIfExists('title',keys.title|default)
+                            .set('width',keys.width|default('100%'))
+                            .set('height',keys.height|default('300'))
+                            .set('frameborder',keys.frameborder|default('0'))
+                            .set('scrolling',keys.scrolling|default('no'))
+                            .set('marginheight',keys.marginheight|default('0'))
+                            .set('marginwidth',keys.marginwidth|default('0'))
+                            .set('src',keys.src|default(''))
+                            .mergeWith(iframe_attributes|default) %}
+                        <a href="https://maps.app.goo.gl/NnveX9VTrNnDhUeSA">
+                            <iframe{% block iframe_attributes %}{{ iframe_attributes }}{% endblock %} class="rounded-top"></iframe>
+                        </a>
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="d-flex gap-1 flex-row flex-wrap small">
+                {{ insert_tag('link_open::4')|raw }}<span class="badge text-bg-primary">Logopädischer Dienst</span>{{ insert_tag('link_close')|raw }}
+            </div>
+            <address class="small mt-3">
+                Gemeindehausweg 1<br>
+                6252 Dagmersellen
+            </address>
+        </div>
+    </div>
+{% endblock %}

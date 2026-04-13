@@ -1,0 +1,21 @@
+.content-headline {
+  @include media-breakpoint-up(lg) {
+    h2 {
+      @include icon-before('\f138', var(--accent-color));
+    }
+  }
+}
+
+h2.content-headline__subheading {
+  font-weight: 700 !important;
+  font-size: clamp-calc(1rem, 1.125rem) !important;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: var(--bs-body-color);
+  // Revert the icon before settings
+  display: block;
+
+  &:before {
+    display: none;
+  }
+}

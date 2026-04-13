@@ -62,28 +62,7 @@ p {
     }
   }
 
-  @include media-breakpoint-up(lg) {
-    h2 {
-      @include icon-before('\f138', var(--accent-color));
-    }
-  }
-
-  h2.content-headline__subheading {
-    font-weight: 700 !important;
-    font-size: clamp-calc(1rem, 1.125rem) !important;
-    margin-top: 0;
-    margin-bottom: 0;
-    color: var(--bs-body-color);
-    // Revert the icon before settings
-    display: block;
-
-    &:before {
-      display: none;
-    }
-  }
-
   p {
-    //line-height: 1.6; // optimized readability
     margin-top: 0;
     margin-bottom: clamp-calc(0.5rem, 1.25rem);
   }
@@ -135,10 +114,7 @@ p {
   // Loop through the map and apply styles
   @each $heading, $values in $headings-map {
     #{$heading} {
-      //font-size: clamp-calc(nth($values, 1) * 1rem, nth($values, 2) * 1rem);
-      //font-weight: nth($values, 4);
       margin-bottom: clamp-calc(nth($values, 3) * 0.5 * .75rem, nth($values, 3) * 0.5 * 1.25rem);
-      //color: nth($values, 5);
     }
   }
 }

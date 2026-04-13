@@ -17,13 +17,17 @@
 //scss
 @import "components/reset.scss";
 @import "components/layout.scss";
-@import "components/header.scss";
-@import "components/footer.scss";
+@import "components/layout_header.scss";
+@import "components/layout_left.scss";
+@import "components/layout_main.scss";
+@import "components/layout_footer.scss";
 @import "components/typography.scss";
 
 @import "components/logo.scss";
+@import "components/content_headline.scss";
 @import "components/content_anchor_links.scss";
 @import "components/content_text_gallery.scss";
+@import "components/content_rsce_address_card_list.scss";
 @import "components/content_address_card.scss";
 @import "components/content_team_member_card.scss";
 @import "components/content_downloads_and_hyperlinks.scss";

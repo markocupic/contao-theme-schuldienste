@@ -33,6 +33,17 @@
             <link rel="canonical" href="{{ canonical }}">
         {% endif %}
 
+        {# --- Add favicons --- #}
+        {{ include('@MarkocupicContaoSchuldiensteTheme/favicon.html.twig') }}
+        {# --- Add Google Fonts --- #}
+        {{ include('@MarkocupicContaoSchuldiensteTheme/google_fonts.html.twig') }}
+        {# --- Add Fontawesome --- #}
+        <link rel="stylesheet" href="assets/contao-component-fontawesome-free/fontawesomefree/css/all.css">
+        {# --- Add Theme scripts --- #}
+        <script src="{{ asset('js/theme.js', 'markocupic_contao_schuldienste_theme') }}"></script>
+        {# --- Add the theme styles --- #}
+        <link rel="stylesheet" href="{{ asset('styles/frontend.css', 'markocupic_contao_schuldienste_theme') }}">
+
         {{ viewport|raw }}
         {{ framework|raw }}
         {{ stylesheets|raw }}
@@ -119,6 +130,7 @@
 
 {{ mootools|raw }}
 {{ jsonLdScripts|raw }}
-
+{# --- Add Bootstrap --- #}
+<script src="{{ asset('bootstrap/dist/js/bootstrap.bundle.min.js', 'markocupic_contao_schuldienste_theme') }}"></script>
 </body>
 </html>

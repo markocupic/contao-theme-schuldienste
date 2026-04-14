@@ -40,7 +40,7 @@
         position: relative;
         border-radius: 50%;
         //border: 4px solid var(--accent-color);
-        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 0%);
+        box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color), transparent 50%);
 
         img {
           border-radius: 50px;

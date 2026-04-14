@@ -1,0 +1,91 @@
+html {
+  .mod_resourceBookingWeekcalendar {
+    .rbb-app {
+      margin: 0;
+      padding: 0 !important;
+      max-width: 50rem;
+
+      form {
+        margin: 0 !important;
+
+        button {
+          color: #fff;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+
+        .rbb-ressource-type-select {
+          display: none;
+        }
+      }
+
+      .rbb-vue-application {
+        .rbb-layout-table.rbb-booking-table-main {
+          .rbb-layout-box-inner {
+            display: flex;
+            flex-direction: column;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+html[data-bs-theme="dark"] {
+  .mod_resourceBookingWeekcalendar {
+    .rbb-app {
+      form {
+
+        select {
+          border-color: transparent;
+        }
+      }
+
+      .rbb-vue-application {
+        .rbb-layout-table {
+          .rbb-layout-box-inner {
+
+            .rbb-layout-cell.rbb-cell-headline {
+              background-color: var(--bs-tertiary-bg) !important;
+            }
+
+            .rbb-layout-cell.rbb-cell-headline.rbb-time-slot-indicator {
+              background-color: var(--bs-tertiary-bg);
+            }
+
+            .rbb-layout-cell.rbb-time-slot-indicator {
+              background-color: var(--bs-tertiary-bg);
+            }
+
+            .rbb-layout-cell {
+              border-color: var(--bs-body-bg);
+            }
+
+            .rbb-layout-cell.rbb-time-slot-cell[data-isbookable="true"] {
+              background-color: #6cc15a;
+            }
+
+            .rbb-layout-cell.rbb-time-slot-cell[data-isfullybooked="true"] {
+              background-color: #dc3545;
+            }
+          }
+        }
+
+
+      }
+
+      .alert {
+        color: var(--bs-body-color);
+      }
+
+      button.btn-primary {
+        color: #fff;
+      }
+    }
+
+  }
+
+}

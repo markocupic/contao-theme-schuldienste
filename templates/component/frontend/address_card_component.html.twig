@@ -15,9 +15,9 @@
             <address class="mb-3">
                 {% if ctx.name|default %}
                     <div class="address-card__title card-title mb-3">
-                        {% if ctx.href|default %}<a href="{{ ctx.url }}">{% endif %}
+                        {% if ctx.url|default %}<a href="{{ insert_tag(ctx.url|replace({'{{': '', '}}': ''})) }}">{% endif %}
                             <strong>{{ ctx.name }}</strong>
-                            {% if ctx.href|default %}</a>{% endif %}
+                            {% if ctx.url|default %}</a>{% endif %}
                     </div>
                 {% endif %}
 

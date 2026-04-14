@@ -1,11 +1,13 @@
 {% if has_logged_in_frontend_user() %}
-    <a href="_contao/logout" title="Abmelden"><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    <a href="_contao/logout" title="Abmelden" class="btn p-0">
+        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+    </a>
 {% else %}
-    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" title="Anmelden">
-        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" title="Anmelden" class="btn p-0">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i><span class="ms-2 label">Login</span>
     </button>
 
-    <div id="loginModal" class="modal modal-lg" tabindex="-1">
+    <div id="loginModal" class="modal modal-lg modal-fullscreen-sm-down" tabindex="-1">
         <div class="modal-dialog">
             <div class="modal-content bg-body-tertiary">
                 <div class="modal-body p-0 overflow-hidden">
@@ -17,7 +19,8 @@
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="login-modal__right p-3 p-lg-5">
-                                <h2 class="modal-title mb-5">Login schuldienste.ch</h2>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen" title="schliessen"></button>
+                                <h2 class="modal-title mb-5 h2">Login schuldienste.ch</h2>
                                 {{ insert_tag('insert_module::20')|raw }}
                             </div>
                         </div>

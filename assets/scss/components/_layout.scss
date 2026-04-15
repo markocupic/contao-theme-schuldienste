@@ -12,7 +12,7 @@
 // Some padding for each layout section
 .layout-header, .layout-left, .layout-main, .layout-footer {
   .inside {
-    padding: clamp-calc(1.5rem, 1.5rem);
+    padding: clamp-calc(1.5rem, 2.5rem) clamp-calc(1.5rem, 3.5rem);
   }
 }
 

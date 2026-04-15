@@ -1,15 +1,7 @@
 <!-- Theme toggle -->
-<button type="button" class="theme-toggle__button btn d-inline-flex align-items-center gap-2 p-0" aria-label="Toggle dark mode">
-    <span class="theme-toggle__icon">
-        <span class="theme-toggle__icon--light-theme" title="Wechsle zu light mode">
-            <i class="fa-regular fa-sun"></i>
-            <span class="ms-2 label">Hell</span>
-        </span>
-        <span class="theme-toggle__icon--dark-theme" title="Wechsle zu dark mode">
-            <i class="fa-regular fa-moon"></i>
-            <span class="ms-2 label">Dunkel</span>
-        </span>
-    </span>
+<button type="button" class="theme-toggle__button btn-unstyled d-inline-flex align-items-center p-0" aria-label="Toggle dark mode">
+    <span class="theme-toggle__icon--light-theme badge rounded-pill text-bg-dark ms-2 label" title="Helles Layout aktivieren"><i class="fa-regular fa-sun"></i><span class="pill-links__label">Hell</span></span>
+    <span class="theme-toggle__icon--dark-theme badge rounded-pill text-bg-dark ms-2 label" title="Dunkles Layout aktivieren"><i class="fa-regular fa-moon"></i><span class="pill-links__label">Dunkel</span></span>
 </button>
 
 {% add to body %}
@@ -61,35 +53,19 @@
     </script>
 {% endadd %}
 <style>
-    button.theme-toggle__button {
-        background: transparent;
-        border: none;
-        color: var(--bs-body-color);
-    }
-
     button.theme-toggle__button:hover, button.theme-toggle__button:active {
         color: var(--bs-body-color) !important;
     }
 
-    .theme-toggle__icon > span {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-
-        & > span {
-            font-size: 1rem !important;
-        }
+    html .theme-toggle__icon--light-theme {
+        display: none !important;
     }
 
-    html .theme-toggle__icon .theme-toggle__icon--light-theme {
-        display: none;
+    html[data-bs-theme="dark"] .theme-toggle__icon--light-theme {
+        display: flex !important;
     }
 
-    html[data-bs-theme="dark"] .theme-toggle__icon .theme-toggle__icon--light-theme {
-        display: flex;
-    }
-
-    html[data-bs-theme="dark"] .theme-toggle__icon .theme-toggle__icon--dark-theme {
-        display: none;
+    html[data-bs-theme="dark"] .theme-toggle__icon--dark-theme {
+        display: none !important;
     }
 </style>

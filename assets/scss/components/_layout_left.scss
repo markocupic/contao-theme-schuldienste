@@ -20,12 +20,14 @@
   .inside {
 
     button.navigation-toggle {
-      color: var(--bs-body-color);
-      background: transparent !important;
-      font-size: 2rem;
       position: absolute;
       top: clamp-calc(1.5rem, 3rem);
       right: clamp-calc(1.5rem, 3rem);
+      background-color: transparent;
+
+      .nav-close svg {
+        color: var(--bs-body-color);
+      }
     }
 
     nav {
@@ -74,6 +76,11 @@
 button.navigation-toggle {
   background: #fff;
   border: none;
+
+  svg {
+    height: clamp-calc(2rem, 3rem);
+    width: auto;
+  }
 }
 
 button.navigation-toggle .nav-open {

@@ -8,55 +8,42 @@
     background: var(--bs-tertiary-bg);
 
     button.layout-header__navigation-toggle {
-      background-color: var(--accent-color);
-      padding: .25rem .375rem;
-      color: #fff;
+      padding: .35rem;
       display: flex;
       align-items: center;
-      font-size: 2rem;
+      background-color: transparent;
+
+      .nav-open, .nav-close {
+        svg {
+          height: clamp-calc(2rem, 3rem);
+          width: auto;
+          color: var(--bs-body-color);
+        }
+      }
 
       span.label {
-        color: #fff;
-        font-size: .75em;
-      }
-    }
-
-    .layout-header__icon-links {
-      margin: 0;
-      padding: 0;
-
-      ul {
-        list-style-type: none;
-        display: flex;
-        gap: 1rem;
-        align-items: flex-end;
-
-        li {
-          padding: .25rem .375rem;
-          line-height: 1;
-
-          > button {
-            border: 0;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-          }
-
-          > button, > a, > button > .fa, button .label {
-            color: var(--bs-secondary-color);
-            background: transparent;
-            font-size: 1rem;
-          }
-
-          > button .label {
-            display: none;
-            @media (min-width: $breakpoint-sm-up) {
-              display: inline;
-            }
-          }
-        }
+        font-size: clamp-calc(1.125rem, 1.75rem);
+        margin-left: .25rem;
+        color: var(--bs-secondary)
       }
     }
   }
+}
+
+.layout-header__search-bar {
+  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 1.2s ease-in-out, padding 1.2s ease-in-out;
+
+  .mod_search {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+body.search-bar-expanded .layout-header__search-bar {
+  max-height: 500px;
+  padding: 3rem 2rem; /* nur hier */
 }

@@ -2,27 +2,33 @@
 {% use "@Contao/component/_figure.html.twig" %}
 {% use '@Contao/component/_rich_text.html.twig' %}
 
+{% set attributes = attributes|default(attrs())
+    .addClass(text_box_bg_classes)
+    .mergeWith(attributes|default) %}
+
 {% block content %}
-    <div class="row g-0">
-        <div class="col-12 col-md-6 col-lg-7">
-            <div class="content-text-gallery__col-text pe-md-3">
-                {# Richtext #}
-                {% block text %}
-                    {% with {text, attributes: text_attributes|default} %}{{ block('rich_text_component') }}{% endwith %}
-                {% endblock %}
+    <div class="inner">
+        <div class="row g-0">
+            <div class="col-12 col-md-6 col-lg-7">
+                <div class="content-text-gallery__col-text pe-md-3">
+                    {# Richtext #}
+                    {% block text %}
+                        {% with {text, attributes: text_attributes|default} %}{{ block('rich_text_component') }}{% endwith %}
+                    {% endblock %}
+                </div>
             </div>
-        </div>
-        <div class="col-12 col-md-6 col-lg-5">
-            <div class="js-fader-gallery content-text-gallery__col-gallery">
-                {% if images|default %}
-                    <ul>
-                        {% for image in images %}
-                            <li>
-                                {% with {figure: image} %}{{ block('figure_component') }}{% endwith %}
-                            </li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
+            <div class="col-12 col-md-6 col-lg-5">
+                <div class="js-fader-gallery content-text-gallery__col-gallery">
+                    {% if images|default %}
+                        <ul>
+                            {% for image in images %}
+                                <li>
+                                    {% with {figure: image} %}{{ block('figure_component') }}{% endwith %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -67,12 +73,12 @@
             .content-text-gallery .js-fader-gallery ul {
                 list-style-type: none;
                 padding: 0;
-                position:relative;
+                position: relative;
                 overflow: hidden;
                 width: 100%;
                 height: 100%;
                 min-height: 300px;
-                margin:0;
+                margin: 0;
             }
 
             .content-text-gallery .js-fader-gallery {

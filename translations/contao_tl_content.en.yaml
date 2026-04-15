@@ -16,8 +16,10 @@ tl_content:
         - Layout Element (CSS ID) in dem nach Sprungmarken gesucht werden soll.
     addTextGallery:
         - Add image gallery
-         Add an image gallery to the element.
-
+        - Add an image gallery to the element.
+    textBoxBg:
+        - Background classes for the text box
+        - Add background classes to the text box.
     # References
     mt-none:
         - Kein Abstand

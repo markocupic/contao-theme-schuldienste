@@ -51,6 +51,7 @@
         }
 
         .team-member-card__status-indicator {
+          display: none; // Disable for now
           position: absolute;
           bottom: 4px;
           right: 1px;
@@ -64,7 +65,6 @@
           }
           //background: #10b981;
           background: var(--bs-teal);
-
           border-radius: 50%;
           animation: pulse-opacity 4s ease-in-out infinite;
         }

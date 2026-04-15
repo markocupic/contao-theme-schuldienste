@@ -9,15 +9,18 @@
     </div>
     <div>
         <div class="d-flex justify-content-end">
-            <button class="layout-header__navigation-toggle navigation-toggle btn rounded-0" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa-solid fa-bars nav-open"></i>
-                <i class="fa-solid fa-xmark nav-close"></i>
+            <button class="layout-header__navigation-toggle navigation-toggle btn rounded-0" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Menu ein- und ausklappen">
+                <span class="nav-open" title="Menu anzeigen">{{ inline_asset('images/icons/menu/burger-right.svg', 'markocupic_contao_schuldienste_theme') }}</span>
+                <span class="nav-close" title="Menu schliessen">{{ inline_asset('images/icons/menu/close.svg', 'markocupic_contao_schuldienste_theme') }}</span>
                 <span class="label d-none d-sm-block ms-2 lh-1">MENÜ</span>
             </button>
         </div>
-        <div class="d-flex justify-content-end mt-3 mt-sm-4">
-            <div class="layout-header__icon-links d-flex">
+        <div class="d-flex justify-content-end mt-3 mt-sm-4 mt-xl-5">
+            <div class="pill-links">
                 <ul class="list-unstyled">
+                    <li>
+                        <button class="btn-unstyled" data-search-toggle type="button" aria-controls="headerSearchBar" aria-expanded="false" aria-label="Suche ein- und ausklappen" title="Suche ein- und ausklappen"><span class="badge bg-light rounded-pill text-bg-info"><i class="fa-brands fa-sistrix"></i><span class="pill-links__label">Suchen</span></span></button>
+                    </li>
                     <li>{{ include('@MarkocupicContaoSchuldiensteTheme/login_form.html.twig') }}</li>
                     <li>{{ include('@MarkocupicContaoSchuldiensteTheme/component/frontend/theme_toggle.html.twig') }}</li>
                 </ul>
@@ -25,6 +28,33 @@
         </div>
     </div>
 </div>
+<div id="headerSearchBar" class="layout-header__search-bar">
+    {# insert the search form #}
+    {{ insert_tag('insert_module::8')|raw }}
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const buttons = document.querySelectorAll('[data-search-toggle]');
+
+        // Always set the aria-expanded attribute to the current state of the body
+        const observer = new MutationObserver(() => {
+            const expanded = body.classList.contains('search-bar-expanded');
+            buttons.forEach(btn => btn.setAttribute('aria-expanded', expanded));
+        });
+
+        observer.observe(body, {
+            attributes: true,
+            attributeFilter: ['class']
+        });
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.toggle('search-bar-expanded');
+            });
+        });
+    });
+</script>
 {% add to body %}
     <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
         const body = document.querySelector('body');
@@ -47,7 +77,7 @@
                 button.disabled = true;
                 setTimeout(() => {
                     button.disabled = false;
-                }, 1000);
+                }, 400);
 
                 body.classList.toggle('navigation-active');
             });

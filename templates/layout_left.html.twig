@@ -7,14 +7,10 @@
     </div>
 </a>
 
-<button class="layout-left__navigation-toggle navigation-toggle" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Toggle navigation">
-    <i class="fa-solid fa-bars nav-open"></i>
-    <i class="fa-solid fa-xmark nav-close"></i>
+<button class="layout-left__navigation-toggle navigation-toggle" type="button" aria-controls="navigationMain" aria-expanded="false" aria-label="Menu schliessen" title="Menu schliessen">
+    <span class="nav-close">{{ inline_asset('images/icons/menu/close.svg', 'markocupic_contao_schuldienste_theme') }}</span>
 </button>
 
 <div class="navigation">
     {{ insert_tag('insert_module::1')|raw }}
-    <div class="mt-5">
-        {% include('@MarkocupicContaoSchuldiensteTheme/component/frontend/theme_toggle.html.twig') %}
-    </div>
 </div>

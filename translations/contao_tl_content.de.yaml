@@ -14,9 +14,12 @@ tl_content:
     anchorLinkContext:
         - Such-Kontext
         - Layout Element (CSS ID) in dem nach Sprungmarken gesucht werden soll.
-    addTextGalley:
+    addTextGallery:
         - Bilder-Galerie hinzufügen
         - Fügen Sie dem Element eine Bildergalerie hinzu.
+    textBoxBg:
+        - Hintergrundklassen für die Text-Box
+        - Fügen Sie der Text-Box Hintergrundklassen hinzu.
     # References
     mt-none:
         - Kein Abstand

@@ -23,6 +23,11 @@ Encore
         to: 'images/[path][name].[ext]'
     })
 
+    .copyFiles({
+        from: './assets/images/logos',
+        to: 'images/logos/[path][name].[hash:8].[ext]'
+    })
+
     .disableSingleRuntimeChunk()
     .cleanupOutputBeforeBuild()
     .enableSourceMaps()

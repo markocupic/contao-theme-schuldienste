@@ -82,6 +82,9 @@ class TextGalleryController extends AbstractContentElementController
             }
         }
 
+        $bgClasses = StringUtil::deserialize($model->textBoxBg, true);
+        $template->set('text_box_bg_classes', implode(' ', $bgClasses));
+
         return $template->getResponse();
     }
 

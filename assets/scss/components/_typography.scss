@@ -28,6 +28,8 @@ $keys: map-keys($headings-map);
     color: nth($values, 5);
     line-height: var(--bs-body-line-height);
     letter-spacing: nth($values, 6);
+    overflow-wrap: break-word;
+    word-break: break-word; /* fallback */
   }
 }
 
@@ -51,6 +53,9 @@ p {
   font-size: .75em;
 }
 
+.layout-wrapper {
+  font-size: clamp-calc(1rem, 1.125rem);
+}
 
 /** Layout Main section only **/
 /** Layout Main section only **/
@@ -121,19 +126,7 @@ p {
 /** Layout Left section only **/
 /** Layout Left section only **/
 .layout-left {
-  font-size: clamp-calc(.75rem, .875rem);
-
-  // Loop through the map and apply styles
-  $keys: map-keys($headings-map);
-
-  @for $i from 1 through length($keys) {
-    $heading: nth($keys, $i);
-    $values: map-get($headings-map, $heading);
-
-    #{$heading}, .h#{$i} {
-      margin-bottom: clamp-calc(nth($values, 3) * 0.5 * .75rem, nth($values, 3) * 0.5 * 1.25rem);
-    }
-  }
+  //
 }
 
 
@@ -141,5 +134,5 @@ p {
 /** Layout Footer section only **/
 /** Layout Footer section only **/
 .layout-footer {
-  font-size: clamp-calc(.75rem, .875rem);
+  //font-size: clamp-calc(.75rem, .875rem);
 }

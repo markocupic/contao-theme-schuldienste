@@ -3,41 +3,42 @@
         <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
     </a>
 {% else %}
-    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" title="Anmelden" class="btn p-0">
-        <i class="fa-solid fa-arrow-right-to-bracket"></i><span class="ms-2 label">Login</span>
+    <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" title="Anmelden" class="btn-unstyled">
+        <span class="badge rounded-pill text-bg-light ms-2 label"><i class="fa-solid fa-arrow-right-to-bracket"></i><span class="pill-links__label">Login</span></span>
     </button>
-
-    <div id="loginModal" class="modal modal-lg modal-fullscreen-sm-down" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content bg-body-tertiary">
-                <div class="modal-body p-0 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-6 d-none d-lg-block">
-                            <div class="login-modal__left">
-                                <img class="rounded-top-start rounded-bottom-start" src="{{ asset('images/loginform/background.jpg', 'markocupic_contao_schuldienste_theme') }}">
+    {% add to body %}
+        <div id="loginModal" class="modal modal-lg modal-fullscreen-sm-down" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content bg-body-tertiary">
+                    <div class="modal-body p-0 overflow-hidden">
+                        <div class="row g-0">
+                            <div class="col-6 d-none d-lg-block">
+                                <div class="login-modal__left">
+                                    <img class="rounded-top-start rounded-bottom-start" src="{{ asset('images/loginform/background.jpg', 'markocupic_contao_schuldienste_theme') }}">
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                            <div class="login-modal__right p-3 p-lg-5">
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen" title="schliessen"></button>
-                                <h2 class="modal-title mb-5 h2">Login schuldienste.ch</h2>
-                                {{ insert_tag('insert_module::20')|raw }}
+                            <div class="col-12 col-lg-6">
+                                <div class="login-modal__right p-3 p-lg-5">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Schliessen" title="schliessen"></button>
+                                    <h2 class="modal-title mb-5 h2">Login schuldienste.ch</h2>
+                                    {{ insert_tag('insert_module::20')|raw }}
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
-        document.addEventListener('DOMContentLoaded', () => {
-            const modalBox = document.getElementById('loginModal');
-            const error = modalBox?.querySelector('.error');
+        <script{{ attrs().setIfExists('nonce', csp_nonce('script-src')) }}>
+            document.addEventListener('DOMContentLoaded', () => {
+                const modalBox = document.getElementById('loginModal');
+                const error = modalBox?.querySelector('.error');
 
-            if (error) {
-                const modal = new bootstrap.Modal(modalBox);
-                modal.show();
-            }
-        })
-    </script>
+                if (error) {
+                    const modal = new bootstrap.Modal(modalBox);
+                    modal.show();
+                }
+            })
+        </script>
+    {% endadd %}
 {% endif %}

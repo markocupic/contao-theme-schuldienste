@@ -13,6 +13,7 @@
   --bs-heading-color-h1: #000000;
   --bs-heading-color: #1b263b; // darkblue
   --bs-alert-bg: var(--bs-alert-bg);
+  --bs-card-bg: var(--bs-light);
 }
 
 :root[data-bs-theme="dark"] {
@@ -30,4 +31,6 @@
   --bs-heading-color-h1: var(--bs-body-color);
   --bs-heading-color: #ededed;
   --bs-alert-bg: var(--bs-body-bg);
+  --bs-card-bg: var(--bs-body-bg);
+
 }

@@ -10,3 +10,9 @@ CTE:
     nested_fragment_slider:
         - Slider Wrapper Element (Nested Fragments)
         - Add a slider wrapper element (nested fragments) to the article.
+
+# Resource Booking Bundle
+RBB:
+    MSG:
+        resourceAvailable: The consultation appointment you requested is still available during the desired time period.
+

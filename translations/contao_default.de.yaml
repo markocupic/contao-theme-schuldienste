@@ -10,3 +10,8 @@ CTE:
     nested_fragment_slider:
         - Slider Wrapper Element (Nested Fragements)
         - Fügen Sie dem Artikel ein Slider Wrapper Element (Nested Fragments) hinzu.
+
+# Resource Booking Bundle
+RBB:
+    MSG:
+        resourceAvailable: Der von Ihnen gewünschte Beratungstermin ist im gewünschten Zeitraum noch verfügbar.

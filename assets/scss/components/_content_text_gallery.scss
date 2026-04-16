@@ -1,5 +1,6 @@
 .content-text-gallery {
   overflow: hidden;
+  background-color: var(--bs-card-bg);
 
   &.bg-primary-subtle {
     .inner {
@@ -38,14 +39,14 @@
   }
 
   .content-text-gallery__col-text {
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
   }
 }
 
 
 [data-bs-theme="dark"] {
   .content-text-gallery {
-    background-color: var(--box-bg-light);
+    background-color: var(--bs-card-bg);
     border-radius: var(--bs-border-radius);
 
     &.bg-primary-subtle {
@@ -85,7 +86,7 @@
     }
 
     .content-text-gallery__col-text {
-      padding: 0 1rem 1rem 1rem;
+      padding: 1rem 1rem 1rem 1rem;
     }
   }
 }

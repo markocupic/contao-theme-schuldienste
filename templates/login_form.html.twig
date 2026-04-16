@@ -1,7 +1,7 @@
 {% if has_logged_in_frontend_user() %}
-    <a href="_contao/logout" title="Abmelden" class="btn p-0">
-        <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
-    </a>
+<a href="_contao/logout" title="Abmelden" class="btn-unstyled">
+    <span class="badge rounded-pill text-bg-light ms-2 label"><i class="fa-solid fa-arrow-right-from-bracket"></i><span class="pill-links__label">Logout</span></span>
+</a>
 {% else %}
     <button type="button" data-bs-toggle="modal" data-bs-target="#loginModal" title="Anmelden" class="btn-unstyled">
         <span class="badge rounded-pill text-bg-light ms-2 label"><i class="fa-solid fa-arrow-right-to-bracket"></i><span class="pill-links__label">Login</span></span>

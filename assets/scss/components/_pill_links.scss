@@ -11,7 +11,7 @@
     align-items: flex-end;
 
     li {
-      button {
+      .btn-unstyled, button.btn-unstyled {
         border: 0;
         padding: 0;
         margin: 0;

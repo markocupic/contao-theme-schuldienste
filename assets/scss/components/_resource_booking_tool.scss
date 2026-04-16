@@ -1,3 +1,27 @@
+:root, :root[data-bs-theme="light"] {
+  --rbb-unbooked: #c4ebbe;
+  --rbb-booked: #ffded5;
+  --rbb-blocked: #e9ecef;
+}
+
+:root[data-bs-theme="dark"] {
+  --rbb-unbooked: #6cc15a;
+  --rbb-booked: #dc3545;
+  --rbb-blocked: var(--bs-body-bg);
+}
+
+.rbb-bg-unbooked {
+  color: var(--rbb-unbooked);
+}
+
+.rbb-bg-booked {
+  color: var(--rbb-booked);
+}
+
+.rbb-bg-blocked {
+  color: var(--rbb-blocked);
+}
+
 html {
   .mod_resourceBookingWeekcalendar {
     .rbb-app {
@@ -27,6 +51,10 @@ html {
             display: flex;
             flex-direction: column;
             margin-right: 2rem;
+
+            .rbb-layout-cell.rbb-time-slot-cell[data-isblocked="true"] {
+              background-color: var(--rbb-blocked);
+            }
           }
         }
       }
@@ -60,16 +88,28 @@ html[data-bs-theme="dark"] {
               background-color: var(--bs-tertiary-bg);
             }
 
+            [data-isinvaliddate="true"] {
+              border-color: var(--bs-body-bg);
+            }
+
             .rbb-layout-cell {
               border-color: var(--bs-body-bg);
             }
 
+            .rbb-layout-cell.rbb-time-slot-cell[data-isinvaliddate="true"] {
+              background-color: var(--bs-tertiary-bg);
+            }
+
             .rbb-layout-cell.rbb-time-slot-cell[data-isbookable="true"] {
-              background-color: #6cc15a;
+              background-color: var(--rbb-unbooked);
             }
 
             .rbb-layout-cell.rbb-time-slot-cell[data-isfullybooked="true"] {
-              background-color: #dc3545;
+              background-color: var(--rbb-booked);
+            }
+
+            .rbb-layout-cell.rbb-time-slot-cell[data-isblocked="true"] {
+              background-color: var(--rbb-blocked);
             }
           }
         }

@@ -17,14 +17,14 @@
         svg {
           height: clamp-calc(2rem, 3rem);
           width: auto;
-          color: var(--bs-body-color);
+          color: var(--accent-color);
         }
       }
 
       span.label {
         font-size: clamp-calc(1.125rem, 1.75rem);
         margin-left: .25rem;
-        color: var(--bs-secondary)
+        color: var(--bs-body-color);
       }
     }
   }

@@ -10,7 +10,7 @@
     <div class="inner">
         <div class="row g-0">
             <div class="col-12 col-md-6 col-lg-7">
-                <div class="content-text-gallery__col-text pe-md-3">
+                <div class="content-text-gallery__col-text">
                     {# Richtext #}
                     {% block text %}
                         {% with {text, attributes: text_attributes|default} %}{{ block('rich_text_component') }}{% endwith %}

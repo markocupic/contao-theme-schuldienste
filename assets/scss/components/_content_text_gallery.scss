@@ -25,7 +25,11 @@
   }
 
   .content-text-gallery__col-text {
-    padding: 1rem;
+    padding: clamp-calc(1rem, 2rem);
+
+    h1 {
+      margin-top: 0;
+    }
   }
 }
 
@@ -59,10 +63,6 @@
           color: var(--bs-body-color);
         }
       }
-    }
-
-    .content-text-gallery__col-text {
-      padding: 1rem;
     }
   }
 }

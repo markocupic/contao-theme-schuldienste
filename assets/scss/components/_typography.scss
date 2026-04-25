@@ -28,6 +28,7 @@ $keys: map-keys($headings-map);
     letter-spacing: nth($values, 6);
     overflow-wrap: break-word;
     word-break: break-word; /* fallback */
+    hyphens: auto;
   }
 }
 

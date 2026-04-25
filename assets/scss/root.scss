@@ -23,14 +23,14 @@
   //--spacing-sm: #{$spacing-sm};
   //--spacing-md: #{$spacing-md};
   //--spacing-lg: #{$spacing-lg};
-  --box-bg-light: var(--bs-body-bg);
-  --menu-bg: var(--bs-body-bg);
-  --menu-bg-active: var(--bs-body-bg);
-  --menu-bg-hover: var(--bs-tertiary-bg);
-  --menu-color: #f8f9fa;
+  --box-bg-light: #252a35;       // Karten/Boxen — hellste Ebene im Dark Mode
+  --menu-bg: var(--bs-tertiary-bg);
+  --menu-bg-active: #252a35;
+  --menu-bg-hover: #252a35;
+  --menu-color: #c8ccd2;         // Nav-Text — sanfter als #f8f9fa
   --bs-heading-color-h1: var(--bs-body-color);
-  --bs-heading-color: #ededed;
-  --bs-alert-bg: var(--bs-body-bg);
-  --bs-card-bg: var(--bs-body-bg);
+  --bs-heading-color: #e4e6ea;
+  --bs-alert-bg: #252a35;
+  --bs-card-bg: #252a35;         // Cards explizit, nicht via body-bg
 
 }

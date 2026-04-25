@@ -15,11 +15,11 @@ $light: #f8f9fa; // Bootstrap gray-100
 
 // Restate Bootstrap Variables
 $body-bg: #f0f2f5;
-$body-bg-dark: lighten(#1c1c1c, 3%);
+$body-bg-dark: #0f1115;        // äußerer Seitenbereich — sehr dunkles Blau-Schwarz
 $body-color: #2c3e50;
-$body-color-dark: #f4f4f4;
+$body-color-dark: #dde0e4;     // sanfteres Weiß, weniger blendend als #f4f4f4
 $body-tertiary-bg: #fff;
-$body-tertiary-bg-dark: #141414;
+$body-tertiary-bg-dark: #1a1e27; // Content-Spalte — etwas heller als der Außenbereich
 
 $link-color: darken($accent-color, 13%); // Minimal contrast ration of 1:4.1
 $link-color-dark: $accent-color; // Minimal contrast ration of 1:4.1

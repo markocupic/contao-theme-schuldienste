@@ -20,8 +20,7 @@ html {
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
-  transition: opacity .3s;
-  transition: background-color .3s;
+  transition: opacity .3s, background-color .3s;
 
   &.visible {
     opacity: 1;

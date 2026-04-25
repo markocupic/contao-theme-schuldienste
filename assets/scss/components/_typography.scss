@@ -1,6 +1,4 @@
 /** All sections **/
-/** All sections **/
-/** All sections **/
 
 $headings-map: (
         h1: (1.800, 3.000, 1.3, 700, var(--accent-color), -0.02em), // font-size min, font-size max, margin, font-weight, letter-spacing
@@ -58,8 +56,6 @@ p {
 }
 
 /** Layout Main section only **/
-/** Layout Main section only **/
-/** Layout Main section only **/
 .layout-main {
 
   font-size: clamp-calc(1rem, 1.125rem);
@@ -86,21 +82,15 @@ p {
 
   .content-text {
     ul {
+      list-style: none;
       list-style-position: outside;
+      padding-left: 0;
 
       li {
+        position: relative;
+        padding-left: 2rem;
         margin-bottom: clamp-calc(0.5rem, .75rem);
       }
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    ul li {
-      position: relative;
-      padding-left: 2rem;
     }
 
     ul li::before {
@@ -122,17 +112,3 @@ p {
 }
 
 
-/** Layout Left section only **/
-/** Layout Left section only **/
-/** Layout Left section only **/
-.layout-left {
-  //
-}
-
-
-/** Layout Footer section only **/
-/** Layout Footer section only **/
-/** Layout Footer section only **/
-.layout-footer {
-  //font-size: clamp-calc(.75rem, .875rem);
-}

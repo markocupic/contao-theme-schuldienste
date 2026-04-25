@@ -4,9 +4,7 @@
   font-size: 1rem;
 
   @media (min-width: $breakpoint-sm-up) {
-    margin-top: 0;
     margin-bottom: 1rem;
-    font-size: 1rem;
   }
 
   ul {
@@ -16,7 +14,7 @@
     padding-bottom: 4px;
     list-style: none !important;
     overflow-x: auto;
-    scrollbar-width: 1px; // Versteckt die Standard-Bar in Firefox
+    scrollbar-width: thin; // Versteckt die Standard-Bar in Firefox
 
     &::-webkit-scrollbar {
       height: 1px; // Exakte Höhe für Chrome/Safari

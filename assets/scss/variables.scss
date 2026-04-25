@@ -11,10 +11,10 @@ $accent-color: #fd6b22;
 // Set the brand color for schuldienste.ch
 $primary: $accent-color;
 
-$light: #fafafa; // very light
+$light: #f8f9fa; // Bootstrap gray-100
 
 // Restate Bootstrap Variables
-$body-bg: darken($light, 3%);
+$body-bg: #f0f2f5;
 $body-bg-dark: lighten(#1c1c1c, 3%);
 $body-color: #2c3e50;
 $body-color-dark: #f4f4f4;

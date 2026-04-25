@@ -42,8 +42,6 @@
 }
 
 // Set a default margin after each content element
-// Set a default margin after each content element
-// Set a default margin after each content element
 [class^="content-"] {
   margin-bottom: var(--spacing-md);
   display: flow-root; // Prevent margin collapsing
@@ -89,6 +87,4 @@
   margin-bottom: var(--spacing-lg) !important;
 }
 
-// End content element margins
-// End content element margins
 // End content element margins
